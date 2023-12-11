@@ -11,7 +11,7 @@ function show_comment($comments)
     if (is_file('../' . PATH_PRODUCT_ADMIN . $img)) {
       $img = PATH_PRODUCT_ADMIN . $img;
     } else {
-      $img = PATH_PRODUCT_ADMIN . 'no-image.jpeg';
+      $img = PATH_PRODUCT_ADMIN . 'no-image.png';
     }
     $show .= '
             <tr>
