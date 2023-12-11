@@ -1,0 +1,11 @@
+extend ./views/layout/dashboard
+block title
+  title Tin tức
+append stylesheet
+  link(rel="stylesheet", href="./css/news.css")
+block main
+  h1.title Tin tức
+  +filter()
+  include ./views/modules/news/news
+  +tablePage()
+

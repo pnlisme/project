@@ -1,0 +1,30 @@
+.table-container
+  table.comment.table 
+    thead.table-head  
+      tr
+        th 
+          ion-icon(name="image-outline")
+        th Họ tên
+        th Nội dung
+        th Thời gian
+        th Hành động
+    tbody.table-body 
+      each val in [1,2,3,4,5,6,7,8,9,10]
+        tr
+          td 
+            .comment-image 
+              img(srcset="./images/user.png 2x", alt="product")
+          td 
+            .comment-name 
+              p Tien Bip
+          td
+            .comment-content
+              p Có cái nịt, còn mỗi cái nịt thôi!
+          td
+            span.comment-time 12:00:00
+            span -
+            span 2021-05-20 
+          td
+            .comment-action 
+              a(href="#")
+                ion-icon(name="trash-outline")

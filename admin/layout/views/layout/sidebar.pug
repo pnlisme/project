@@ -1,0 +1,5 @@
+.sidebar 
+  ul.sidebar-list
+    each item in [{href: './', icon: 'bar-chart-outline', text: 'Bảng điều khiển'}, {href: './category.html', icon: 'albums-outline', text: 'Danh mục'}, {href: './product.html', icon: 'cube-outline', text: 'Sản phẩm'}, {href: './account.html', icon: 'people-circle-outline', text: 'Tài khoản'},{href: './order.html', icon: 'cart-outline', text: 'Đơn hàng'}, {href: './comment.html', icon: 'chatbubble-ellipses-outline', text: 'Bình luận'}, {href: './news.html', icon: 'newspaper-outline', text:'Tin tức'}, {href: './brand.html', icon: 'business-outline', text: 'Thương hiệu'}, {href: './voucher.html', icon: 'wallet-outline', text:'Mã giảm giá'}, {href: './', icon: 'log-out-outline', text: 'Đăng xuất'}]
+      +sidebarItem(item.href, item.icon, item.text)
+    

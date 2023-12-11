@@ -1,0 +1,126 @@
+.yourclass {
+  display: grid;
+  justify-content: flex-start;
+  grid-auto-columns: 90%;
+  grid-auto-flow: column;
+  grid-gap: 1.5rem;
+  overflow: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding: 1rem;
+  grid-template-columns: unset;
+}
+.yourclass::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+.yourclass > * {
+  scroll-snap-align: start;
+}
+.border-hover {
+  border: 2px solid #302828;
+}
+/* Toast-message */
+// #toast {
+//   position: fixed;
+//   top: 15px;
+//   right: 10px;
+// }
+
+// .toast {
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin-bottom: 20px;
+//   padding: 18px 25px;
+//   font-size: 20px;
+//   color: white;
+//   border-radius: 5px;
+//   overflow: hidden;
+
+//   animation: showToast ease 3s forwards;
+// }
+
+// /* animtion for toast */
+// @keyframes showToast {
+//   0% {
+//     transform: translateX(100%);
+//   }
+
+//   25% {
+//     transform: translateX(-10%);
+//   }
+
+//   50% {
+//     transform: translateX(0%);
+//   }
+
+//   100% {
+//     transform: translateX(0%);
+//   }
+// }
+
+// @keyframes hideToast {
+//   0% {
+//     transform: translateX(0%);
+//   }
+
+//   25% {
+//     transform: translateX(-10%);
+//   }
+
+//   50% {
+//     transform: translateX(10px);
+//   }
+
+//   100% {
+//     transform: translateX(200%);
+//   }
+// }
+
+// .toast.success {
+//   background-color: rgb(113, 248, 113);
+//   border-left: 6px solid green;
+// }
+
+// .toast.error {
+//   background-color: rgb(247, 96, 96);
+//   border-left: 6px solid red;
+// }
+
+// .cout-down {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   border-bottom: 4px solid green;
+//   animation: loading ease 4s forwards;
+// }
+
+// /* animation for coutdown (border-bottom)*/
+// @keyframes loading {
+//   from {
+//     width: 100%;
+//   }
+//   to {
+//     width: 0%;
+//   }
+// }
+
+// .toast.success .cout-down {
+//   border-bottom: 4px solid green;
+// }
+
+// .toast.error .cout-down {
+//   border-bottom: 4px solid red;
+// }
+
+// .toast i {
+//   font-size: 25px;
+//   margin-right: 10px;
+// }

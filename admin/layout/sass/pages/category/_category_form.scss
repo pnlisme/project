@@ -1,0 +1,128 @@
+@use "../../abstracts" as *;
+.category-form {
+  position: fixed;
+  inset: 0;
+  background-color: $color-subtext;
+  display: none;
+  &-container {
+    background-color: $color-secondary;
+    height: 100vh;
+    margin-left: 240px;
+    padding: 120px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 320px;
+    border-bottom-left-radius: 540px;
+  }
+  &-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 24px;
+  }
+  &-group {
+    tr {
+      grid-template-columns: 2fr 1fr;
+    }
+    td {
+      padding: 16px 32px;
+    }
+    td:nth-child(2) {
+      text-align: center;
+      border-left: 1px solid $color;
+    }
+  }
+  &-body {
+    tr:hover {
+      background-color: $color-secondary;
+    }
+    input {
+      width: 100%;
+      border: 1px solid $color;
+      border-radius: 12px;
+      padding: 13px 16px;
+      &:focus {
+        border-color: $color-tertiary;
+      }
+    }
+    button {
+      margin: 0;
+    }
+  }
+}
+// .category-formU {
+//   position: fixed;
+//   inset: 0;
+//   background-color: $color-subtext;
+//   display: none;
+//   &-container {
+//     background-color: $color-secondary;
+//     height: 100vh;
+//     margin-left: 240px;
+//     padding: 120px;
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     border-top-left-radius: 320px;
+//     border-bottom-left-radius: 540px;
+//   }
+//   &-close {
+//     position: absolute;
+//     top: 40px;
+//     right: 40px;
+//     font-size: 24px;
+//   }
+//   &-group {
+//     tr {
+//       grid-template-columns: 2fr 1fr;
+//     }
+//     td:nth-child(2) {
+//       text-align: center;
+//       border-left: 1px solid $color;
+//     }
+//   }
+//   &-body {
+//     tr:hover {
+//       background-color: $color-secondary;
+//     }
+//     input {
+//       width: 100%;
+//       border: 1px solid $color;
+//       border-radius: 12px;
+//       padding: 13px 16px;
+//       &:focus {
+//         border-color: $color-tertiary;
+//       }
+//     }
+//     button {
+//       margin: 0;
+//     }
+//   }
+// }
+.remove-form {
+  animation: closeForm 0.25s linear forwards;
+}
+.open-form {
+  animation: openForm 0.25s linear forwards;
+}
+@keyframes closeForm {
+  from {
+    // opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    // opacity: 0;
+    transform: translateX(100%);
+  }
+}
+@keyframes openForm {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

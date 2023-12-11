@@ -1,0 +1,88 @@
+@use "../abstracts" as *;
+:root {
+  --fw-medium: 500;
+  --fz-medium: 18px;
+}
+.sidebar {
+  flex-shrink: 0;
+  width: fit-content;
+  font-size: var(--fz-medium);
+  font-weight: var(--fw-medium);
+  color: $color-secondary;
+  background-color: $color;
+  &-item {
+    position: relative;
+    transition: all 0.2s linear;
+    &:hover {
+      color: $color;
+      & > .sidebar-animation {
+        transform: translateX(0);
+      }
+    }
+  }
+  &-item:first-child {
+    .sidebar-animation {
+      &:before {
+        width: 12px;
+        height: 12px;
+        rotate: 180deg;
+        right: -12px;
+        top: 0;
+      }
+    }
+  }
+  &-item:last-child {
+    color: $color-quaternary;
+    .sidebar-animation {
+      &::after {
+        width: 12px;
+        height: 12px;
+        rotate: 180deg;
+        right: -12px;
+        bottom: 0;
+      }
+    }
+  }
+  &-animation {
+    position: absolute;
+    inset: 0;
+    background-color: $color-secondary;
+    border-top-left-radius: 100rem;
+    border-bottom-left-radius: 100rem;
+    transform: translateX(100%);
+    transition: all 0.2s linear;
+    &:before {
+      width: 12px;
+      height: 12px;
+      content: "";
+      background: url(../images/icons/icon-up.png) center/cover no-repeat;
+      position: absolute;
+      top: -12px;
+      right: 0;
+      // transform: translateX(100%);
+      transition: all 0.2s linear;
+    }
+    &::after {
+      width: 12px;
+      height: 12px;
+      content: "";
+      background: url(../images/icons/icon-down.png) center/cover no-repeat;
+      position: absolute;
+      bottom: -12px;
+      right: 0;
+      // transform: translateX(100%);
+      transition: all 0.2s linear;
+    }
+  }
+  &-link {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    ion-icon {
+      font-size: 24px;
+    }
+  }
+}

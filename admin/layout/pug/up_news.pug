@@ -1,0 +1,9 @@
+extend ./views/layout/dashboard
+block title
+  title Chỉnh sửa tin tức
+append stylesheet
+  link(rel="stylesheet", href="./css/news.css")
+block main
+  h1.title Chỉnh sửa tin tức
+  include ./views/modules/news/up_news
+

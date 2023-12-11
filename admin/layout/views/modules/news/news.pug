@@ -1,0 +1,29 @@
+.table-container
+  table.news.table 
+    thead.table-head  
+      tr
+        th Tiêu đề
+        th Đăng bởi 
+        th Thời gian
+        th Hàng động
+    tbody.table-body 
+      each val in [1,2,3,4,5,6,7,8,9,10]
+        tr
+          td
+            .news-username 
+              p Nhà tôi ba đời trị bệnh trĩ, thay cột sống blabla...
+          td 
+            .news-fullname 
+              p Dep Trai Nhat Xom
+          td
+              span.news-time 12:00:00  
+              span -
+              span 2021-05-20 
+          td
+            .news-action
+              a.news-edit(href="/up_news.html")
+                ion-icon.md.hydrated(name="create-outline", role="img")
+              span |
+              a(href="#")
+                ion-icon.md.hydrated(name="trash-outline", role="img")
+  a(href="/add_news.html").table-button.button.news-add Thêm tin tức

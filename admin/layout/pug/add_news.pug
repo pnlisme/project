@@ -1,0 +1,9 @@
+extend ./views/layout/dashboard
+block title
+  title Thêm tin tức
+append stylesheet
+  link(rel="stylesheet", href="./css/news.css")
+block main
+  h1.title Thêm tin tức
+  include ./views/modules/news/add_news
+

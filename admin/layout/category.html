@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/40.0.0/ckeditor.min.js" integrity="sha512-Zyl/SvrviD3rEMVNCPN+m5zV0PofJYlGHnLDzol2kM224QpmWj9p5z7hQYppmnLFhZwqif5Fugjjouuk5l1lgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/app.js"> </script>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/category.css">
+  </head>
+  <body> 
+    <header class="header">
+      <div class="header-image"> <img srcSet="./images/logo.png 2x" alt="logo"></div>
+    </header>
+    <div class="wrapper" id="wrapper">
+      <div class="sidebar"> 
+        <ul class="sidebar-list">
+          <li class="sidebar-item"><a class="sidebar-link" href="./">
+              <ion-icon name="bar-chart-outline"></ion-icon><span>Bảng điều khiển</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./category.html">
+              <ion-icon name="albums-outline"></ion-icon><span>Danh mục</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./product.html">
+              <ion-icon name="cube-outline"></ion-icon><span>Sản phẩm</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./account.html">
+              <ion-icon name="people-circle-outline"></ion-icon><span>Tài khoản</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./order.html">
+              <ion-icon name="cart-outline"></ion-icon><span>Đơn hàng</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./comment.html">
+              <ion-icon name="chatbubble-ellipses-outline"></ion-icon><span>Bình luận</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./news.html">
+              <ion-icon name="newspaper-outline"></ion-icon><span>Tin tức</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./brand.html">
+              <ion-icon name="business-outline"></ion-icon><span>Thương hiệu</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./voucher.html">
+              <ion-icon name="wallet-outline"></ion-icon><span>Mã giảm giá</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./">
+              <ion-icon name="log-out-outline"></ion-icon><span>Đăng xuất</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+        </ul>
+      </div>
+      <main class="main">
+        <h1 class="title">Danh mục</h1>
+        <div class="table-scroll"> 
+          <table class="category table"> 
+            <thead class="table-head">
+              <tr> 
+                <th>Tên thể loại</th>
+                <th>Số lượng sản phẩm</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+              <tr> 
+                <td> <span>Tai nghe</span></td>
+                <td> <span>10</span></td>
+                <td> <a class="category-action category-update" href="#">
+                    <ion-icon name="create-outline"></ion-icon></a><span>|</span><a class="category-action category-remove" href="#">
+                    <ion-icon name="trash-outline"></ion-icon></a></td>
+              </tr>
+              <tr> 
+                <td> <span>Tai nghe</span></td>
+                <td> <span>10</span></td>
+                <td> <a class="category-action category-update" href="#">
+                    <ion-icon name="create-outline"></ion-icon></a><span>|</span><a class="category-action category-remove" href="#">
+                    <ion-icon name="trash-outline"></ion-icon></a></td>
+              </tr>
+              <tr> 
+                <td> <span>Tai nghe</span></td>
+                <td> <span>10</span></td>
+                <td> <a class="category-action category-update" href="#">
+                    <ion-icon name="create-outline"></ion-icon></a><span>|</span><a class="category-action category-remove" href="#">
+                    <ion-icon name="trash-outline"></ion-icon></a></td>
+              </tr>
+              <tr> 
+                <td> <span>Tai nghe</span></td>
+                <td> <span>10</span></td>
+                <td> <a class="category-action category-update" href="#">
+                    <ion-icon name="create-outline"></ion-icon></a><span>|</span><a class="category-action category-remove" href="#">
+                    <ion-icon name="trash-outline"></ion-icon></a></td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="table-button button category-add">
+            <p>Thêm danh mục</p>
+          </button>
+        </div>
+        <div class="table-page"><a class="button table-page-button" href="#">
+            <ion-icon name="chevron-back-outline"></ion-icon></a><a class="button table-page-button" href="#"><span>1</span></a><a class="button table-page-button" href="#"><span>2</span></a><a class="button table-page-button" href="#"><span>3</span></a><a class="button table-page-button" href="#">
+            <ion-icon name="chevron-forward-outline"></ion-icon></a></div>
+        <div class="category-form">
+          <div class="category-form-container">
+            <h2 class="sub-title category-form-title">Thêm danh mục</h2><a class="category-form-close" href="#">
+              <ion-icon name="close-circle-outline"></ion-icon></a>
+            <div class="category-form-table">
+              <form>
+                <table class="category-form-group table">
+                  <thead class="table-head">
+                    <tr>
+                      <th>Tên thể loại</th>
+                      <th>Hàng động</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-body category-form-body">
+                    <tr>
+                      <td> 
+                        <input id="category-name" type="text" placeholder="Nhập tên thể loại">
+                      </td>
+                      <td>
+                        <button class="button" id="category-submit" type="submit">Thêm danh mục</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="category-form">
+          <div class="category-form-container">
+            <h2 class="sub-title category-form-title">Chỉnh sửa danh mục</h2><a class="category-form-close" href="#">
+              <ion-icon name="close-circle-outline"></ion-icon></a>
+            <div class="category-form-table">
+              <form>
+                <table class="category-form-group table">
+                  <thead class="table-head">
+                    <tr>
+                      <th>Tên thể loại</th>
+                      <th>Hàng động</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-body category-form-body">
+                    <tr>
+                      <td> 
+                        <input id="category-name" type="text" placeholder="Tai nghe">
+                      </td>
+                      <td>
+                        <button class="button" id="category-submit" type="submit">Chỉnh sửa danh mục</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer class="footer"> 
+      <div class="footer-copyright"> 
+        <p>© 2023. Mọi bản quyền được bảo lưu.</p>
+      </div>
+      <div class="footer-brand"> <span>Chấp nhận cho</span>
+        <div class="footer-item"><img srcset="./images/footer/1.png 2x" alt="brand"></div>
+        <div class="footer-item"><img srcset="./images/footer/1.png 2x" alt="brand"></div>
+        <div class="footer-item"><img srcset="./images/footer/1.png 2x" alt="brand"></div>
+        <div class="footer-item"><img srcset="./images/footer/1.png 2x" alt="brand"></div>
+      </div>
+    </footer>
+    <script src="./js/dashboard.js"> </script>
+    <script src="./js/category.js"> </script>
+    <script src="./js/product.js"> </script>
+    <script src="./js/account.js"> </script>
+    <script src="./js/order.js"></script>
+  </body>
+</html>

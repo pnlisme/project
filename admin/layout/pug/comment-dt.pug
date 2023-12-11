@@ -1,0 +1,11 @@
+extend ./views/layout/dashboard
+block title
+  title Bình luận chi tiết
+append stylesheet
+  link(rel="stylesheet", href="./css/comment-dt.css")
+block main
+  h1.title Airpod Max
+  +filter()
+  include ./views/modules/comment-dt/comment-dt
+  +tablePage()
+

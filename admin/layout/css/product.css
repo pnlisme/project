@@ -1,0 +1,231 @@
+.product tr {
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.product ion-icon {
+  font-size: 24px;
+}
+.product th:not(:last-child),
+.product td:not(:last-child) {
+  border-right: 1px solid #000;
+}
+.product th,
+.product td {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product td:first-child {
+  padding: 12px 0;
+}
+.product th:nth-child(2),
+.product td:nth-child(2) {
+  justify-content: flex-start;
+}
+.product-image {
+  width: 120px;
+  height: 120px;
+}
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.product-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+}
+.product-action span {
+  opacity: 0.5;
+}
+.product-action ion-icon {
+  transition: all 0.2s linear;
+}
+.product-action ion-icon:hover {
+  transform: scale(1.2);
+}
+.product-quantity {
+  font-weight: 700;
+}
+.product-price {
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.product-price del {
+  opacity: 0.5;
+}
+
+.product-form {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.product-form span {
+  color: #ff497c;
+}
+.product-form-container {
+  height: 100vh;
+  overflow: auto;
+  padding: 120px;
+  background-color: #fff;
+  margin-left: 200px;
+  position: relative;
+  border-top-left-radius: 240px;
+  border-bottom-left-radius: 240px;
+}
+.product-form-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-size: 24px;
+}
+.product-form-content label {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.product-form-content input,
+.product-form-content select {
+  line-height: 20px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+.product-form-content input:focus,
+.product-form-content select:focus {
+  outline: none;
+  border-color: #3577f0;
+}
+.product-form-image {
+  width: 400px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.product-form-image img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-form-subimg {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.show-image {
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  margin-bottom: 24px;
+  position: relative;
+  display: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.show-image:first-child {
+  height: 100%;
+}
+.show-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.show-image-up {
+  width: 100%;
+  max-width: 400px;
+  height: 260px;
+  margin-bottom: 24px;
+  position: relative;
+  /* display: none; */
+  border-radius: 8px;
+  overflow: hidden;
+}
+.show-image-up:first-child {
+  height: 100%;
+}
+.show-image-up img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.remove-img {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 24px;
+  color: #ff497c;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  padding: 4px;
+  border-radius: 100rem;
+}
+.remove-img:hover {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+.product-form-radio-container {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.product-form-radio-container div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.product-form-radio-container div label,
+.product-form-radio-container div input {
+  margin: 0;
+}
+.product-form-input-container {
+  display: flex;
+  gap: 24px;
+}
+.product-form-input-container div {
+  width: 100%;
+}
+
+.remove-form {
+  animation: closeForm 0.25s linear forwards;
+}
+
+.open-form {
+  animation: openForm 0.25s linear forwards;
+}
+
+@keyframes closeForm {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes openForm {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.sidebar-item:nth-child(3) {
+  color: #000;
+}
+.sidebar-item:nth-child(3) .sidebar-animation {
+  transform: translateX(0);
+}
+
+/*# sourceMappingURL=product.css.map */

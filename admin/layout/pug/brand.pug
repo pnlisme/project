@@ -1,0 +1,12 @@
+extend ./views/layout/dashboard
+block title
+  title Thương hiệu
+append stylesheet
+  link(rel="stylesheet", href="./css/brand.css")
+block main
+  h1.title Thương hiệu
+  include ./views/modules/brand/brand
+  +tablePage()
+  include ./views/modules/brand/add_brand
+  include ./views/modules/brand/up_brand
+

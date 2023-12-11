@@ -1,0 +1,28 @@
+extend ./add_category
+
+block sub-title
+  h2.sub-title.category-form-title Chỉnh sửa danh mục
+
+block category-placeholder
+  input#category-name(type="text", placeholder="Tai nghe")
+
+block category-button
+  button#category-submit.button(type="submit") Chỉnh sửa danh mục
+//- .category-formU
+//-   .category-formU-container
+//-     h2.sub-title.category-formU-title Edit Category
+//-     a(href="#").category-formU-close
+//-       ion-icon(name="close-circle-outline")
+//-     .category-formU-table
+//-       form
+//-         table.category-formU-group.table
+//-           thead.table-head
+//-             tr
+//-               th Category Name
+//-               th Action
+//-           tbody.table-body.category-formU-body
+//-             tr
+//-               td 
+//-                 input#category-name(type="text", placeholder="Headphones")
+//-               td
+//-                 button#category-submit.button(type="submit") Submit

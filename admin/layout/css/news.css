@@ -1,0 +1,235 @@
+.news tr {
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+}
+.news {
+  --green: #58c27d;
+}
+.news ion-icon {
+  font-size: 24px;
+}
+.news th:not(:last-child),
+.news td:not(:last-child) {
+  border-right: 1px solid #000;
+}
+.news th,
+.news td {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news td:first-child {
+  padding: 12px 0;
+}
+.news th:nth-child(2),
+.news td:nth-child(2) {
+  justify-content: flex-start;
+}
+.news-image {
+  width: 120px;
+  height: 120px;
+}
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.news-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+}
+.news-action span {
+  opacity: 0.5;
+}
+.news-action ion-icon {
+  transition: all 0.2s linear;
+}
+.news-action ion-icon:hover {
+  transform: scale(1.2);
+}
+.news-quantity {
+  font-weight: 700;
+}
+.news-price {
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.news-price del {
+  opacity: 0.5;
+}
+
+.news-form {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.news-form span {
+  color: #ff497c;
+}
+.news-form-container {
+  height: 100vh;
+  overflow: auto;
+  padding: 120px;
+  background-color: #fff;
+  margin-left: 200px;
+  position: relative;
+  border-top-left-radius: 240px;
+  border-bottom-left-radius: 240px;
+}
+.news-form-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-size: 24px;
+}
+.news-form-content label {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.news-form-content input,
+.news-form-content select {
+  line-height: 20px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+.news-form-content input:focus,
+.news-form-content select:focus {
+  outline: none;
+  border-color: #3577f0;
+}
+.news-form-image {
+  width: 400px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.news-form-image img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.news-form-subimg {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.show-image {
+  width: 100%;
+  max-width: 400px;
+  height: 260px;
+  margin-bottom: 24px;
+  position: relative;
+  display: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.show-image:first-child {
+  height: 100%;
+}
+.show-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.show-image-up {
+  width: 100%;
+  max-width: 400px;
+  height: 260px;
+  margin-bottom: 24px;
+  position: relative;
+  /* display: none; */
+  border-radius: 8px;
+  overflow: hidden;
+}
+.show-image-up:first-child {
+  height: 100%;
+}
+.show-image-up img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.remove-img {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 24px;
+  color: #ff497c;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  padding: 4px;
+  border-radius: 100rem;
+}
+.remove-img:hover {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+.news-form-radio-container {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.news-form-radio-container div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.news-form-radio-container div label,
+.news-form-radio-container div input {
+  margin: 0;
+}
+.news-form-input-container {
+  display: flex;
+  gap: 24px;
+}
+.news-form-input-container div {
+  width: 100%;
+}
+
+.remove-form {
+  animation: closeForm 0.25s linear forwards;
+}
+
+.open-form {
+  animation: openForm 0.25s linear forwards;
+}
+
+@keyframes closeForm {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes openForm {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-item:nth-child(7) {
+  color: #000;
+}
+.sidebar-item:nth-child(7) .sidebar-animation {
+  transform: translateX(0);
+}
+
+/*# sourceMappingURL=news.css.map */

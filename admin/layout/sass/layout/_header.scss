@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+.header {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $bgr-c;
+  padding: 12px 32px;
+  transition: all 0.5s ease-in-out;
+  &-images {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,25 @@
+extends ./assets/pug/layout
+block main
+    section.container.pb-40 
+        .profile.flex.flex-col.gap-1
+            .profile-img.rounded-full.w-24
+                img(src="./images/profile.jpg", alt="alt").rounded-full 
+            p.profile-title.text-third.font-bold Hello A3KHIA 
+            span.text-gray.font-bold eTrade Member Since Sep 2020
+        .grid.grid-flow-row-dense.grid-cols-8.gap-10.pt-5
+            .navbar.col-span-2.bg-primary.rounded-xl
+                navbar
+                ul.p-5.flex.flex-col.gap-3
+                    li.list-none.flex.items-center.gap-5.py-3.px-6.bg-white.rounded-lg
+                        ion-icon(name="grid").text-primary.text-lg
+                        a(href="").text-primary.text-xs.fw-500 Dashboad
+                    +list("cart","Order")
+                    +list("home","Addresses")
+                    +list("person","Account Details")
+                    +list("log-out","Logout")
+            .sesion-address.col-span-6
+                .title.pb-4
+                    p.text-third.font-normal Hello Hasan (not Hasan? 
+                        a(href="").font-bold Log Out )
+                p.text-third.tracking-wide From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.
+            

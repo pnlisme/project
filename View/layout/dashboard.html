@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/e5ff98b392.js" crossorigin="anonymous"></script>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<!-- CSS -->
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body><header>
+<div>
+<div class=" w-3/4 px-8 container bg-box rounded-15 mt-8 flex items-center justify-between">
+<!-- LOGO -->
+<div>
+<img src="assets/img/logo.png" alt="Logo Web">
+</div>
+<!-- NAV -->
+<div>
+<ul class="flex text-h2 gap-6">
+<li>
+<a href="#">Home</a>
+</li>
+<li>
+<a href="#">Product</a>
+</li>
+<li>
+<a href="#">Contact</a>
+</li>
+<li>
+<a href="#">About</a>
+</li>
+<li>
+<a href="#">Blog</a>
+</li>
+</ul>
+</div>
+<!-- SITE LINK -->
+<div>
+<ul class="flex gap-3">
+<li>
+<a href="#">
+<img src="./assets/img/icon-search.png" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<img src="./assets/img/icon-cart.png" alt="">
+</a>
+</li>
+<li>
+<a href="#" class="relative heart-container">
+<div class="heart-1 "></div>
+<div class="heart-2 top-0 absolute"></div>
+</a>
+</li>
+<li>
+<a href="#">
+<img src="./assets/img/icon-user.png" alt="">
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</header><section class="my-16">
+<div class="bg-primary">
+<div class="container py-4 flex justify-between items-center">
+<div>
+<!-- UPPER -->
+<div class="flex text-gray-400">
+<a  class="mr-4 text-grey-500 relative after:content-[''] after:absolute after:top-1/4 after:-right-2 after:w-px after:px-px after:h-4 after:bg-gray-500 after:block" href="#">Home</a>
+<p class="text-white" > Contact</p>
+</div>
+<!-- LOWER -->
+<div>
+<h1 class="text-h1 text-white font-bold">Account Detail</h1>
+</div>
+</div>
+<!-- IMG -->
+<div class="w-2/12">
+<img src="/layout/assets/img/cucShit.png" alt="">
+</div>
+</div>
+</div>
+</section>
+<section class="container pb-40"> 
+  <div class="profile flex flex-col gap-1">
+    <div class="profile-img rounded-full w-24"><img class="rounded-full" src="./images/profile.jpg" alt="alt"/></div>
+    <p class="profile-title text-third font-bold">Hello A3KHIA </p><span class="text-gray font-bold">eTrade Member Since Sep 2020</span>
+  </div>
+  <div class="grid grid-flow-row-dense grid-cols-8 gap-10 pt-5">
+    <div class="navbar col-span-2 bg-primary rounded-xl">
+      <navbar></navbar>
+      <ul class="p-5 flex flex-col gap-3">
+        <li class="list-none flex items-center gap-5 py-3 px-6 bg-white rounded-lg">
+          <ion-icon class="text-primary text-lg" name="grid"></ion-icon><a class="text-primary text-xs fw-500" href="">Dashboad</a>
+        </li>
+        <li class="group list-none flex items-center gap-5 py-3 px-6 rounded-lg transition duration hover:bg-white">
+          <ion-icon class="text-white text-lg group-hover:text-primary" name="cart"></ion-icon><a class="text-white text-xs fw-500 group-hover:text-primary" href="">Order</a>
+        </li>
+        <li class="group list-none flex items-center gap-5 py-3 px-6 rounded-lg transition duration hover:bg-white">
+          <ion-icon class="text-white text-lg group-hover:text-primary" name="home"></ion-icon><a class="text-white text-xs fw-500 group-hover:text-primary" href="">Addresses</a>
+        </li>
+        <li class="group list-none flex items-center gap-5 py-3 px-6 rounded-lg transition duration hover:bg-white">
+          <ion-icon class="text-white text-lg group-hover:text-primary" name="person"></ion-icon><a class="text-white text-xs fw-500 group-hover:text-primary" href="">Account Details</a>
+        </li>
+        <li class="group list-none flex items-center gap-5 py-3 px-6 rounded-lg transition duration hover:bg-white">
+          <ion-icon class="text-white text-lg group-hover:text-primary" name="log-out"></ion-icon><a class="text-white text-xs fw-500 group-hover:text-primary" href="">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sesion-address col-span-6">
+      <div class="title pb-4">
+        <p class="text-third font-normal">Hello Hasan (not Hasan? <a class="font-bold" href="">Log Out )</a></p>
+      </div>
+      <p class="text-third tracking-wide">From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.</p>
+    </div>
+  </div>
+</section>
+<!-- BANNER-->
+<div>
+  <div class="container banner-container p-16">
+    <div>
+      <!-- UPPER-->
+      <div class="text-white flex items-center gap-3 font-bold">
+        <div class="w-12 rounded-full flex items-center justify-center h-12 bg-primary text-white"><i class="fa-solid fa-envelope text-xl"></i></div>
+        <p>Newsletter</p>
+      </div>
+      <h1 class="text-primary text-h1 font-bold">Get weekly update</h1>
+      <!-- LOWER-->
+      <div class="mt-4 flex gap-2">
+        <div class="flex gap-3 bg-white w-fit px-6 py-3 rounded-button"><i class="fa-solid fa-envelope text-xl"></i>
+          <input type="text" placeholder="example@gmail.com"/>
+        </div>
+        <div class="w-fit px-6 py-4 bg-primary text-white rounded-button">Subcribe</div>
+      </div>
+    </div>
+  </div>
+</div><footer class="mt-12">
+<div class="container mb-8 mt-24  grid grid-cols-1 mx-auto  md:grid-cols-4  mt-22">
+<div class="flex items-center  md:mx-0">
+<div class="img w-24 h-24"><img src="./assets/img/delivery.png" alt=""></div>
+<div class="info ml-4 mb-2">
+<p class="font-extrabold text-xl">Fast & Secure delivery</p>
+<p class="text-sm">Tell about your service</p>
+</div>
+</div>
+<div class="flex items-center  md:mx-0">
+<div class="img w-24 h-24"><img src="./assets/img/money back.png" alt=""></div>
+<div class="info ml-4 mb-2">
+<p class="font-extrabold text-xl">Fast & Secure delivery</p>
+<p class="text-sm">Within 10 days.</p>
+</div>
+</div>
+<div class="flex items-center  md:mx-0">
+<div class="img w-24 h-24"><img src="./assets/img/return.png" alt=""></div>
+<div class="info ml-4 mb-2">
+<p class="font-extrabold text-xl">Fast & Secure delivery</p>
+<p class="text-sm">No question ask.</p>
+</div>
+</div>
+<div class="flex items-center  md:mx-0">
+<div class="img w-24 h-24"><img src="./assets/img/support.png" alt=""></div>
+<div class="info ml-4 mb-2">
+<p class="font-extrabold text-xl">Fast & Secure delivery</p>
+<p class="text-sm">24/7 Live support.</p>
+</div>
+</div>
+</div>
+<div>
+<div class="container grid-cols-1 md:grid-cols-4 grid border-y-2 py-10 border-gray">
+<div class="flex flex-col justify-between">
+<h1 class="font-bold text-h2 text-lg">Support</h1>
+<p class="w-56 color-777">QTSC 9 Building, To Ky Street Ho Chi Minh City</p>
+<div class="">
+<div>
+<img class="inline-block mr-4" src="assets/img/mail.png" alt="">
+<span class="color-777">example@domain.com</span>
+</div>
+<div>
+<img class="inline-block mr-4" src="assets/img/telephone.png" alt="">
+<span class="color-777">(84+) 123 456 78</span>
+</div>
+</div>
+</div>
+<div class="ml-6">
+<h1 class="font-bold text-h2 text-lg">Account</h1>
+<div class="mt-2 leading-9 cursor-pointer">
+<p class="color-777">My Account</p>
+<p class="color-777">Login</p>
+<p class="color-777">Cart</p>
+<p class="color-777">Wislish</p>
+<p class="color-777">Shop</p>
+</div>
+</div>
+<div class="ml-12">
+<h1 class="font-bold text-h2 text-lg">Quick Link</h1>
+<div class="mt-2 leading-9 cursor-pointer">
+<p class="color-777">About Us</p>
+<p class="color-777">Privacy Policy</p>
+<p class="color-777">Terms Of Use</p>
+<p class="color-777">Contact</p>
+</div>
+</div>
+<div class="ml-16">
+<h1 class="font-bold text-h2 text-lg">Follow Us</h1>
+<div class="mt-2">
+<div class="flex gap-4 cursor-pointer">
+<img class="w-10 h-10 mr-2" src="./assets/img/facebook (2).png" alt="">
+<img class="w-10 h-10 mr-2" src="./assets/img/instagram.png" alt="">
+<img class="w-10 h-10 mr-2" src="./assets/img/linkedin.png" alt="">
+</div>
+</div>
+</div>
+</div>
+<div class="container arr flex justify-between items-center py-4 text-sm">
+<p class="color-777">© 2023. All rights reserved</p>
+<div class="payment">
+<p class="color-777">Accept For</p>
+<div class="payment_img flex justify-between items-center ml-4">
+<img class="mr-2 w-6 h-6" src="./assets/img/paypal.png" alt="">
+<img class="mr-2 w-14 h-14" src="./assets/img/pay-1.png" alt="">
+<img class="mr-2 w-12 h-12" src="./assets/img/visa.png" alt="">
+<img class="mr-2 w-12 h-12" src="./assets/img/momo.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</footer></body> 
+<script src="/layout/assets/js/tailwind.js"></script>
+<script src="/layout/assets/js/index.js"></script>
+<script src="/layout/assets/js/swiper.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

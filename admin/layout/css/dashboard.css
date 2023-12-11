@@ -1,0 +1,121 @@
+.db-account {
+  font-size: var(--fs-large);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #fff;
+}
+.db-account-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100rem;
+}
+.db-account-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100rem;
+}
+.db-account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.db-account-info-name b {
+  font-weight: 700;
+  font-style: italic;
+}
+.db-account-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.db-account-role {
+  font-weight: 700;
+  font-style: italic;
+  color: #ff497c;
+}
+
+.overview-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+}
+.overview-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ebebeb;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.overview-title {
+  font-size: 12px;
+  font-weight: 700;
+  font-style: italic;
+  color: #000;
+  opacity: 0.5;
+}
+.overview-count {
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+}
+.overview-icon {
+  font-size: 36px;
+  color: #000;
+  opacity: 0.5;
+}
+
+.statistic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.statistic-item {
+  position: relative;
+}
+.statistic-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ebebeb;
+  padding: 16px 32px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.statistic-content:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+.statistic-title {
+  font-style: italic;
+}
+.statistic-icon {
+  transition: all 0.2s linear;
+}
+.statistic-dropdown {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 0 32px;
+  margin: 0 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.statistic-dropdown p {
+  margin: 32px 0;
+}
+
+.sidebar-item:first-child {
+  color: #000;
+}
+.sidebar-item:first-child .sidebar-animation {
+  transform: translateX(0);
+}
+
+/*# sourceMappingURL=dashboard.css.map */

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/40.0.0/ckeditor.min.js" integrity="sha512-Zyl/SvrviD3rEMVNCPN+m5zV0PofJYlGHnLDzol2kM224QpmWj9p5z7hQYppmnLFhZwqif5Fugjjouuk5l1lgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/app.js"> </script>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/order.css">
+  </head>
+  <body> 
+    <header class="header">
+      <div class="header-image"> <img srcSet="./images/logo.png 2x" alt="logo"></div>
+    </header>
+    <div class="wrapper" id="wrapper">
+      <div class="sidebar"> 
+        <ul class="sidebar-list">
+          <li class="sidebar-item"><a class="sidebar-link" href="./">
+              <ion-icon name="bar-chart-outline"></ion-icon><span>Bảng điều khiển</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./category.html">
+              <ion-icon name="albums-outline"></ion-icon><span>Danh mục</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./product.html">
+              <ion-icon name="cube-outline"></ion-icon><span>Sản phẩm</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./account.html">
+              <ion-icon name="people-circle-outline"></ion-icon><span>Tài khoản</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./order.html">
+              <ion-icon name="cart-outline"></ion-icon><span>Đơn hàng</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./comment.html">
+              <ion-icon name="chatbubble-ellipses-outline"></ion-icon><span>Bình luận</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./news.html">
+              <ion-icon name="newspaper-outline"></ion-icon><span>Tin tức</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./brand.html">
+              <ion-icon name="business-outline"></ion-icon><span>Thương hiệu</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./voucher.html">
+              <ion-icon name="wallet-outline"></ion-icon><span>Mã giảm giá</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+          <li class="sidebar-item"><a class="sidebar-link" href="./">
+              <ion-icon name="log-out-outline"></ion-icon><span>Đăng xuất</span></a>
+            <div class="sidebar-animation"></div>
+          </li>
+        </ul>
+      </div>
+      <main class="main">
+        <h1 class="title">Đơn hàng</h1>
+        <div class="filter">
+          <div class="filter-select"> 
+            <select id="filter-select">
+              <option value="all">Tất cả</option>
+              <option value="new">Mới nhất</option>
+              <option value="sale">Giảm giá</option>
+            </select>
+          </div>
+          <div class="filter-search"> 
+            <input id="filter-search" type="text" placeholder="Nhập từ khoá"/>
+            <button class="button">
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="order table"> 
+            <thead class="table-head"> 
+              <tr>
+                <th>Tên người dùng</th>
+                <th>Họ tên</th>
+                <th>Thời gian</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Hàng động</th>
+              </tr>
+            </thead>
+            <tbody class="table-body"> 
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="order-username"> 
+                    <p>guest101</p>
+                  </div>
+                </td>
+                <td> 
+                  <div class="order-fullname"> 
+                    <p>Tao Dep Trai</p>
+                  </div>
+                </td>
+                <td><span class="order-time">12:00:00  </span><span>-</span><span>2021-05-20 </span></td>
+                <td>
+                  <div class="order-Total"> 
+                    <p>299.000 VND</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-status"> 
+                    <p>Đã thanh toán</p>
+                  </div>
+                </td>
+                <td>
+                  <div class="order-action"> <a class="order-detail" href="#">
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon></a></div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-page"><a class="button table-page-button" href="#">
+            <ion-icon name="chevron-back-outline"></ion-icon></a><a class="button table-page-button" href="#"><span>1</span></a><a class="button table-page-button" href="#"><span>2</span></a><a class="button table-page-button" href="#"><span>3</span></a><a class="button table-page-button" href="#">
+            <ion-icon name="chevron-forward-outline"></ion-icon></a></div>
+        <div class="order-form">
+          <div class="order-form-container">
+            <h2 class="sub-title order-form-title">Đơn hàng #123456789</h2><a class="order-form-close" href="#">
+              <ion-icon name="close-circle-outline"></ion-icon></a>
+            <div class="order-form-content"> 
+              <label>Người đặt hàng: </label>
+              <div class="order-form-image"> <img src="./images/guest.png" alt="product image"></div>
+              <label>Tên người dùng: <span> *</span></label>
+              <input class="order-form-input" type="text" value="Lang Tu" disabled>
+              <label>Trạng thái: <span> *</span></label>
+              <select class="order-form-select">
+                <option value="1">Đang chờ xử lý</option>
+                <option value="2">Đang giao hàng</option>
+                <option value="3">Đã giao hàng</option>
+                <option value="4">Đã hủy</option>
+              </select>
+              <div class="order-form-input-container">
+                <div>
+                  <label for="order-fullname">Họ và tên:<span>*</span></label>
+                  <input class="order-form-input" type="text" value="Tiến Bịp" id="order-fullname">
+                </div>
+                <div>
+                  <label for="receiver-fullname">Họ tên người nhận:<span>*</span></label>
+                  <input class="order-form-input" type="text" value="Tiến Bịp" id="receiver-fullname">
+                </div>
+              </div>
+              <div class="order-form-input-container">
+                <div>
+                  <label for="order-email">Email:<span>*</span></label>
+                  <input class="order-form-input" type="email" value="meomeo@gmail.com" id="order-email">
+                </div>
+                <div>
+                  <label for="receiver-email">Email người nhận:<span>*</span></label>
+                  <input class="order-form-input" type="email" value="leuleu@gmail.com" id="receiver-email">
+                </div>
+              </div>
+              <div class="order-form-input-container">
+                <div>
+                  <label for="order-phone">Số điện thoại:<span>*</span></label>
+                  <input class="order-form-input" type="text" value="0123456789" id="order-phone">
+                </div>
+                <div>
+                  <label for="receiver-phone">Số điện thoại người nhận:<span>*</span></label>
+                  <input class="order-form-input" type="text" value="0123456789" id="receiver-phone">
+                </div>
+              </div>
+              <div class="order-form-input-container">
+                <div>
+                  <label for="order-address">Địa chỉ:<span>*</span></label>
+                  <input class="order-form-input" type="text" value="Hà Nội" id="order-address">
+                </div>
+                <div>
+                  <label for="receiver-address">Địa chỉ người nhận:<span>*</span></label>
+                  <input class="order-form-input" type="text" value="Hà Nội" id="receiver-address">
+                </div>
+              </div>
+              <label>Ghi chú: </label>
+              <textarea class="order-form-textarea"></textarea>
+              <div class="order-detail-form">
+                <table class="table">
+                  <thead class="table-head">
+                    <th>Tên sản phẩm</th>
+                    <th>Giá tiền</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                  </thead>
+                  <tbody class="table-body">
+                    <tr>
+                      <td> 
+                        <p class="order-detail-form-name">Apple Airpod Max</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-price">$499</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-quantity">2</p>
+                      </td>
+                      <td> 
+                        <p class="order-detail-form-subtotal">$998</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> 
+                        <p class="order-detail-form-name">Apple Airpod Max</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-price">$499</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-quantity">2</p>
+                      </td>
+                      <td> 
+                        <p class="order-detail-form-subtotal">$998</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> 
+                        <p class="order-detail-form-name">Apple Airpod Max</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-price">$499</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-quantity">2</p>
+                      </td>
+                      <td> 
+                        <p class="order-detail-form-subtotal">$998</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> 
+                        <p class="order-detail-form-name">Apple Airpod Max</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-price">$499</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-quantity">2</p>
+                      </td>
+                      <td> 
+                        <p class="order-detail-form-subtotal">$998</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> 
+                        <p class="order-detail-form-name">Apple Airpod Max</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-price">$499</p>
+                      </td>
+                      <td>
+                        <p class="order-detail-form-quantity">2</p>
+                      </td>
+                      <td> 
+                        <p class="order-detail-form-subtotal">$998</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="order-detail-form-total">
+                  <p class="order-detail-form-total-title">Tổng cộng:</p>
+                  <p class="order-detail-form-total-price">$998</p>
+                </div>
+              </div>
+              <button class="order-form-button button" type="submit">Lưu thay đổi</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer class="footer"> 
+      <div class="footer-copyright"> 
+        <p>© 2023. Mọi bản quyền được bảo lưu.</p>
+      </div>
+      <div class="footer-brand"> <span>Chấp nhận cho</span>
+        <div class="footer-item"><img srcset="./images/footer/1.png 2x" alt="brand"></div>
+        <div class="footer-item"><img srcset="./images/footer/1.png 2x" alt="brand"></div>
+        <div class="footer-item"><img srcset="./images/footer/1.png 2x" alt="brand"></div>
+        <div class="footer-item"><img srcset="./images/footer/1.png 2x" alt="brand"></div>
+      </div>
+    </footer>
+    <script src="./js/dashboard.js"> </script>
+    <script src="./js/category.js"> </script>
+    <script src="./js/product.js"> </script>
+    <script src="./js/account.js"> </script>
+    <script src="./js/order.js"></script>
+  </body>
+</html>

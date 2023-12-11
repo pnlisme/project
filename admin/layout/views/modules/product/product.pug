@@ -1,0 +1,43 @@
+.table-container
+  table.product.table 
+    thead.table-head  
+      tr
+        th 
+          ion-icon(name="image-outline")
+        th Tên sản phẩm
+        th Thời gian nhập
+        th Số lượng
+        th Giá
+        th Danh mục
+        th Hàng động
+    tbody.table-body 
+      each val in [1,2,3,4,5,6,7,8,9,10]
+        tr
+          td 
+            .product-image 
+              img(srcset="./images/product.png 2x", alt="product")
+          td 
+            .product-name 
+              p Sản phẩm #{val}
+          td
+            .product-entry-date 
+              p 12/12/2020
+          td
+            .product-quantity 
+              p 99
+          td
+            .product-price 
+              del 400$
+              p 99$
+          td
+            .product-category 
+              p Tai nghe
+          td
+            .product-action 
+              a(href="#" class="product-update")
+                ion-icon(name="create-outline")
+              span |
+              a(href="#")
+                ion-icon(name="trash-outline")
+button.table-button.button.product-add
+  p Thêm sản phẩm

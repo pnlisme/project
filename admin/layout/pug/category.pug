@@ -1,0 +1,12 @@
+extend ./views/layout/dashboard
+block title
+  title Danh mục
+append stylesheet
+  link(rel="stylesheet", href="./css/category.css")
+block main
+  h1.title Danh mục
+  include ./views/modules/category/category
+  +tablePage()
+  include ./views/modules/category/add_category
+  include ./views/modules/category/up_category
+

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e5ff98b392.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ICON -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div>
+        <div
+          class="w-3/4 px-8 container bg-box rounded-15 mt-8 flex items-center justify-between"
+        >
+          <!-- LOGO -->
+          <div>
+            <img src="assets/img/logo.png" alt="Logo Web" />
+          </div>
+          <!-- NAV -->
+          <div>
+            <ul class="flex text-base gap-8">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Product</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <!-- SITE LINK -->
+          <div>
+            <ul class="flex gap-3 text-xl">
+              <li>
+                <a href="#">
+                  <i class="bx bx-search"></i>
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <i class="bx bx-user"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bx bx-cart"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bx bx-heart"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <section class="my-16">
+      <div class="bg-primary">
+        <div class="container py-4 flex justify-between items-center">
+          <div>
+            <!-- UPPER -->
+            <div class="flex text-gray-400">
+              <a
+                class="mr-4 text-gray-500 relative after:content-[''] after:absolute after:top-1/4 after:-right-2 after:w-px after:px-px after:h-4 after:bg-gray-500 after:block"
+                href="#"
+                >Home</a
+              >
+              <p class="text-white">Shop</p>
+            </div>
+            <!-- LOWER -->
+            <div>
+              <h1 class="text-h1 text-white font-bold mt-2">
+                Explore All Products
+              </h1>
+            </div>
+          </div>
+          <!-- IMG -->
+          <div class="w-2/12">
+            <img src="/layout/assets/img/cucShit.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="shop-content max-[640px]:mx-6">
+        <div class="content-inner">
+            <!-- FILTER -->
+            <div class="filter-container lg:flex lg:justify-between lg:items-center">
+                <div class="letf-filter sm:flex sm:justify-between sm:items-center sm:gap-4 sm:mb-4 lg:mb-0 lg:w-2/4">
+                    <!-- SELECT OPTIONS -->
+                    <div class="select-container w-full">
+                        <select class="select-box">
+                            <option value="">All Categories</option>
+                            <option value="">Macbook</option>
+                            <option value="">Iphone</option>
+                            <option value="">Keyboard</option>
+                            <option value="">Headphone</option>
+                        </select>
+
+                        <div class="icon-container">
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                    </div>
+                    <!-- SELECT OPTIONS -->
+                    <div class="select-container w-full mt-4 sm:mt-0 ">
+                        <select class="select-box">
+                            <option value="">Brand</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                        </select>
+
+                        <div class="icon-container">
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                    </div>
+                    <!-- SELECT OPTIONS -->
+                    <div class="select-container w-full mt-4 sm:mt-0">
+                        <select class="select-box">
+                            <option value="">Price Range</option>
+                            <option value="">Macbook</option>
+                            <option value="">Iphone</option>
+                            <option value="">Keyboard</option>
+                            <option value="">Headphone</option>
+                        </select>
+
+                        <div class="icon-container">
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SELECT OPTIONS RIGHT COL-->
+                <div class="select-container w-full mt-4 sm:mt-0 lg:w-1/5">
+                    <select class="select-box">
+                        <option value="">Sort by Latest</option>
+                        <option value="">Macbook</option>
+                        <option value="">Iphone</option>
+                        <option value="">Keyboard</option>
+                        <option value="">Headphone</option>
+                    </select>
+
+                    <div class="icon-container">
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <!-- PRODUCT ROW -->
+        <div class="grid grid-cols-4 gap-3 mt-12">
+          <!-- SINGLE PRODUCT -->
+          <div class="overflow-hidden w-full group rounded-box">
+            <div class="bg-box relative slider-box flex justify-center pb-16">
+              <img
+                class="group-hover:scale-125 w-3/4 object-contain group-hover:blur-sm transition duration-500"
+                src="./assets/img/headphone-img.png"
+                alt=""
+              />
+              <div
+                class="absolute bottom-0 flex gap-2 mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2 xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300"
+              >
+                <div
+                  class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-solid fa-basket-shopping"></i>
+                  <p class="text-white hidden xl:block">Add To cart</p>
+                </div>
+                <div
+                  class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-regular fa-eye"></i>
+                  <p class="text-white hidden xl:block">View Product</p>
+                </div>
+              </div>
+              <div
+                class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0 transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </div>
+            </div>
+
+            <!-- DES -->
+            <p class="text-center font-bold mt-4">Airpod Max</p>
+            <p class="text-center text-sm">Headphone</p>
+            <div class="flex justify-center gap-4">
+              <del class="font-del">100.000 VNĐ</del>
+              <p>50.000 VNĐ</p>
+            </div>
+          </div>
+
+          <!-- SINGLE PRODUCT -->
+          <div class="overflow-hidden w-full group rounded-box">
+            <div class="bg-box relative slider-box flex justify-center pb-16">
+              <img
+                class="group-hover:scale-125 w-3/4 object-contain group-hover:blur-sm transition duration-500"
+                src="./assets/img/headphone-img.png"
+                alt=""
+              />
+              <div
+                class="absolute bottom-0 flex gap-2 mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2 xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300"
+              >
+                <div
+                  class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-solid fa-basket-shopping"></i>
+                  <p class="text-white hidden xl:block">Add To cart</p>
+                </div>
+                <div
+                  class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-regular fa-eye"></i>
+                  <p class="text-white hidden xl:block">View Product</p>
+=======
+            <!-- PRODUCT ROW -->
+            <div class="grid grid-cols sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-12">
+                <!-- SINGLE PRODUCT -->
+                <div class="overflow-hidden w-full group rounded-box">
+                    <div class="bg-box relative slider-box flex justify-center pb-16">
+                        <img class="group-hover:scale-125 w-3/4 object-contain	 group-hover:blur-sm  transition duration-500 "
+                            src="./assets/img/headphone-img.png" alt="">
+                        <div
+                            class="absolute bottom-0 flex gap-2  mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2  xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300">
+                            <div
+                                class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto  p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                                <p class="text-white hidden xl:block">Add To cart</p>
+
+                            </div>
+                            <div
+                                class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75">
+                                <i class="fa-regular fa-eye"></i>
+                                <p class="text-white hidden xl:block">View Product</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0  transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <!-- DES -->
+                    <p class="text-center font-bold mt-4">Airpod Max</p>
+                    <p class="text-center text-sm">Headphone</p>
+                    <div class="flex justify-center gap-4">
+                        <del class="font-del ">100.000 VNĐ</del>
+                        <p >50.000 VNĐ</p>
+
+                    </div>
+                </div>
+
+                <!-- SINGLE PRODUCT -->
+                <div class="overflow-hidden w-full group rounded-box    ">
+                    <div class="bg-box relative slider-box flex justify-center pb-16">
+                        <img class="group-hover:scale-125 w-3/4 object-contain	 group-hover:blur-sm  transition duration-500 "
+                            src="./assets/img/headphone-img.png" alt="">
+                        <div
+                            class="absolute bottom-0 flex gap-2  mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2  xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300">
+                            <div
+                                class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto  p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                                <p class="text-white hidden xl:block">Add To cart</p>
+
+                            </div>
+                            <div
+                                class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75">
+                                <i class="fa-regular fa-eye"></i>
+                                <p class="text-white hidden xl:block">View Product</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0  transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <!-- DES -->
+                    <p class="text-center font-bold mt-4">Airpod Max</p>
+                    <p class="text-center text-sm">Headphone</p>
+                    <div class="flex justify-center gap-4">
+                        <del class="font-del ">100.000 VNĐ</del>
+                        <p >50.000 VNĐ</p>
+
+                    </div>
+                </div>
+
+                <!-- SINGLE PRODUCT -->
+                <div class="overflow-hidden w-full group rounded-box mt-12 lg:mt-0">
+                    <div class="bg-box relative slider-box flex justify-center pb-16">
+                        <img class="group-hover:scale-125 w-3/4 object-contain	 group-hover:blur-sm  transition duration-500 "
+                            src="./assets/img/headphone-img.png" alt="">
+                        <div
+                            class="absolute bottom-0 flex gap-2  mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2  xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300">
+                            <div
+                                class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto  p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                                <p class="text-white hidden xl:block">Add To cart</p>
+
+                            </div>
+                            <div
+                                class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75">
+                                <i class="fa-regular fa-eye"></i>
+                                <p class="text-white hidden xl:block">View Product</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0  transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <!-- DES -->
+                    <p class="text-center font-bold mt-4">Airpod Max</p>
+                    <p class="text-center text-sm">Headphone</p>
+                    <div class="flex justify-center gap-4">
+                        <del class="font-del ">100.000 VNĐ</del>
+                        <p >50.000 VNĐ</p>
+
+                    </div>
+                </div>
+              </div>
+              <div
+                class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0 transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </div>
+            </div>
+
+                <!-- SINGLE PRODUCT -->
+                <div class="overflow-hidden w-full group rounded-box mt-12 lg:mt-0">
+                    <div class="bg-box relative slider-box flex justify-center pb-16">
+                        <img class="group-hover:scale-125 w-3/4 object-contain	 group-hover:blur-sm  transition duration-500 "
+                            src="./assets/img/headphone-img.png" alt="">
+                        <div
+                            class="absolute bottom-0 flex gap-2  mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2  xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300">
+                            <div
+                                class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto  p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                                <p class="text-white hidden xl:block">Add To cart</p>
+
+                            </div>
+                            <div
+                                class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75">
+                                <i class="fa-regular fa-eye"></i>
+                                <p class="text-white hidden xl:block">View Product</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0  transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+
+                    <!-- DES -->
+                    <p class="text-center font-bold mt-4">Airpod Max</p>
+                    <p class="text-center text-sm">Headphone</p>
+                    <div class="flex justify-center gap-4">
+                        <del class="font-del ">100.000 VNĐ</del>
+                        <p >50.000 VNĐ</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- PRODUCT ROW -->
+        <div class="grid grid-cols-4 gap-3 mt-12">
+          <!-- SINGLE PRODUCT -->
+          <div class="overflow-hidden w-full group rounded-box">
+            <div class="bg-box relative slider-box flex justify-center pb-16">
+              <img
+                class="group-hover:scale-125 w-3/4 object-contain group-hover:blur-sm transition duration-500"
+                src="./assets/img/headphone-img.png"
+                alt=""
+              />
+              <div
+                class="absolute bottom-0 flex gap-2 mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2 xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300"
+              >
+                <div
+                  class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-solid fa-basket-shopping"></i>
+                  <p class="text-white hidden xl:block">Add To cart</p>
+                </div>
+                <div
+                  class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-regular fa-eye"></i>
+                  <p class="text-white hidden xl:block">View Product</p>
+                </div>
+              </div>
+              <div
+                class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0 transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </div>
+            </div>
+
+            <!-- DES -->
+            <p class="text-center font-bold mt-4">Airpod Max</p>
+            <p class="text-center text-sm">Headphone</p>
+            <div class="flex justify-center gap-4">
+              <del class="font-del">100.000 VNĐ</del>
+              <p>50.000 VNĐ</p>
+            </div>
+          </div>
+
+          <!-- SINGLE PRODUCT -->
+          <div class="overflow-hidden w-full group rounded-box">
+            <div class="bg-box relative slider-box flex justify-center pb-16">
+              <img
+                class="group-hover:scale-125 w-3/4 object-contain group-hover:blur-sm transition duration-500"
+                src="./assets/img/headphone-img.png"
+                alt=""
+              />
+              <div
+                class="absolute bottom-0 flex gap-2 mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2 xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300"
+              >
+                <div
+                  class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-solid fa-basket-shopping"></i>
+                  <p class="text-white hidden xl:block">Add To cart</p>
+                </div>
+                <div
+                  class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-regular fa-eye"></i>
+                  <p class="text-white hidden xl:block">View Product</p>
+                </div>
+              </div>
+              <div
+                class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0 transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </div>
+            </div>
+
+            <!-- DES -->
+            <p class="text-center font-bold mt-4">Airpod Max</p>
+            <p class="text-center text-sm">Headphone</p>
+            <div class="flex justify-center gap-4">
+              <del class="font-del">100.000 VNĐ</del>
+              <p>50.000 VNĐ</p>
+            </div>
+          </div>
+
+          <!-- SINGLE PRODUCT -->
+          <div class="overflow-hidden w-full group rounded-box">
+            <div class="bg-box relative slider-box flex justify-center pb-16">
+              <img
+                class="group-hover:scale-125 w-3/4 object-contain group-hover:blur-sm transition duration-500"
+                src="./assets/img/headphone-img.png"
+                alt=""
+              />
+              <div
+                class="absolute bottom-0 flex gap-2 mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2 xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300"
+              >
+                <div
+                  class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-solid fa-basket-shopping"></i>
+                  <p class="text-white hidden xl:block">Add To cart</p>
+                </div>
+                <div
+                  class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-regular fa-eye"></i>
+                  <p class="text-white hidden xl:block">View Product</p>
+                </div>
+              </div>
+              <div
+                class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0 transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </div>
+            </div>
+
+            <!-- DES -->
+            <p class="text-center font-bold mt-4">Airpod Max</p>
+            <p class="text-center text-sm">Headphone</p>
+            <div class="flex justify-center gap-4">
+              <del class="font-del">100.000 VNĐ</del>
+              <p>50.000 VNĐ</p>
+            </div>
+          </div>
+
+          <!-- SINGLE PRODUCT -->
+          <div class="overflow-hidden w-full group rounded-box">
+            <div class="bg-box relative slider-box flex justify-center pb-16">
+              <img
+                class="group-hover:scale-125 w-3/4 object-contain group-hover:blur-sm transition duration-500"
+                src="./assets/img/headphone-img.png"
+                alt=""
+              />
+              <div
+                class="absolute bottom-0 flex gap-2 mb-4 xl:mb-0 items-center justify-center lg:flex xl:block xl:bottom-1/2 xl:right-1/2 xl:translate-x-1/2 xl:translate-y-1/2 xl:opacity-0 xl:group-hover:opacity-100 transition-all duration-300"
+              >
+                <div
+                  class="flex items-center justify-center gap-2 bg-primary text-white h-8 w-8 xl:h-auto xl:w-auto p-2 rounded-box xl:translate-x-4 group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-solid fa-basket-shopping"></i>
+                  <p class="text-white hidden xl:block">Add To cart</p>
+                </div>
+                <div
+                  class="flex items-center justify-center gap-2 xl:mt-2 bg-primary text-white h-8 w-8 xl:h-fit xl:w-fit p-2 rounded-box xl:-translate-x-4 xl:group-hover:translate-x-0 transition duration-300 delay-75"
+                >
+                  <i class="fa-regular fa-eye"></i>
+                  <p class="text-white hidden xl:block">View Product</p>
+                </div>
+              </div>
+              <div
+                class="absolute xl:group-hover:-translate-x-2 xl:group-hover:opacity-100 xl:opacity-0 transition duration-300 delay-75 top-1 right-2 bg-primary text-white px-2 py-1 rounded-box"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </div>
+            </div>
+
+            <!-- DES -->
+            <p class="text-center font-bold mt-4">Airpod Max</p>
+            <p class="text-center text-sm">Headphone</p>
+            <div class="flex justify-center gap-4">
+              <del class="font-del">100.000 VNĐ</del>
+              <p>50.000 VNĐ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANNER -->
+    <div>
+      <div class="container banner-container p-16 mt-24 mb-28">
+        <div>
+          <!-- UPPER -->
+          <div class="text-white flex items-center gap-3 font-bold">
+            <div
+              class="w-12 rounded-full flex items-center justify-center h-12 bg-primary text-white"
+            >
+              <i class="fa-solid fa-envelope text-xl"></i>
+            </div>
+            <p>Newsletter</p>
+          </div>
+          <h1 class="text-primary text-h1 font-bold">Get weekly update</h1>
+
+          <!-- LOWER -->
+          <div class="mt-4 flex gap-2">
+            <div class="flex gap-3 bg-white w-fit px-6 py-3 rounded-button">
+              <i class="fa-solid fa-envelope text-xl"></i>
+              <input type="text" placeholder="example@gmail.com" />
+            </div>
+            <div class="w-fit px-6 py-4 bg-primary text-white rounded-button">
+              Subcribe
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POLICY -->
+    <div class="policy flex items-center place-content-between mt-22">
+      <div class="flex items-center">
+        <div class="img w-16 h-16">
+          <img src="./assets/img/delivery.png" alt="" />
+        </div>
+
+        <div class="info ml-4 mb-2">
+          <p class="font-extrabold text-lg">Fast & Secure delivery</p>
+          <p class="text-sm">Tell about your service</p>
+        </div>
+      </div>
+
+      <div class="flex items-center">
+        <div class="img w-16 h-16">
+          <img src="./assets/img/money back.png" alt="" />
+        </div>
+
+        <div class="info ml-4 mb-2">
+          <p class="font-extrabold text-lg">Fast & Secure delivery</p>
+          <p class="text-sm">Within 10 days.</p>
+        </div>
+      </div>
+
+      <div class="flex items-center">
+        <div class="img w-16 h-16">
+          <img src="./assets/img/return.png" alt="" />
+        </div>
+
+        <div class="info ml-4 mb-2">
+          <p class="font-extrabold text-lg">Fast & Secure delivery</p>
+          <p class="text-sm">No question ask.</p>
+        </div>
+      </div>
+
+      <div class="flex items-center">
+        <div class="img w-16 h-16">
+          <img src="./assets/img/support.png" alt="" />
+        </div>
+
+        <div class="info ml-4 mb-2">
+          <p class="font-extrabold text-lg">Fast & Secure delivery</p>
+          <p class="text-sm">24/7 Live support.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="mt-12">
+      <div>
+        <div class="container grid-cols-4 grid border-y-2 py-10">
+          <div class="flex flex-col justify-between">
+            <h1 class="font-bold text-h2 text-lg">Support</h1>
+            <p class="w-56 color-777">
+              QTSC 9 Building, To Ky Street Ho Chi Minh City
+            </p>
+                    <div >
+                        <div>
+                            <img class="inline-block mr-4" src="assets/img/mail.png" alt="">
+                            <span class="color-777">example@domain.com</span>
+                        </div>
+              <div>
+                <img
+                  class="inline-block mr-4"
+                  src="assets/img/telephone.png"
+                  alt=""
+                />
+                <span class="color-777">(84+) 123 456 78</span>
+              </div>
+            </div>
+          </div>
+          <div class="ml-6">
+            <h1 class="font-bold text-h2 text-lg">Account</h1>
+            <div class="mt-2 leading-9 cursor-pointer">
+              <p class="color-777">My Account</p>
+              <p class="color-777">Login</p>
+              <p class="color-777">Cart</p>
+              <p class="color-777">Wislish</p>
+              <p class="color-777">Shop</p>
+            </div>
+          </div>
+
+          <div class="ml-12">
+            <h1 class="font-bold text-h2 text-lg">Quick Link</h1>
+            <div class="mt-2 leading-9 cursor-pointer">
+              <p class="color-777">About Us</p>
+              <p class="color-777">Privacy Policy</p>
+              <p class="color-777">Terms Of Use</p>
+              <p class="color-777">Contact</p>
+            </div>
+          </div>
+
+          <div class="ml-16">
+            <h1 class="font-bold text-h2 text-lg">Follow Us</h1>
+            <div class="mt-2">
+              <div class="flex gap-4 cursor-pointer">
+                <img
+                  class="w-10 h-10 mr-2"
+                  src="./assets/img/facebook (2).png"
+                  alt=""
+                />
+                <img
+                  class="w-10 h-10 mr-2"
+                  src="./assets/img/instagram.png"
+                  alt=""
+                />
+                <img
+                  class="w-10 h-10 mr-2"
+                  src="./assets/img/linkedin.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arr flex justify-between items-center py-4 text-sm">
+          <p class="color-777">© 2023. All rights reserved</p>
+
+          <div class="payment">
+            <p class="color-777">Accept For</p>
+
+            <div class="payment_img flex justify-between items-center ml-4">
+              <img class="mr-2 w-6 h-6" src="./assets/img/paypal.png" alt="" />
+              <img class="mr-2 w-14 h-14" src="./assets/img/pay-1.png" alt="" />
+              <img class="mr-2 w-12 h-12" src="./assets/img/visa.png" alt="" />
+              <img class="mr-2 w-12 h-12" src="./assets/img/momo.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+<script src="/view/layout/assets/js/tailwind.js"></script>
+</html>

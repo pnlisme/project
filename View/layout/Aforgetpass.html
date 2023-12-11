@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e5ff98b392.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ICON -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+    <div id="container">
+        <!-- HEAD -->
+        <div class="head flex justify-between items-center absolute w-full px-24 mt-8">
+            <img class="ml-4" src="./assets/img/logo.png" alt="">
+
+            <div class="flex justify-between items-center gap-12">
+                <a class="text-sm font-bold" href="">Đã có tài khoản?</a>
+                <button class="px-8 py-4 rounded-md text-white font-bold transform hover:scale-110 transition duration-300" style="background-color: #FF497c;">Đăng nhập ngay</button>
+            </div>
+        </div>
+
+        <div class="flex justify-between">
+            <!-- LEFT COL -->
+            <div class="left w-1/2">
+                <div class="img" style="width: 460px; height: 775px;">
+                    <img class="h-full w-full object-cover" src="./assets/img/bg-image-10.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- SIGNIN FORM -->
+            <div class="right w-1/2 flex items-center">
+                <div class="w-2/4">
+                    <h1 class="text-4xl font-bold">Quên mật khẩu?</h1>
+                    <p class="text-sm mt-6 leading-6 opacity-40">Nhập địa chỉ email đã đăng kí. Chúng mình sẽ gửi cho bạn hướng dẫn đặt lại mật khẩu qua email này.</p>
+                    <form action="">
+                        <div class="mt-8">
+                            <label class="text-sm">Email</label> <br>
+                            <input class="w-full border px-6 py-4 rounded-md mt-2" type="email" placeholder="etrade@gmail.com" style="border: 1px solid #ccd3d8;">
+                        </div>
+                    </form>
+
+                    <div class="flex justify-between items-center mt-8">
+                        <button class="px-8 py-4 rounded-md text-white font-bold transform hover:scale-110 transition duration-300" style="background-color: #4676e8;">Đặt lại mật khẩu</button>                      
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>    
+</body>
+<script src="/view/layout/assets/js/tailwind.js"></script>
+</html>

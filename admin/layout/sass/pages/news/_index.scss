@@ -1,0 +1,11 @@
+@use "../../abstracts" as *;
+@forward "./news";
+@forward "./news_form";
+.sidebar {
+  &-item:nth-child(7) {
+    color: $color;
+    .sidebar-animation {
+      transform: translateX(0);
+    }
+  }
+}

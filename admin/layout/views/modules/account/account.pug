@@ -1,0 +1,40 @@
+.table-container
+  table.account.table 
+    thead.table-head  
+      tr
+        th 
+          ion-icon(name="image-outline")
+        th Tên đầy đủ
+        th Tên người dùng
+        th Điện thoại
+        th Email 
+        th Trạng thái
+        th Hành động
+    tbody.table-body 
+      each val in [1,2,3,4,5,6,7,8,9,10]
+        tr
+          td 
+            .account-image 
+              img(srcset="./images/user.png 2x", alt="account")
+          td 
+            .account-fullname 
+              p Tao Dep Trai
+          td
+            .account-username 
+              p guest101
+          td
+            .account-phone 
+              p 0123456789
+          td
+            .account-email 
+              p meomeo@gmail.com
+          td
+            .account-status 
+              p Hoạt động
+          td
+            .account-action 
+              a(href="#" class="account-edit")
+                ion-icon(name="create-outline")
+              span |
+              a(href="#")
+                ion-icon(name="trash-outline")

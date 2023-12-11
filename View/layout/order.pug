@@ -1,0 +1,36 @@
+extends ./assets/pug/layout
+block main
+    section.container.pb-40 
+        .profile.flex.flex-col.gap-1
+            .profile-img.rounded-full.w-24
+                img(src="./images/profile.jpg", alt="alt").rounded-full 
+            p.profile-title.text-third.font-bold Hello A3KHIA 
+            span.text-gray.font-bold eTrade Member Since Sep 2020
+        .grid.grid-flow-row-dense.grid-cols-8.gap-10.pt-5
+            .navbar.col-span-2.bg-primary.rounded-xl
+                navbar
+                ul.p-5.flex.flex-col.gap-3
+                    +list("grid","Dashboad")
+                    li.list-none.flex.items-center.gap-5.py-3.px-6.bg-white.rounded-lg
+                        ion-icon(name="cart").text-primary.text-lg
+                        a(href="").text-primary.text-xs.fw-500 Order
+                    +list("home","Addresses")
+                    +list("person","Account Details")
+                    +list("log-out","Logout")
+            .sesion-address.col-span-6
+                table.table-fixed.w-full
+                    thead 
+                        tr.grid.grid-cols-5
+                            th.flex.justify-center.font-semibold Order
+                            th.flex.justify-center.font-semibold Date
+                            th.flex.justify-center.font-semibold Status
+                            th.flex.justify-center.font-semibold Total
+                            th.flex.justify-center.font-semibold Actions
+                    tbody 
+                        tr.grid.grid-cols-5
+                            td.flex.justify-center.text-red-600 #6523      
+                            td.flex.justify-center October 16, 2023     
+                            td.flex.justify-center Processing      
+                            td.flex.justify-center $326.63 for 1 items      
+                            td.flex.justify-center 
+                                ion-icon(name="eye-outline").text-h2      

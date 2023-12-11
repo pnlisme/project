@@ -1,0 +1,12 @@
+extend ./views/layout/dashboard
+block title
+  title Đơn hàng
+append stylesheet
+  link(rel="stylesheet", href="./css/order.css")
+block main
+  h1.title Đơn hàng
+  +filter()
+  include ./views/modules/order/order
+  +tablePage()
+  include ./views/modules/order/order_detail
+

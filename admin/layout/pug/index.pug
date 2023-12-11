@@ -1,0 +1,9 @@
+extend ./views/layout/dashboard
+append stylesheet
+  link(rel="stylesheet", href="./css/dashboard.css")
+block main
+  include ./views/modules/dashboard/account
+  h1.title Bảng điều khiển
+  canvas#chartStatistic(style="width:100%;max-width:100%;")
+  include ./views/modules/dashboard/overview
+  include ./views/modules/dashboard/statistic

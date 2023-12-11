@@ -1,0 +1,31 @@
+@use "../../abstracts" as *;
+.category {
+  tr {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 48px;
+  }
+  td {
+    padding: 16px 32px;
+  }
+  td:nth-child(2) {
+    text-align: center;
+    border-left: 1px solid $color;
+    border-right: 1px solid $color;
+  }
+  td:last-child {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 16px;
+    font-size: 24px;
+    span {
+      opacity: 0.5;
+    }
+  }
+  &-action {
+    transition: all 0.2s linear;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

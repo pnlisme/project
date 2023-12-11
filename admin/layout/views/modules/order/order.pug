@@ -1,0 +1,33 @@
+.table-container
+  table.order.table 
+    thead.table-head  
+      tr
+        th Tên người dùng
+        th Họ tên
+        th Thời gian
+        th Tổng tiền
+        th Trạng thái
+        th Hàng động
+    tbody.table-body 
+      each val in [1,2,3,4,5,6,7,8,9,10]
+        tr
+          td
+            .order-username 
+              p guest101
+          td 
+            .order-fullname 
+              p Tao Dep Trai
+          td
+              span.order-time 12:00:00  
+              span -
+              span 2021-05-20 
+          td
+            .order-Total 
+              p 299.000 VND
+          td
+            .order-status 
+              p Đã thanh toán
+          td
+            .order-action 
+              a(href="#" class="order-detail")
+                ion-icon(name="ellipsis-horizontal-circle-outline")

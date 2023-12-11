@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+body {
+  font-family: $font-family;
+}
+.title {
+  margin-top: 24px;
+  margin-bottom: 40px;
+  font-size: $h1;
+  font-weight: $fw-bold;
+  letter-spacing: 2%;
+}
+.sub-title {
+  font-size: $h2;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 24px;
+}

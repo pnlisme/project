@@ -1,0 +1,12 @@
+extend ./views/layout/dashboard
+block title
+  title Tài khoản
+append stylesheet
+  link(rel="stylesheet", href="./css/account.css")
+block main
+  h1.title Tài khoản
+  +filter()
+  include ./views/modules/account/account
+  +tablePage()
+  include ./views/modules/account/up_account
+

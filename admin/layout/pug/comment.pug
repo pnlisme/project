@@ -1,0 +1,11 @@
+extend ./views/layout/dashboard
+block title
+  title Bình luận
+append stylesheet
+  link(rel="stylesheet", href="./css/comment.css")
+block main
+  h1.title Bình luận
+  +filter()
+  include ./views/modules/comment/comment
+  +tablePage()
+

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/view/layout/assets/js/tailwind.js"></script>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5ff98b392.js" crossorigin="anonymous"></script>
+    <!-- ICON -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div>
+            <div class=" w-3/4 px-8 container bg-box rounded-15 mt-8 flex items-center justify-between">
+                <!-- LOGO -->
+                <div>
+                    <img src="assets/img/logo.png" alt="Logo Web">
+                </div>
+                <!-- NAV -->
+                <div>
+                    <ul class="flex text-base gap-8">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Product</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- SITE LINK -->
+                <div>
+                    <ul class="flex gap-3 text-xl">
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-search'></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-user'></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-cart'></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-heart'></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <section class="my-16">
+        <div class="banner-content bg-primary">
+            <div class="container py-4 flex justify-between items-center">
+                <div>
+                    <!-- UPPER -->
+                    <div class="flex text-white">
+                        <a class="mr-4 text-grey-500 relative after:content-[''] after:absolute after:top-1/4 after:-right-2 after:w-px after:px-px after:h-4 after:bg-gray-500 after:block"
+                            href="#">Home</a>
+                        <p class="text-white">Shop</p>
+                    </div>
+                    <!-- LOWER -->
+                    <div>
+                        <h1 class="banner-text text-h1 text-white font-bold mt-2">Explore All Products</h1>
+                    </div>
+                </div>
+                <!-- IMG -->
+                <div class="w-2/12">
+                    <img src="/layout/assets/img/cucShit.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div id="content">
+        <div class="cart-container flex flex-col justify-between lg:flex-row max-[640px]:m-4 md:m-4 lg:mx-16 ">
+            <!-- CART -->
+            <div
+                class="cart lg:w-2/3 py-8 px-8 mx-n max-[600px]:w-full max-[600px]:py-4 max-[600px]:px-4 md:w-full md:mx-0">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl">Your Cart</h2>
+                    <span class="opacity-70 text-sm"><i class='bx bx-x'></i> Clear cart</span>
+                </div>
+
+                <!--START: SINGLE PRODUCT -->
+                <div
+                    class="cart-item flex justify-between items-center px-4 py-4 mt-5 h-40 max-[640px]:block max-[640px]:h-60">
+                    <div class="flex items-center py-4 max-[640px]:items-center ">
+                        <div class="flex items-center justify-center w-28 h-26">
+                            <img src="./assets/img/headphone-img.png" alt="">
+                        </div>
+
+                        <p class="font-bold ml-4">Apple Airpod Max <br>
+                            <span class="text-sm font-normal opacity-70">White</span>
+                        </p>
+                    </div>
+
+                    <!-- count -->
+                    <div class="btn-container flex justify-between items-center max-[600px]:mt-6 md:ml-12">
+                        <div class="md:w-28">
+                            <a class="decrease text-xl px-3 pb-1 cursor-pointer">-</a>
+                            <a class="quantity mx-2 max-[600px]:mx-0">1</a>
+                            <a class="increase text-xl px-3 pb-1 cursor-pointer">+</a>
+                        </div>
+
+                        <div class="price xl:mx-24 max-[600px]:mx-2 md:mx-6">
+                            <span class="font-bold text-2xl">$400</span>
+                        </div>
+
+                        <div class="del-icon">
+                            <a href="#" class="close-btn"><i class='bx bx-x opacity-70'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--START: SINGLE PRODUCT -->
+                <div
+                    class="cart-item flex justify-between items-center px-4 py-4 mt-5 h-40 max-[640px]:block max-[640px]:h-60">
+                    <div class="flex items-center py-4 max-[640px]:items-center ">
+                        <div class="flex items-center justify-center w-28 h-26">
+                            <img src="./assets/img/headphone-img.png" alt="">
+                        </div>
+
+                        <p class="font-bold ml-4">Apple Airpod Max <br>
+                            <span class="text-sm font-normal opacity-70">White</span>
+                        </p>
+                    </div>
+
+                    <!-- count -->
+                    <div class="btn-container flex justify-between items-center max-[600px]:mt-6 md:ml-12">
+                        <div class="md:w-28">
+                            <a class="decrease text-xl px-3 pb-1 cursor-pointer">-</a>
+                            <a class="quantity mx-2 max-[600px]:mx-0">1</a>
+                            <a class="increase text-xl px-3 pb-1 cursor-pointer">+</a>
+                        </div>
+
+                        <div class="price xl:mx-24 max-[600px]:mx-2 md:mx-6">
+                            <span class="font-bold text-2xl">$400</span>
+                        </div>
+
+                        <div class="del-icon">
+                            <a href="#" class="close-btn"><i class='bx bx-x opacity-70'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--START: SINGLE PRODUCT -->
+                <div
+                    class="cart-item flex justify-between items-center px-4 py-4 mt-5 h-40 max-[640px]:block max-[640px]:h-60">
+                    <div class="flex items-center py-4 max-[640px]:items-center ">
+                        <div class="flex items-center justify-center w-28 h-26">
+                            <img src="./assets/img/headphone-img.png" alt="">
+                        </div>
+
+                        <p class="font-bold ml-4">Apple Airpod Max <br>
+                            <span class="text-sm font-normal opacity-70">White</span>
+                        </p>
+                    </div>
+
+                    <!-- count -->
+                    <div class="btn-container flex justify-between items-center max-[600px]:mt-6 md:ml-12">
+                        <div class="md:w-28">
+                            <a class="decrease text-xl px-3 pb-1 cursor-pointer">-</a>
+                            <a class="quantity mx-2 max-[600px]:mx-0">1</a>
+                            <a class="increase text-xl px-3 pb-1 cursor-pointer">+</a>
+                        </div>
+
+                        <div class="price xl:mx-24 max-[600px]:mx-2 md:mx-6">
+                            <span class="font-bold text-2xl">$400</span>
+                        </div>
+
+                        <div class="del-icon">
+                            <a href="#" class="close-btn"><i class='bx bx-x opacity-70'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- TOTAL BOARD -->
+            <div class="mt-8 lg:flex lg:items-start lg:w-1/3 lg:ml-8 ">
+                <div class="checkout max-[640px]:w-auto lg:w-full">
+                    <p class="font-semibold text-lg">Promo code</p>
+                    <input class="border-2 rounded-2xl px-4 py-1 mt-4" type="text" placeholder="Type here...">
+
+                    <div class="border-t-2 pt-6 mt-6">
+                        <div class="flex justify-between items-center text-sm opacity-70">
+                            <p>Subtotal</p>
+                            <p>$1200</p>
+                        </div>
+
+                        <div class="flex justify-between items-center text-sm opacity-70 my-5">
+                            <p>Discount</p>
+                            <p>$0</p>
+                        </div>
+
+                        <div class="flex justify-between items-center text-lg font-bold">
+                            <p>Total</p>
+                            <p>$1200</p>
+                        </div>
+                    </div>
+
+                    <p class="border-2 rounded-md bg-bl text-white text-sm font-semibold py-3 text-center mt-7"><a
+                            href="#">CHECK OUT</a></p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BANNER -->
+    <div>
+        <div class="container banner-container p-16 mt-24 mb-28">
+            <div>
+                <!-- UPPER -->
+                <div class="text-white flex items-center gap-3 font-bold">
+                    <div class=" w-12  rounded-full flex items-center justify-center h-12 bg-primary  text-white">
+                        <i class="fa-solid fa-envelope text-xl"></i>
+                    </div>
+                    <p>Newsletter</p>
+                </div>
+                <h1 class="text-primary text-h1 font-bold">Get weekly update</h1>
+
+                <!-- LOWER -->
+                <div class="mt-4 flex gap-2">
+                    <div class="flex gap-3 bg-white w-fit px-6 py-3 rounded-button">
+                        <i class="fa-solid fa-envelope text-xl"></i>
+                        <input type="text" placeholder="example@gmail.com">
+                    </div>
+                    <div class="w-fit px-6 py-4 bg-primary text-white rounded-button cursor-pointer">
+                        Subcribe
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POLICY -->
+    <div class="policy flex items-center place-content-between mt-22">
+
+        <div class="px-16 py-12 flex flex-col items-center justify-center" style="border: 1px solid rgba(0, 0, 0, 0.1);">
+            <div class="img w-16 h-16"><img src="./assets/img/fast-delivery.webp" alt=""></div>
+            <p class="mt-4 font-extrabold text-base">Giao Hàng</p>
+            <p class="font-extrabold text-base">Nhanh Chóng</p>
+        </div>          
+
+        <div class="px-16 py-12 flex flex-col items-center justify-center" style="border: 1px solid rgba(0, 0, 0, 0.1);">
+            <div class="img w-16 h-16"><img src="./assets/img/money-back.webp" alt=""></div>
+            <p class="mt-4 font-extrabold text-base">Chính Sách</p>
+            <p class="font-extrabold text-base">Hoàn Tiền</p>
+        </div>  
+
+        <div class="px-16 py-12 flex flex-col items-center justify-center" style="border: 1px solid rgba(0, 0, 0, 0.1);">
+            <div class="img w-16 h-16"><img src="./assets/img/return-policy.webp" alt=""></div>
+            <p class="mt-4 font-extrabold text-base">Chính Sách</p>
+            <p class="font-extrabold text-base">Đổi Trả</p>
+        </div> 
+
+        <div class="px-16 py-12 flex flex-col items-center justify-center" style="border: 1px solid rgba(0, 0, 0, 0.1);">
+            <div class="img w-16 h-16"><img src="./assets/img/promo.webp" alt=""></div>
+            <p class="mt-4 font-extrabold text-base">Ưu Đãi</p>
+            <p class="font-extrabold text-base">Hấp Dẫn</p>
+        </div> 
+
+        <div class="px-16 py-12 flex flex-col items-center justify-center" style="border: 1px solid rgba(0, 0, 0, 0.1);">
+            <div class="img w-16 h-16"><img src="./assets/img/support.webp" alt=""></div>
+            <p class="mt-4 font-extrabold text-base">Hỗ Trợ</p>
+            <p class="font-extrabold text-base">24/7</p>
+        </div> 
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="mt-12">
+        <div>
+            <div class="container grid-cols-4 grid border-y-2 py-10">
+                <div class="flex flex-col justify-between">
+                    <h1 class="font-bold text-h2 text-lg">Support</h1>
+                    <p class="w-56 color-777">QTSC 9 Building, To Ky Street Ho Chi Minh City</p>
+
+                    <div class="">
+                        <div>
+                            <img class="inline-block mr-4" src="assets/img/mail.png" alt="">
+                            <span class="color-777">example@domain.com</span>
+                        </div>
+
+                        <div>
+                            <img class="inline-block mr-4" src="assets/img/telephone.png" alt="">
+                            <span class="color-777">(84+) 123 456 78</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ml-6">
+                    <h1 class="font-bold text-h2 text-lg">Account</h1>
+                    <div class="mt-2 leading-9 cursor-pointer">
+                        <p class="color-777">My Account</p>
+                        <p class="color-777">Login</p>
+                        <p class="color-777">Cart</p>
+                        <p class="color-777">Wislish</p>
+                        <p class="color-777">Shop</p>
+                    </div>
+                </div>
+
+                <div class="ml-12">
+                    <h1 class="font-bold text-h2 text-lg">Quick Link</h1>
+                    <div class="mt-2 leading-9 cursor-pointer">
+                        <p class="color-777">About Us</p>
+                        <p class="color-777">Privacy Policy</p>
+                        <p class="color-777">Terms Of Use</p>
+                        <p class="color-777">Contact</p>
+                    </div>
+                </div>
+
+                <div class="ml-16">
+                    <h1 class="font-bold text-h2 text-lg">Follow Us</h1>
+                    <div class="mt-2">
+                        <div class="flex gap-4 cursor-pointer">
+                            <img class="w-10 h-10 mr-2" src="./assets/img/facebook (2).png" alt="">
+                            <img class="w-10 h-10 mr-2" src="./assets/img/instagram.png" alt="">
+                            <img class="w-10 h-10 mr-2" src="./assets/img/linkedin.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arr flex justify-between items-center py-4 text-sm">
+                <p class="color-777">© 2023. All rights reserved</p>
+
+                <div class="payment">
+                    <p class="color-777">Accept For</p>
+
+                    <div class="payment_img flex justify-between items-center ml-4">
+                        <img class="mr-2 w-6 h-6" src="./assets/img/paypal.png" alt="">
+                        <img class="mr-2 w-14 h-14" src="./assets/img/pay-1.png" alt="">
+                        <img class="mr-2 w-12 h-12" src="./assets/img/visa.png" alt="">
+                        <img class="mr-2 w-12 h-12" src="./assets/img/momo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END: FOOTER -->
+
+    <style>
+        @layer utilities {
+            .checkout-width {
+                width: 327px;
+                /* Adjust the width value based on your needs */
+            }
+        }
+    </style>
+</body>
+
+
+</html>

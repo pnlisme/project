@@ -1,0 +1,61 @@
+@use "../../abstracts" as *;
+.statistic {
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &-item {
+    position: relative;
+  }
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $bgr-c;
+    padding: 16px 32px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    }
+  }
+  &-title {
+    font-style: italic;
+  }
+  &-icon {
+    transition: all 0.2s linear;
+  }
+  &-dropdown {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 0 32px;
+    margin: 0 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    p {
+      margin: 32px 0;
+    }
+  }
+}
+// @keyframes dropdown-hide {
+//   0% {
+//     opacity: 1;
+//     visibility: visible;
+//     transform: translateY(0);
+//     display: block;
+//   }
+//   100% {
+//     display: none;
+//     opacity: 0;
+//     visibility: hidden;
+//     transform: translateY(-100%);
+//   }
+// }

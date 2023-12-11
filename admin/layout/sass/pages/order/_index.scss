@@ -1,0 +1,11 @@
+@use "../../abstracts" as *;
+@forward "./order_tb";
+@forward "./order_form";
+.sidebar {
+  &-item:nth-child(5) {
+    color: $color;
+    .sidebar-animation {
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.order-form
+  .order-form-container
+    h2.sub-title.order-form-title Đơn hàng #123456789
+    a(href="#").order-form-close
+      ion-icon(name="close-circle-outline")
+    .order-form-content 
+      label Người đặt hàng: 
+      .order-form-image 
+        img(src="./images/guest.png" alt="product image")
+      label Tên người dùng: 
+        span  *
+      input.order-form-input(type="text", value="Lang Tu", disabled)
+      label Trạng thái: 
+        span  *
+      select.order-form-select
+        option(value="1") Đang chờ xử lý
+        option(value="2") Đang giao hàng
+        option(value="3") Đã giao hàng
+        option(value="4") Đã hủy
+      .order-form-input-container
+        div
+          label(for="order-fullname") Họ và tên:
+            span *
+          input.order-form-input(type="text", value="Tiến Bịp", id="order-fullname")
+        div
+          label(for="receiver-fullname") Họ tên người nhận:
+            span *
+          input.order-form-input(type="text", value="Tiến Bịp", id="receiver-fullname")
+      .order-form-input-container
+        div
+          label(for="order-email") Email:
+            span *
+          input.order-form-input(type="email", value="meomeo@gmail.com", id="order-email")
+        div
+          label(for="receiver-email") Email người nhận:
+            span *
+          input.order-form-input(type="email", value="leuleu@gmail.com", id="receiver-email")
+      .order-form-input-container
+        div
+          label(for="order-phone") Số điện thoại:
+            span *
+          input.order-form-input(type="text", value="0123456789", id="order-phone")
+        div
+          label(for="receiver-phone") Số điện thoại người nhận:
+            span *
+          input.order-form-input(type="text", value="0123456789", id="receiver-phone")
+      .order-form-input-container
+        div
+          label(for="order-address") Địa chỉ:
+            span *
+          input.order-form-input(type="text", value="Hà Nội", id="order-address")
+        div
+          label(for="receiver-address") Địa chỉ người nhận:
+            span *
+          input.order-form-input(type="text", value="Hà Nội", id="receiver-address")
+      label Ghi chú: 
+      textarea.order-form-textarea
+      .order-detail-form
+        table.table
+          thead.table-head
+              th Tên sản phẩm
+              th Giá tiền
+              th Số lượng
+              th Thành tiền
+          tbody.table-body
+            each val in [1,2,3,4,5]
+              tr
+                td 
+                  p.order-detail-form-name Apple Airpod Max
+                td
+                  p.order-detail-form-price $499
+                td
+                  p.order-detail-form-quantity 2
+                td 
+                  p.order-detail-form-subtotal $998
+        .order-detail-form-total
+          p.order-detail-form-total-title Tổng cộng:
+          p.order-detail-form-total-price $998
+      button.order-form-button.button(type="submit") Lưu thay đổi

@@ -1,0 +1,102 @@
+@use "../../abstracts" as *;
+.news-form {
+  // position: fixed;
+  // inset: 0;
+  background-color: $color-subtext;
+  // display: none;
+  span {
+    color: $color-quaternary;
+  }
+  &-container {
+    background-color: $color-secondary;
+    // height: 100vh;
+    // overflow: auto;
+    // padding: 120px;
+    // margin-left: 200px;
+    // position: relative;
+    // border-top-left-radius: 240px;
+    // border-bottom-left-radius: 240px;
+  }
+  &-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 24px;
+  }
+  &-content {
+    // overflow: scroll;
+    label {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    input,
+    select {
+      padding: 12px 16px;
+      border-radius: 4px;
+      border: 1px solid $color;
+      margin-bottom: 24px;
+      font-size: 16px;
+      &:focus {
+        outline: none;
+        border-color: $color-tertiary;
+      }
+    }
+  }
+  &-image {
+    width: 400px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    img {
+      border-radius: 8px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-radio-container {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      label,
+      input {
+        margin: 0;
+      }
+    }
+  }
+  &-input-container {
+    display: flex;
+    gap: 24px;
+    div {
+      width: 100%;
+    }
+  }
+}
+.remove-form {
+  animation: closeForm 0.25s linear forwards;
+}
+.open-form {
+  animation: openForm 0.25s linear forwards;
+}
+@keyframes closeForm {
+  from {
+    // opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    // opacity: 0;
+    transform: translateX(100%);
+  }
+}
+@keyframes openForm {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

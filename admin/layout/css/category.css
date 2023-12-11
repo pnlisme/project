@@ -1,0 +1,112 @@
+.category tr {
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 48px;
+}
+.category td {
+  padding: 16px 32px;
+}
+.category td:nth-child(2) {
+  padding: 12px 0;
+  text-align: center;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+.category td:last-child {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 16px;
+  font-size: 24px;
+}
+.category td:last-child span {
+  opacity: 0.5;
+}
+.category-action {
+  transition: all 0.2s linear;
+}
+.category-action:hover {
+  transform: scale(1.2);
+}
+
+.category-form {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.category-form-container {
+  background-color: #fff;
+  height: 100vh;
+  margin-left: 240px;
+  padding: 120px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-left-radius: 320px;
+  border-bottom-left-radius: 540px;
+}
+.category-form-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-size: 24px;
+}
+.category-form-group tr {
+  grid-template-columns: 2fr 1fr;
+}
+.category-form-group td {
+  padding: 16px 32px;
+}
+.category-form-group td:nth-child(2) {
+  text-align: center;
+  border-left: 1px solid #000;
+}
+.category-form-body tr:hover {
+  background-color: #fff;
+}
+.category-form-body input {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 13px 16px;
+}
+.category-form-body input:focus {
+  border-color: #3577f0;
+}
+.category-form-body button {
+  margin: 0;
+}
+
+.remove-form {
+  animation: closeForm 0.25s linear forwards;
+}
+
+.open-form {
+  animation: openForm 0.25s linear forwards;
+}
+
+@keyframes closeForm {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes openForm {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.sidebar-item:nth-child(2) {
+  color: #000;
+}
+.sidebar-item:nth-child(2) .sidebar-animation {
+  transform: translateX(0);
+}
+
+/*# sourceMappingURL=category.css.map */

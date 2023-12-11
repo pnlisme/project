@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e5ff98b392.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/app.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <div
+          class="w-3/4 px-8 container bg-box rounded-15 mt-8 flex items-center justify-between"
+        >
+          <!-- LOGO -->
+          <div>
+            <img src="assets/img/logo.png" alt="Logo Web" />
+          </div>
+          <!-- NAV -->
+          <div>
+            <ul class="flex text-h2 gap-6">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Product</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <!-- SITE LINK -->
+          <div>
+            <ul class="flex gap-3">
+              <li>
+                <a href="#">
+                  <img src="./assets/img/icon-search.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./assets/img/icon-cart.png" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#" class="relative heart-container">
+                  <div class="heart-1"></div>
+                  <div class="heart-2 top-0 absolute"></div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./assets/img/icon-user.png" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="my-16">
+      <div class="bg-primary">
+        <div class="container py-4 flex justify-between items-center">
+          <div>
+            <!-- UPPER -->
+            <div class="flex text-gray-400">
+              <a
+                class="mr-4 text-grey-500 relative after:content-[''] after:absolute after:top-1/4 after:-right-2 after:w-px after:px-px after:h-4 after:bg-gray-500 after:block"
+                href="#"
+                >Home</a
+              >
+              <p class="text-white">Contact</p>
+            </div>
+            <!-- LOWER -->
+            <div>
+              <h1 class="text-h1 text-white font-bold">Account Detail</h1>
+            </div>
+          </div>
+          <!-- IMG -->
+          <div class="w-2/12">
+            <img src="/layout/assets/img/cucShit.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container pb-40">
+      <div class="profile flex flex-col gap-1">
+        <div class="profile-img rounded-full w-24">
+          <img class="rounded-full" src="./images/profile.jpg" alt="alt" />
+        </div>
+        <p class="profile-title text-third font-bold">Hello A3KHIA</p>
+        <span class="text-gray font-bold">eTrade Member Since Sep 2020</span>
+      </div>
+      <div class="grid grid-flow-row-dense grid-cols-8 gap-10 pt-5">
+        <div class="navbar col-span-2 bg-primary rounded-xl">
+          <navbar>
+            <ul class="p-5 flex flex-col gap-3">
+              <li
+                class="group list-none flex items-center gap-5 py-3 px-6 rounded-lg transition duration hover:bg-white"
+              >
+                <ion-icon
+                  class="text-white text-lg group-hover:text-primary"
+                  name="grid"
+                ></ion-icon
+                ><a
+                  class="text-white text-xs fw-500 group-hover:text-primary"
+                  href=""
+                  >Dashboad</a
+                >
+              </li>
+              <li
+                class="group list-none flex items-center gap-5 py-3 px-6 rounded-lg transition duration hover:bg-white"
+              >
+                <ion-icon
+                  class="text-white text-lg group-hover:text-primary"
+                  name="cart"
+                ></ion-icon
+                ><a
+                  class="text-white text-xs fw-500 group-hover:text-primary"
+                  href=""
+                  >Order</a
+                >
+              </li>
+              <li
+                class="group list-none flex items-center gap-5 py-3 px-6 rounded-lg transition duration hover:bg-white"
+              >
+                <ion-icon
+                  class="text-white text-lg group-hover:text-primary"
+                  name="home"
+                ></ion-icon
+                ><a
+                  class="text-white text-xs fw-500 group-hover:text-primary"
+                  href=""
+                  >Addresses</a
+                >
+              </li>
+              <li
+                class="list-none flex items-center gap-5 py-3 px-6 bg-white rounded-lg"
+              >
+                <ion-icon class="text-primary text-lg" name="person"></ion-icon
+                ><a class="text-primary text-xs fw-500" href=""
+                  >Account Details</a
+                >
+              </li>
+              <li
+                class="group list-none flex items-center gap-5 py-3 px-6 rounded-lg transition duration hover:bg-white"
+              >
+                <ion-icon
+                  class="text-white text-lg group-hover:text-primary"
+                  name="log-out"
+                ></ion-icon
+                ><a
+                  class="text-white text-xs fw-500 group-hover:text-primary"
+                  href=""
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </navbar>
+        </div>
+        <form class="col-span-6 flex flex-col gap-8" action="" method="method">
+          <p class="text-third font-bold text-h3">Billing Address</p>
+          <div class="grid grid-cols-2 gap-8">
+            <label class="flex relative">
+              <input
+                class="w-full text-sm bg-white rounded-lg border-gray border-opacity-50 py-3 px-3 outline-none border-2 transition duration-200 focus:border-blue-500 focus:text-primary"
+                type="text"
+                name=""
+              /><span
+                class="absolute left-0 top-3 mx-2 px-2 transition duration input-text"
+                >Firstname</span
+              >
+            </label>
+            <label class="flex relative">
+              <input
+                class="w-full text-sm bg-white rounded-lg border-gray border-opacity-50 py-3 px-3 outline-none border-2 transition duration-200 focus:border-blue-500 focus:text-primary"
+                type="text"
+                name=""
+              /><span
+                class="absolute left-0 top-3 mx-2 px-2 transition duration input-text"
+                >Lastname</span
+              >
+            </label>
+            <label class="flex relative">
+              <input
+                class="w-full text-sm bg-white rounded-lg border-gray border-opacity-50 py-3 px-3 outline-none border-2 transition duration-200 focus:border-blue-500 focus:text-primary"
+                type="text"
+                name=""
+              /><span
+                class="absolute left-0 top-3 mx-2 px-2 transition duration input-text"
+                >Email</span
+              >
+            </label>
+            <label class="flex relative">
+              <input
+                class="w-full text-sm bg-white rounded-lg border-gray border-opacity-50 py-3 px-3 outline-none border-2 transition duration-200 focus:border-blue-500 focus:text-primary"
+                type="text"
+                name=""
+              /><span
+                class="absolute left-0 top-3 mx-2 px-2 transition duration input-text"
+                >Phone</span
+              >
+            </label>
+          </div>
+          <label class="flex relative">
+            <input
+              class="w-full text-sm bg-white rounded-lg border-gray border-opacity-50 py-3 px-3 outline-none border-2 transition duration-200 focus:border-blue-500 focus:text-primary"
+              type="text"
+              name=""
+            /><span
+              class="absolute left-0 top-3 mx-2 px-2 transition duration input-text"
+              >Addresses</span
+            >
+          </label>
+          <button
+            class="bg-primary py-3 rounded-lg font-bold w-36 inline-block px-10 text-white text-center transition duration motion-safe:hover:scale-110"
+          >
+            Update
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- BANNER-->
+    <div>
+      <div class="container banner-container p-16">
+        <div>
+          <!-- UPPER-->
+          <div class="text-white flex items-center gap-3 font-bold">
+            <div
+              class="w-12 rounded-full flex items-center justify-center h-12 bg-primary text-white"
+            >
+              <i class="fa-solid fa-envelope text-xl"></i>
+            </div>
+            <p>Newsletter</p>
+          </div>
+          <h1 class="text-primary text-h1 font-bold">Get weekly update</h1>
+          <!-- LOWER-->
+          <div class="mt-4 flex gap-2">
+            <div class="flex gap-3 bg-white w-fit px-6 py-3 rounded-button">
+              <i class="fa-solid fa-envelope text-xl"></i>
+              <input type="text" placeholder="example@gmail.com" />
+            </div>
+            <div class="w-fit px-6 py-4 bg-primary text-white rounded-button">
+              Subcribe
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="mt-12">
+      <div>
+        <div class="container grid-cols-4 grid">
+          <div class="flex flex-col justify-between">
+            <h1 class="font-bold text-h2">Support</h1>
+            <p class="w-56">QTSC 9 Building, To Ky Street Ho Chi Minh City</p>
+            <div class="">
+              <div>
+                <img
+                  class="inline-block mr-2"
+                  src="assets/img/mail.png"
+                  alt=""
+                />
+                <span>example@domain.com</span>
+              </div>
+              <div>
+                <img
+                  class="inline-block mr-2"
+                  src="assets/img/telephone.png"
+                  alt=""
+                />
+                <span>(84+) 123 456 78</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-h2">Account</h1>
+            <div class="mt-2">
+              <p>My Account</p>
+              <p>Login</p>
+              <p>Cart</p>
+              <p>Wislish</p>
+              <p>Shop</p>
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-h2">Quick Link</h1>
+            <div class="mt-2">
+              <p>About Us</p>
+              <p>Privacy Policy</p>
+              <p>Terms Of Use</p>
+              <p>Contact</p>
+            </div>
+          </div>
+          <div>
+            <h1 class="font-bold text-h2">Follow Us</h1>
+            <div class="mt-2">
+              <div class="flex gap-4">
+                <img src="./assets/img/facebook (2) 1.png" alt="" />
+                <img src="./assets/img/instagram 1.png" alt="" />
+                <img src="./assets/img/linkedin 1.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="/layout/assets/js/tailwind.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</html>

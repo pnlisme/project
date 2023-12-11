@@ -1,0 +1,17 @@
+mixin list(icon,text)
+    li.group.list-none.flex.items-center.gap-5.py-3.px-6.rounded-lg.transition.duration(class='hover:bg-white')
+        ion-icon(name=icon).text-white.text-lg(class='group-hover:text-primary')
+        a(href="").text-white.text-xs.fw-500(class='group-hover:text-primary')=text
+mixin about-list(image,title,content)
+    .about-lists
+        .about-list.flex.flex-col.gap-3.px-12.py-9.border-2.rounded-md.border-white.shadow-black-500.shadow-lg
+            .about-icon 
+                img(src=image, alt="")  
+            h3.font-bold.text-button.text-third=title 
+            span.font-normal.text-gray.leading-5.tracking-widest=content 
+mixin card-profile(image,role,name)
+    .profile-item
+        .image.pb-3
+            img(src=image, alt="").h-72
+        span.role.text-sm.text-medium.text-gray=role
+        h3.text-h2.text-primary.font-bold=name

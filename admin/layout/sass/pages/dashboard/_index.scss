@@ -1,0 +1,12 @@
+@use "../../abstracts" as *;
+@forward "./account";
+@forward "./overview";
+@forward "./statistic";
+.sidebar {
+  &-item:first-child {
+    color: $color;
+    .sidebar-animation {
+      transform: translateX(0);
+    }
+  }
+}

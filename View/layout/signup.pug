@@ -1,0 +1,41 @@
+extends ./assets/pug/layout
+block main
+    div
+        div
+            .container.grid.grid-cols-2.bg-detail
+                div.flex.items-center.justify-center.p-16
+                    form(action="" method="method").h-fit.w-fit
+                        .py-12.px-16.h-fit.w-fit.flex.flex-col.gap-2.bg-detail.border.rounded-lg.border-white.shadow-primary
+                            .images 
+                                img(src="/layout/assets/img/logo.png", alt="")(class="w-6/12")
+                            h1.text-h1.color-primary.font-bold LOGIN
+                            label(for="username").flex.flex-col.gap-2
+                                span.text-small Username
+                                input(type="email", id="username", name="username" placeholder="Username").bg-white.w-80.border.border-slate-300.rounded-md.py-2.pl-6.pr-6.shadow-sm(class=".focus:outline-none.focus:border-sky-500.focus:ring-sky-500.focus:ring-1.sm:text-sm")
+                            label(for="email").flex.flex-col.gap-2
+                                span.text-small Email
+                                input(type="email", id="email", name="email" placeholder="Email").bg-white.w-80.border.border-slate-300.rounded-md.py-2.pl-6.pr-6.shadow-sm(class=".focus:outline-none.focus:border-sky-500.focus:ring-sky-500.focus:ring-1.sm:text-sm")
+                            label(for="password").flex.flex-col.gap-2
+                                span.text-small Password
+                                .input-field.bg-white.w-80.border.border-slate-300.rounded-md.py-2.pl-6.pr-6.shadow-sm.flex.items-center.justify-between
+                                    input(type="password", name="password" placeholder="Password")#passwordInput
+                                    ion-icon(name='eye-outline')#togglePassword
+                            label(for="ForgotPassword").flex.flex-col.gap-2.pb-4
+                                span.text-small Forgot Password
+                                .input-field.bg-white.w-80.border.border-slate-300.rounded-md.py-2.pl-6.pr-6.shadow-sm.flex.items-center.justify-between
+                                    input(type="password", name="ForgotPassword" placeholder="ForgotPassword")#passwordInput
+                                    ion-icon(name='eye-outline')#togglePassword
+                            //-a(href="").text-span.pb-4 Fogot password?
+                            +button-login("Sign in")
+                            //- span.text-span.font-normal.text-primary.text-center.pt-4 or continue with     
+                            //- .social.grid.grid-cols-3.gap-2
+                            //-     a(href="").social-item.rounded-full.bg-white.flex.items-center.justify-center 
+                            //-         img(src="./images/google.svg", alt="alt").p-2
+                            //-     a(href="").social-item.rounded-full.bg-white.flex.items-center.justify-center 
+                            //-         img(src="./images/github.svg", alt="alt").p-2
+                            //-     a(href="").social-item.rounded-full.bg-white.flex.items-center.justify-center 
+                            //-         img(src="./images/facebook.svg", alt="alt").p-2
+                div.flex.items-center.justify-center
+                    .images
+                        .images-item
+                            img(src="./images/thaytu.png", alt="alt")

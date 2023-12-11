@@ -1,0 +1,243 @@
+.order {
+  --green: #58c27d;
+}
+.order tr {
+  grid-template-columns: 1fr 1.5fr 1.5fr 1fr 1.5fr 1fr;
+}
+.order ion-icon {
+  font-size: 24px;
+}
+.order th:not(:last-child),
+.order td:not(:last-child) {
+  border-right: 1px solid #000;
+}
+.order th,
+.order td {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.order td:first-child {
+  padding: 12px 0;
+}
+.order th:nth-child(2),
+.order td:nth-child(2) {
+  justify-content: flex-start;
+  padding: 8px 16px;
+}
+.order td:nth-child(3) {
+  gap: 4px;
+}
+.order td:nth-child(4),
+.order td:nth-child(5) {
+  font-weight: 700;
+}
+.order td:nth-child(5) {
+  color: var(--green);
+}
+.order-image {
+  width: 120px;
+  height: 120px;
+}
+.order-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.order-time {
+  font-style: italic;
+}
+.order-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+}
+.order-action span {
+  opacity: 0.5;
+}
+.order-action ion-icon {
+  transition: all 0.2s linear;
+}
+.order-action ion-icon:hover {
+  transform: scale(1.2);
+}
+
+.order-form {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.order-form span {
+  color: #ff497c;
+}
+.order-form textarea {
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  margin-bottom: 24px;
+  font-size: 16px;
+  width: 100%;
+  min-height: 160px;
+}
+.order-form textarea:focus {
+  outline: none;
+  border-color: #3577f0;
+}
+.order-form-password p {
+  font-style: italic;
+  opacity: 0.5;
+}
+.order-form-password hr {
+  margin: 8px 0 24px;
+}
+.order-form-container {
+  height: 100vh;
+  overflow: auto;
+  padding: 120px;
+  background-color: #fff;
+  margin-left: 200px;
+  position: relative;
+  border-top-left-radius: 240px;
+  border-bottom-left-radius: 240px;
+}
+.order-form-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-size: 24px;
+}
+.order-form-content label {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.order-form-content input,
+.order-form-content select {
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+.order-form-content input:focus,
+.order-form-content select:focus {
+  outline: none;
+  border-color: #3577f0;
+}
+.order-form-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.order-form-image img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.order-form-radio-container {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.order-form-radio-container div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.order-form-radio-container div label,
+.order-form-radio-container div input {
+  margin: 0;
+}
+.order-form-input-container {
+  display: flex;
+  gap: 24px;
+}
+.order-form-input-container div {
+  width: 100%;
+}
+
+.order-detail-form table {
+  border: none !important;
+}
+.order-detail-form td:first-child {
+  justify-content: flex-start;
+  padding-left: 24px;
+}
+.order-detail-form thead {
+  border: none !important;
+}
+.order-detail-form thead tr {
+  background-color: rgba(51, 117, 240, 0.35) !important;
+}
+.order-detail-form thead tr:hover {
+  background-color: rgba(51, 117, 240, 0.35);
+}
+.order-detail-form tr {
+  border: none !important;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  background-color: #fff;
+}
+.order-detail-form tr:nth-child(odd) {
+  background-color: #fff;
+}
+.order-detail-form tr:nth-child(even) {
+  background-color: rgba(51, 117, 240, 0.35);
+}
+.order-detail-form td {
+  border: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+}
+.order-detail-form-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ck-blurred.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline {
+  min-height: 240px;
+}
+
+.remove-form {
+  animation: closeForm 0.25s linear forwards;
+}
+
+.open-form {
+  animation: openForm 0.25s linear forwards;
+}
+
+@keyframes closeForm {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes openForm {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.sidebar-item:nth-child(5) {
+  color: #000;
+}
+.sidebar-item:nth-child(5) .sidebar-animation {
+  transform: translateX(0);
+}
+
+/*# sourceMappingURL=order.css.map */

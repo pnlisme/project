@@ -1,0 +1,22 @@
+.table-scroll 
+  table.category.table 
+    thead.table-head
+      tr 
+        th Tên thể loại
+        th Số lượng sản phẩm
+        th Hành động
+    tbody.table-body
+      each val in [1,2,3,4]
+        tr 
+          td 
+            span Tai nghe
+          td 
+            span 10
+          td 
+            a(href="#").category-action.category-update
+              ion-icon(name="create-outline")
+            span |
+            a(href="#").category-action.category-remove
+              ion-icon(name="trash-outline")
+  button.table-button.button.category-add
+    p Thêm danh mục

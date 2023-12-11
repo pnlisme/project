@@ -1,0 +1,21 @@
+.category-form
+  .category-form-container
+    block sub-title
+      h2.sub-title.category-form-title Thêm danh mục
+    a(href="#").category-form-close
+      ion-icon(name="close-circle-outline")
+    .category-form-table
+      form
+        table.category-form-group.table
+          thead.table-head
+            tr
+              th Tên thể loại
+              th Hàng động
+          tbody.table-body.category-form-body
+            tr
+              td 
+                block category-placeholder
+                  input#category-name(type="text", placeholder="Nhập tên thể loại")
+              td
+                block category-button
+                  button#category-submit.button(type="submit") Thêm danh mục

@@ -1,0 +1,10 @@
+@use "../../abstracts" as *;
+@forward "./comment-dt_tb";
+.sidebar {
+  &-item:nth-child(6) {
+    color: $color;
+    .sidebar-animation {
+      transform: translateX(0);
+    }
+  }
+}

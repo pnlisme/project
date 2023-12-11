@@ -1,0 +1,51 @@
+extends ./assets/pug/layout
+block main
+    section.grid.grid-cols-3.gap-4.container.pb-14
+        .about-image.col-span-1
+            img(src="./images/image-about-1.png", alt="alt")
+        .about-content.col-span-2
+            .content-main.p-20.flex.flex-col.gap-4 
+                .content-title.flex.gap-2.items-center
+                    ion-icon(name="bag").p-2.bg-pink.rounded-full.text-white.font-medium
+                    span.text-sm.text-pink.font-medium This Week's 
+                h3.content-header.text-third.font-bold.text-h3 Online shopping includes both buying things online. 
+                h3.content-body.text-third.font-normal.text-h2.tracking-widest.leading-7 Salesforce B2C Commerce can help you create unified, intelligent digital commerce experiences — both online and in the store. 
+                .content-footer.grid.grid-cols-2.gap-4 
+                    span.text-sm.tracking.leading-5.text-gray Empower your sales teams with industry tailored solutions that support manufacturers as they go digital, and adapt to changing markets & customers faster by creating new business.    
+                    span.text-sm.tracking.leading-5.text-gray Salesforce B2B Commerce offers buyers the seamless, self-service experience of online shopping with all the B2B    
+    section.grid.grid-cols-3.gap-4.container.pb-14
+        +about-list("./images/about-list-1.png","40,000+ Happy Customer","Empower your sales teams with industry tailored solutions that support.")
+        +about-list("./images/about-list-2.png","40,000+ Happy Customer","Empower your sales teams with industry tailored solutions that support.")
+        +about-list("./images/about-list-3.png","12 Awards Won","Empower your sales teams with industry tailored solutions that support.")
+    section.container.pb-14
+        .content-title.flex.gap-2.items-centers
+            ion-icon(name="people").p-2.bg-pink.rounded-full.text-white.font-medium
+            span.text-sm.text-pink.font-medium Our Team 
+        .content-header.flex.justify-between.items-center.pt-2
+            h3.text-h1.text-third.font-bold Expart Management Team
+            .icon-arrow.flex-center
+                ion-icon(name="chevron-back").p-2.bg-slate-100.text-gray.rounded-sm
+                ion-icon(name="chevron-forward").p-2.bg-slate-100.text-gray.rounded-sm
+        .profile-items.grid.grid-cols-4.pt-8
+            +card-profile("./images/about-profile.png","Fouder","Phan Tuyen Dat")
+            +card-profile("./images/about-profile.png","Fouder","Phan Tuyen Dat")
+            +card-profile("./images/about-profile.png","Fouder","Phan Tuyen Dat")
+            +card-profile("./images/about-profile.png","Fouder","Phan Tuyen Dat")
+    section.container.grid.grid-cols-5.pb-14
+        .images.col-span-2
+            img(src="./images/image-pr-1.png", alt="alt")
+        .col-span-3
+            .content-main.p-14.flex.flex-col.gap-4 
+                span.text-gray.text-sm.font-normal.leading-5.tracking-widest Features #01
+                h3.text-third.font-bold.text-4xl Solutions that work together
+                span.py-4.text-gray.text-sm.font-normal.leading-5.tracking-wide Publish your eCommerce site quickly with our easy-to-use store builder— no coding required. Migrate your items from your point of sale system or turn your Instagram feed into a shopping site and start selling fast. Square Online works for all kinds of businesses—retail, restaurants, services.
+                +buttons("View Now")
+    section.container.grid.grid-cols-5.pb-14
+        .col-span-3
+            .content-main.p-14.flex.flex-col.gap-4 
+                span.text-gray.text-sm.font-normal.leading-5.tracking-widest Features #01
+                h3.text-third.font-bold.text-4xl Solutions that work together
+                span.py-4.text-gray.text-sm.font-normal.leading-5.tracking-wide Publish your eCommerce site quickly with our easy-to-use store builder— no coding required. Migrate your items from your point of sale system or turn your Instagram feed into a shopping site and start selling fast. Square Online works for all kinds of businesses—retail, restaurants, services.
+                +buttons("View Now")
+        .images.col-span-2
+            img(src="./images/image-pr-2.png", alt="alt")

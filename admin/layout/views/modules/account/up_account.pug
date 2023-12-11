@@ -1,0 +1,42 @@
+.account-form
+  .account-form-container
+    h2.sub-title.account-form-title Chỉnh sửa tài khoản 
+    a(href="#").account-form-close
+      ion-icon(name="close-circle-outline")
+    .account-form-content 
+      label Ảnh đại diện: 
+      .account-form-image 
+        img(src="./images/user.png" alt="product image")
+      label Tên người dùng: 
+        span  *
+      input.account-form-input(type="text", value="LangTu", disabled)
+      label(for="account-fullname") Tên đầy đủ:
+        span *
+      input.account-form-input(type="text", value="Tiến Bịp", id="account-fullname")
+      label(for="account-email") Email:
+        span *
+      input.account-form-input(type="email", value="meomeo@gmail.com", id="account-email")
+      label(for="account-phone") Số điện thoại:
+        span *
+      input.account-form-input(type="text", value="0123456789", id="account-phone")
+      label(for="account-address") Địa chỉ:
+        span *
+      input.account-form-input(type="text", value="Hà Nội", id="account-address")
+      label Trạng thái: 
+        span *
+      select.account-form-select
+        option(value="1") Hoạt động
+        option(value="0") Bị cấm
+      label Quyền hạn:
+        span *
+      select.account-form-select
+        option(value="1") Quản lí
+        option(value="0") Người dùng
+      .account-form-password
+        p Đổi mật khẩu
+        hr
+        label(for="account-password") Mật khẩu mới (Bỏ trống nếu không muốn thay đổi):
+        input.account-form-input(type="password", value="123456", id="account-password")
+        label(for="account-password-confirm") Xác nhận mật khẩu mới:
+        input.account-form-input(type="password", value="123456", id="account-password-confirm")
+      button.account-form-button.button(type="submit") Lưu thay đổi

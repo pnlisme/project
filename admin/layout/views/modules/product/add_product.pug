@@ -1,0 +1,57 @@
+.product-form
+  .product-form-container
+    block sub-title
+      h2.sub-title.product-form-title Thêm mới sản phẩm
+    a(href="#").product-form-close
+      ion-icon(name="close-circle-outline")
+    .product-form-content 
+      label Chọn danh mục:
+      select.product-form-select
+        option(default) -- Danh mục --
+        option(value="Headphone") Tai nghe
+        option(value="Smartphone") Điện thoại
+        option(value="Laptop") Máy tính
+        option(value="Camera") Thiết bị quay
+      label Chọn thương hiệu:
+      select.product-form-select
+        option(default) -- Thương hiệu --
+        option(value="Apple") Apple
+        option(value="Samsung") Samsung
+        option(value="Sony") Sony
+        option(value="Canon") Canon
+      label Hình ảnh sản phẩm:
+      input.product-form-input(type="file")
+      block product-image
+        
+      label Tên sản phẩm:
+      input.product-form-input(type="text", placeholder="Nhập tên sản phẩm")
+      label Giá bán ảo (Hiển thị khi lớn hơn giá bán thực tế):
+      input.product-form-input(type="text", placeholder="Nhập giá sản phẩm")
+      label Giá bán thực tế: 
+      input.product-form-input(type="text", placeholder="Nhập giá sản phẩm")
+      label Giảm giá:
+      .product-form-radio-container
+        div 
+          input(type="radio" name="sale" id="sale-y" value="yes" checked)
+          label(for="sale-y") Có!
+        div 
+          input(type="radio" name="sale" id="sale-n" value="no")
+          label(for="sale-n") Không!
+      label Bán chạy:
+      .product-form-radio-container 
+        div 
+          input(type="radio" name="hot" id="hot-y" value="yes" checked)
+          label(for="hot-y") Có!
+        div
+          input(type="radio" name="hot" id="hot-n" value="no")
+          label(for="hot-n") Không!
+      .product-form-input-container 
+        div 
+          label(for="entry-date") Ngày nhập hàng:
+          input(type="date" name="entry-date" placeholder="Entry-date")
+        div
+          label(for="quantity") Số lượng:
+          input(type="text" name="quantity" placeholder="Nhập số lượng")
+      label Mô tả sản phẩm:
+      <textarea id="editor" name="description"></textarea>
+      button.product-form-button.button(type="submit") Thêm sản phẩm

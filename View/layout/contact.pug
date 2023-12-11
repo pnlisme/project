@@ -1,0 +1,36 @@
+extends ./assets/pug/layout
+block main
+    section.container.grid.grid-cols-3.pb-14.gap-8
+        .form-contact.col-span-2.flex.flex-col.gap-4
+            h3.font-bold.text-h3.text-third We would love to hear from you.
+            span.text-gray.text-p.font-medium If you’ve got great products your making or looking to work with us then drop us a line.
+            form(action="").pt-8
+                div.grid.grid-cols-3.gap-4.pb-4
+                    label.flex.relative
+                        input(type="text", name="").w-full.text-sm.bg-white.rounded-lg.border-gray.border-opacity-50.py-3.px-3.outline-none.border-2.transition.duration-200(class="focus:border-blue-500 focus:text-primary")
+                        span.absolute.left-0.top-3.mx-2.px-2.transition.duration.input-text Firstname
+                    label.flex.relative
+                        input(type="text", name="").w-full.text-sm.bg-white.rounded-lg.border-gray.border-opacity-50.py-3.px-3.outline-none.border-2.transition.duration-200(class="focus:border-blue-500 focus:text-primary")
+                        span.absolute.left-0.top-3.mx-2.px-2.transition.duration.input-text Lastname
+                    label.flex.relative
+                        input(type="text", name="").w-full.text-sm.bg-white.rounded-lg.border-gray.border-opacity-50.py-3.px-3.outline-none.border-2.transition.duration-200(class="focus:border-blue-500 focus:text-primary")
+                        span.absolute.left-0.top-3.mx-2.px-2.transition.duration.input-text Lastname
+                label.flex.relative
+                    textarea(, name="").h-52.w-full.text-sm.bg-white.rounded-lg.border-gray.border-opacity-50.py-3.px-3.outline-none.border-2.transition.duration-200(class="focus:border-blue-500 focus:text-primary")
+                    span.absolute.left-0.top-3.mx-2.px-2.transition.duration.input-text Lastname
+        .information.col-span-1
+            .information-content.pr-12 
+                .flex.flex-col.gap-4.pb-4
+                    h3.text-h3.font-bold.text-third Our Store
+                    span.text-p.text-medium.leading-5.text-gray Cong vien phan mem quang trung, 12 district,Thanh Pho Ho Chi Minh
+                    span.text-p.text-medium.leading-5.text-gray.pt-4 Phone: +84 123 123 123
+                    span.text-p.text-medium.leading-5.text-gray Email: E-project@gmail.com
+                .flex.flex-col.gap-4.pb-4   
+                    h3.text-h3.font-bold.text-third Careers
+                    span.text-p.text-medium.leading-5.text-gray Instead of buying six things, one that you really like.
+                .flex.flex-col.gap-4 
+                    h3.text-h3.font-bold.text-third Opening Hours:
+                    span.text-p.text-medium.leading-5.text-gray Monday to Saturday: 9am - 10pm
+                    span.text-p.text-medium.leading-5.text-gray Sundays: 10am - 6pm
+    section.container.pb-14 
+        iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.44366148992!2d106.62525347514674!3d10.853821089299716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bee0b0ef9e5%3A0x5b4da59e47aa97a8!2zQ8O0bmcgVmnDqm4gUGjhuqduIE3hu4FtIFF1YW5nIFRydW5n!5e0!3m2!1svi!2s!4v1700476472274!5m2!1svi!2s' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade').w-full.h-96

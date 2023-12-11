@@ -1,0 +1,51 @@
+extends ./assets/pug/layout
+block main
+    section.container.pb-40 
+        .profile.flex.flex-col.gap-1
+            .profile-img.rounded-full.w-24
+                img(src="./images/profile.jpg", alt="alt").rounded-full 
+            p.profile-title.text-third.font-bold Hello A3KHIA 
+            span.text-gray.font-bold eTrade Member Since Sep 2020
+        .grid.grid-flow-row-dense.grid-cols-8.gap-10.pt-5
+            .navbar.col-span-2.bg-primary.rounded-xl
+                navbar
+                ul.p-5.flex.flex-col.gap-3
+                    +list("grid","Dashboad")
+                    +list("cart","Order")
+                    li.list-none.flex.items-center.gap-5.py-3.px-6.bg-white.rounded-lg
+                        ion-icon(name="home").text-primary.text-lg
+                        a(href="").text-primary.text-xs.fw-500 Addresses
+                    +list("person","Account Details")
+                    +list("log-out","Logout")
+            .sesion-address.col-span-6
+                small.text-third The following addresses will be used on the checkout page by default.
+                .address-option.grid.grid-cols-2.gap-4.pt-4
+                    .address-list 
+                        .address-title.border-b-2.border-zinc-200.flex.items-center.justify-between.pb-4
+                            h3.text-h3.font-medium Shipping Address
+                            a(href="") 
+                                ion-icon(name="create-outline").text-h3
+                        .address-content.text-p.font-normal.pt-4 
+                            p Name :
+                                span.text-p Hasan AH
+                            p Email: 
+                                span.text-p admin@email.com
+                            p Phone:
+                                span.text-p 1234 567890
+                            p.pt-4 Address 
+                                span.text-p 7398 Smoke Ranch Road Las Vegas, Nevada 89128
+                    .address-list 
+                        .address-title.border-b-2.border-zinc-200.flex.items-center.justify-between.pb-4
+                            h3.text-h3.font-medium Billing Address
+                            a(href="") 
+                                ion-icon(name="create-outline").text-h3
+                        .address-content.text-p.font-normal.pt-4 
+                            p Name :
+                                span.text-p Hasan AH
+                            p Email: 
+                                span.text-p admin@email.com
+                            p Phone:
+                                span.text-p 1234 567890
+                            p.pt-4 Address 
+                                span.text-p 7398 Smoke Ranch Road Las Vegas, Nevada 89128
+        

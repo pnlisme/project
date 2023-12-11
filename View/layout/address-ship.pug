@@ -1,0 +1,38 @@
+extends ./assets/pug/layout
+block main
+   section.container.pb-40 
+      .profile.flex.flex-col.gap-1
+         .profile-img.rounded-full.w-24
+            img(src="./images/profile.jpg", alt="alt").rounded-full 
+         p.profile-title.text-third.font-bold Hello A3KHIA 
+         span.text-gray.font-bold eTrade Member Since Sep 2020
+      .grid.grid-flow-row-dense.grid-cols-8.gap-10.pt-5
+         .navbar.col-span-2.bg-primary.rounded-xl
+            navbar
+               ul.p-5.flex.flex-col.gap-3
+                  +list("grid","Dashboad")
+                  +list("cart","Order")
+                  +list("home","Addresses")
+                  li.list-none.flex.items-center.gap-5.py-3.px-6.bg-white.rounded-lg
+                     ion-icon(name="person").text-primary.text-lg
+                     a(href="").text-primary.text-xs.fw-500 Account Details
+                  +list("log-out","Logout")
+         form(action="" method="method").col-span-6.flex.flex-col.gap-8
+            p.text-third.font-bold.text-h3 Shipping Address
+            div.grid.grid-cols-2.gap-8
+               label.flex.relative
+                  input(type="text", name="").w-full.text-sm.bg-white.rounded-lg.border-gray.border-opacity-50.py-3.px-3.outline-none.border-2.transition.duration-200(class="focus:border-blue-500 focus:text-primary")
+                  span.absolute.left-0.top-3.mx-2.px-2.transition.duration.input-text Firstname
+               label.flex.relative
+                  input(type="text", name="").w-full.text-sm.bg-white.rounded-lg.border-gray.border-opacity-50.py-3.px-3.outline-none.border-2.transition.duration-200(class="focus:border-blue-500 focus:text-primary")
+                  span.absolute.left-0.top-3.mx-2.px-2.transition.duration.input-text Lastname
+               label.flex.relative
+                  input(type="text", name="").w-full.text-sm.bg-white.rounded-lg.border-gray.border-opacity-50.py-3.px-3.outline-none.border-2.transition.duration-200(class="focus:border-blue-500 focus:text-primary")
+                  span.absolute.left-0.top-3.mx-2.px-2.transition.duration.input-text Email
+               label.flex.relative
+                  input(type="text", name="").w-full.text-sm.bg-white.rounded-lg.border-gray.border-opacity-50.py-3.px-3.outline-none.border-2.transition.duration-200(class="focus:border-blue-500 focus:text-primary")
+                  span.absolute.left-0.top-3.mx-2.px-2.transition.duration.input-text Phone
+            label.flex.relative
+                input(type="text", name="").w-full.text-sm.bg-white.rounded-lg.border-gray.border-opacity-50.py-3.px-3.outline-none.border-2.transition.duration-200(class="focus:border-blue-500 focus:text-primary")
+                span.absolute.left-0.top-3.mx-2.px-2.transition.duration.input-text Addresses
+            +buttons("Update")   

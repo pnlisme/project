@@ -1,0 +1,102 @@
+@use "../abstracts" as *;
+
+.container {
+  padding: 40px 0;
+}
+.table {
+  &-container {
+    overflow-x: auto;
+    // max-height: 600px;
+  }
+  width: 100%;
+  min-width: max-content;
+  border-collapse: collapse;
+  border: 1px solid $color;
+  // border-radius: 12px;
+  &-head {
+    font-size: 18px;
+    font-weight: 700;
+    background-color: $bgr-c;
+    border: 1px solid $color;
+    tr {
+      grid-template-rows: 48px;
+    }
+  }
+  tr {
+    display: grid;
+    align-items: center;
+    transition: all 0.2s linear;
+  }
+  tr:not(:last-child) {
+    border-bottom: 1px solid $color;
+  }
+  tr:hover {
+    background-color: $bgr-c;
+  }
+  td {
+    padding: 8px 16px;
+  }
+  &-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    & .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      & ion-icon {
+        scale: 2;
+      }
+      // &:first-child,
+      // &:last-child {
+      //   font-size: 24px;
+      // }
+    }
+  }
+}
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  select,
+  input {
+    padding: 8px 16px;
+    border: 1px solid $color;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s linear;
+    &:focus {
+      border-color: $color-tertiary;
+    }
+  }
+  select {
+    min-width: 120px;
+    color: $color-secondary;
+    background-color: $color;
+  }
+  &-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    input {
+      min-width: 320px;
+    }
+  }
+  button {
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: $color;
+    color: $color-secondary;
+    transition: all 0.2s linear;
+    margin: 0;
+  }
+}
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred,
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-focused {
+  min-height: 240px;
+}
