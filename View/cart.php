@@ -39,9 +39,9 @@ foreach ($_SESSION['cart'] as $key) {
                    </div>
                    <div class="">
                    
-                       <span class=" lg:my-0 text-sm lg:text-lg text-primary font-bold">' . $lastprice . '</span>
+                       <span class=" lg:my-0 text-sm lg:text-lg text-primary font-bold">' . number_format($lastprice,3) . '</span>
                        <span class="font-bold test-sm lg:text-lg">VND</span>
-                       <del class=" block text-sm lg:text-md text-customGray">' . $price . " " . $VND . '</del>
+                       <del class=" block text-sm lg:text-md text-customGray">' . number_format($price,3) . " " . $VND . '</del>
                    </div>
                </div>
                <div class="ml-auto flex flex-col justify-between">
@@ -61,7 +61,7 @@ foreach ($_SESSION['cart'] as $key) {
                         <i class="plus-quantity fa-solid fa-plus" aria-hidden="true"></i>
                     </button>
                </div>
-                <p class="totalPriceEach text-sm lg:text-md font-bold mt-2" >'.$totalPrice.' VND</p>
+                <p class="totalPriceEach text-sm lg:text-md font-bold mt-2" >'.number_format(($lastprice * $quantity),3).' VND</p>
             </div>
 
                </div>

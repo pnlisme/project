@@ -182,8 +182,8 @@ function show_product($dssp)
     <p class="text-center font-bold mt-2 text-sm lg:text-lg">' . $name . '</p>
     <p class="my-2 text-center text-sm">' . $brand_name . '</p>
     <div class="flex flex-col lg:flex-row justify-center gap-1 lg:gap-4  items-center">
-    <p class="text-sm lg:text-lg font-bold">' . $price_sale . 'VNĐ</p>
-    <del class="font-del text-sm lg:text-lg ">' . $price . 'VNĐ</del>
+    <p class="text-sm lg:text-lg font-bold">' . number_format($price,3) . 'VNĐ</p>
+    <del class="font-del text-sm lg:text-lg ">' . number_format($price,3) . 'VNĐ</del>
     </div>
 </div>';
     }
@@ -250,7 +250,7 @@ function show_product_new_secondary($pr_new)
         <img class="w-80 object-cover" src="' . $img . '" alt="" />
             <div>
             <p class="text-center font-bold mt-4">' . $name . '</p>
-            <p class="text-center font-bold mb-6">' . $price_sale . '</p>
+            <p class="text-center font-bold mb-6">' . number_format($price_sale,3) . '</p>
             </div>
 
     </div>';
@@ -285,8 +285,8 @@ function show_product_view_secondary($dssp)
         <input type="hidden" name="img" value="' . $img . '">
         <input type="hidden" name="name" value="' . $name . '">
         <input type="hidden" name="brand" value="' . $brand_name . '">
-        <input type="hidden" name="price" value="' . $price_sale . '">
-        <input type="hidden" name="price_sale" value="' . $price . '"> 
+        <input type="hidden" name="price" value="' . number_format($price_sale,3) . '">
+        <input type="hidden" name="price_sale" value="' . number_format($price,3) . '"> 
         <a  href="' . $link . '" >
         <img class="group-hover:scale-125  group-hover:blur-sm  transition duration-500" 
 src="' . $img . '" alt="">
@@ -317,8 +317,8 @@ src="' . $img . '" alt="">
         <p class="text-center font-bold mt-4">' . $name . '</p>
         <p class="text-center text-sm">' . $brand_name . '</p>
         <div class="flex justify-center gap-4">
-        <p>' . $price_sale . 'VNĐ</p>
-        <del class="font-del">' . $price . 'VNĐ</del>
+        <p>' . number_format($price_sale,3) . 'VNĐ</p>
+        <del class="font-del">' . number_format($price,3) . 'VNĐ</del>
         </div>
     </div>
 </div>';
@@ -468,9 +468,8 @@ function show_product_search($dssp)
                                                         </a>
                                                     </div>
                                                     <span class="mt-4 w-fit mx-auto" >' . $name. '</span>
-                                                    <div class="w-fit mx-auto mt-1">
-                                                        <p  class="w-fit font-bold mb-1">' . $price_sale . 'VND</p>
-                                                        <p class="line-through	 w-fit"> ' . $price. 'VND</p>
+                                                    <div class="w-fit mx-auto mt-2">
+                                                        <p  class="w-fit font-bold mb-1">' . number_format($price,3). 'VND</p>
                                                     </div>
                                                 </div>';
     }

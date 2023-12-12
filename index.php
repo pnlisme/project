@@ -50,7 +50,7 @@ else {
             //search
                 $kyw="";
                 $titlepage="";
-            if (isset($_POST["timkiem"])&&($_POST["timkiem"])) {
+            if (isset($_POST["timkiem"])) {
                 $kyw=$_POST["kyw"];
                 $titlepage="Kết quả tìm kiếm với từ khóa: ".$kyw;
             }

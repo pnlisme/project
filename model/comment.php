@@ -24,7 +24,18 @@ function binh_luan_delete($ma_bl){
 }
 
 function binh_luan_select_all(){
-    $sql = "SELECT * FROM comment ORDER BY date DESC";
+    $sql = "SELECT
+    product.img,
+    product.name,
+    comment.content,
+    comment.date,
+    user.username
+FROM
+    product
+JOIN comment ON product.id = comment.id_product
+JOIN user ON comment.id_user = user.id;
+limit 8
+";
     return pdo_query($sql);
 }
 

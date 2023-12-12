@@ -1,6 +1,4 @@
 <?php
-echo var_dump($_SESSION['promodeCode']);
-
 $html_cart = "";
 $lastprice = 0;
 $totalPrice = 0;
@@ -30,9 +28,9 @@ foreach ($_SESSION['cart'] as $key) {
         <p class="text-white text-sm my-1" >Số lượng: ' . $quantity . '</p>
         <div class="flex gap-4">
         
-            <span class="text-sm font-bold text-white ">' . $lastprice . ' VND</span>
-            <del class="font-bold text-white text-sm">' . $price . " " . $VND . '</del>
-            <p class="text-white ml-auto text-sm ">Tổng: '.$quantity * $lastprice.' VND</p>
+            <span class="text-sm font-bold text-white ">' . number_format($lastprice,3) . ' VND</span>
+            <del class="font-bold text-white text-sm">' . number_format($price,3) . " " . $VND . '</del>
+            <p class="text-white ml-auto text-sm ">Tổng: '.number_format(($quantity * $lastprice),3).' VND</p>
 
         </div>
 
@@ -243,7 +241,7 @@ foreach ($_SESSION['cart'] as $key) {
                 <div class="mt-6 border-b py-2">
                     <div class="flex items-center justify-between">
                         <p class="text-sm font-medium text-gray-900">Tiền giảm</p>
-                        <p class="salePrice font-semibold text-gray-900"><?=round($totalPrice * ($discountPercentage / 100))?> VND</p>
+                        <p class="salePrice font-semibold text-gray-900"><?=number_format(round($totalPrice * ($discountPercentage / 100)),3)?> VND</p>
                         
                     </div>
                 </div>
@@ -251,7 +249,7 @@ foreach ($_SESSION['cart'] as $key) {
                     <p class="text-sm font-medium text-gray-900">Tổng</p>
                     <div class="flex gap-1 items-center text-2xl font-semibold">
                         <p class="priceDiscount"><?=
-                     round($totalPrice = $totalPrice - ($totalPrice * ($discountPercentage / 100)));
+                     number_format(round($totalPrice = $totalPrice - ($totalPrice * ($discountPercentage / 100))),3);
                         
                         ?></p>
                         <p class="text-2xl font-semibold text-gray-900">VND</p>
