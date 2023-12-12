@@ -733,6 +733,8 @@ function gsapButton() {
 });
 };
 
+// == 10. MORDAL SEACH ==
+
 
 // == 10. PASSWORD TOGGLE ==
 // const passwordInput = document.getElementById("passwordInput");
@@ -767,6 +769,22 @@ function validateFormSignIn(event) {
   if (username.trim() === '') {
       usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
   }
+
+$('.search-open').click(function() {
+  $(".modal-search").toggleClass('hidden');
+  $('.search-box').toggleClass('hidden');
+  lenis.stop();
+})
+
+$(".close-search").click(function() {
+  $(".modal-search").toggleClass('hidden');
+  $('.search-box').toggleClass('hidden');
+  lenis.start();
+})
+
+// == 11. PASSWORD TOGGLE ==
+const passwordInput = document.getElementById("passwordInput");
+const togglePassword = document.getElementById("togglePassword");
 
   if (password.trim() === '') {
       passwordError.textContent = 'Vui lòng nhập mật khẩu.';
