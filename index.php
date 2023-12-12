@@ -9,6 +9,8 @@ include "model/pdo.php";
 include "model/product.php";
 include "model/news.php";
 include "model/user.php";
+include "model/comment.php";
+
 $product_hot = get_product_hot(4);
 $product_new = get_product_new(4);
 $product_view = get_product_view(4);
@@ -85,9 +87,19 @@ else {
                 $product_relate =get_product_relate($iddm,$id,4);
                 include "View/detail.php";
             } else {
-                include "View/home.php";
+                include "View/detail.php";
             }
             break;
+            case 'comment':
+                
+                if (isset($_POST['comment'])) {
+                    $idpro = $_POST['idpro'];
+                    $commentContent = $_POST['contentComment'];
+                    binh_luan_insert($idpro,$_SESSION['s_user']['id'],$commentContent);
+                    header('Location: index.php?pg=detail&idpro=' . $idpro);
+                    exit();
+                }
+                break;
         case 'about':
           
             include "View/about.php";
@@ -107,22 +119,23 @@ else {
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            // Kiểm tra tài khoản
-            $checkuser = checkuser($username, $password);
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Kiểm tra tài khoản
+                $checkuser = checkuser($username, $password);
 
-            if (is_array($checkuser) && count($checkuser) > 0) {
-                // Đăng nhập thành công, thiết lập session và chuyển hướng
-                $_SESSION['s_user'] = $checkuser;
-                header('location:index.php?pg');
-            } else {
-                // Tài khoản không tồn tại, thiết lập thông báo lỗi và chuyển hướng
-                $tb = "Tài khoản không tồn tại";
-                $_SESSION['tb_dangnhap'] = $tb;
-                header('location: index.php?pg=signin');
+                if (is_array($checkuser) && count($checkuser) > 0) {
+                    // Đăng nhập thành công, thiết lập session và chuyển hướng
+                    $_SESSION['s_user'] = $checkuser;
+                    header('location:index.php?pg');
+                    exit();
+                } else {
+                    // Tài khoản không tồn tại, thiết lập thông báo lỗi và chuyển hướng
+                    $tb = "Tài khoản không tồn tại";
+                    $_SESSION['tb_dangnhap'] = $tb;
+                    header('location: index.php?pg=signin');
+                }
             }
-
-
-        break;
+            break;
         case 'signin':
 
             // output
@@ -187,14 +200,11 @@ else {
             if (isset($_POST['dangky'])&&($_POST['dangky'])) {
                 $username = $_POST['username'];
                 $email = $_POST['email'];
-                $password = $_POST['ForgotPassword'];
+                $password = $_POST['password'];
                 //xử lí
-                user_insert($username, $password, $email);
-                
+                user_insert($username, $email, $password);
             }
-            
             include "View/Asignin.php";
-            
             break;
         case 'signup':
             include_once "View/Asignup.php";
@@ -223,10 +233,10 @@ else {
             $role=0;
             acount_update($fullname,$phone,$address,$password,$role,$id);
             include "View/account_confirm.php";
-        }
+            }
         break;
-            default:
-        include "View/home.php";
+        default:
+            include "View/home.php";
             break;
     }
 }

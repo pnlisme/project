@@ -1,16 +1,59 @@
 <?php
-extract($product_detail);
+
+
+// extract($product_detail);
+$customerComment = '';
+$idPro = $_GET['idpro'];
+$allComment = binh_luan_select_by_id($idPro);
+
+foreach ($allComment as $key) {
+    $customerComment .= '
+        <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+            <div class="w-8 h-8 rounded-full bg-blue-500"></div>
+            <div class="">
+                <div class="flex items-center gap-4">
+                    <p class="font-bold">' . $key['user_name'] . '</p>
+                    <p class="text-sm color-777">' . $key['date'] . '</p>
+                </div>
+                <p>' . $key['content'] . '</p>
+            </div>
+        </div>
+    ';
+}
+
+$html_comment = '';
+
+if ((count($_SESSION['s_user']) > 0)) {
+    $html_comment = '
+                   <form action="index.php?pg=comment" method="POST">
+                    <div class="px-3 mb-2 mt-2">
+                        <input type="hidden" name="idpro" value="'.$id.'">
+                        <textarea name="contentComment" placeholder="comment" class="w-full bg-gray-100 rounded border border-gray-400 leading-normal resize-none h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"></textarea>
+                    </div>
+                    <div class="flex justify-end px-4">
+                        <button type="submit" name="comment" class="cursor-pointer transition duration-300 delay-75 hover:scale-110 comment-send px-2.5 py-1.5 rounded-md text-white text-sm bg-primary px-2 py-2 font-bold">Gửi bình luận</button>
+                    </div>
+                </form>
+    ';
+} else {
+    $html_comment = "<p>Bạn phải đăng nhập mới có thể bình luận</p>";
+}
+
 if ($img != "") $img = PATH_IMG . $img;
 if ($img_1 != "") $img_1 = PATH_IMG . $img_1;
 if ($img_2 != "") $img_2 = PATH_IMG . $img_2;
 if ($img_3 != "") $img_3 = PATH_IMG . $img_3;
-if ($img_4 != "") $img_4= PATH_IMG . $img_4;
+if ($img_4 != "") $img_4 = PATH_IMG . $img_4;
 $display_price = (
     isset($product_detail['price_sale']) &&
     $product_detail['price_sale'] !== null &&
     (float)$product_detail['price_sale'] !== 0.00
 ) ? $product_detail['price_sale'] : $product_detail['price'];
 $html_product_relate = show_product($product_relate);
+
+
+
+
 ?>
 
 <section>
@@ -18,31 +61,31 @@ $html_product_relate = show_product($product_relate);
         <div class="container flex items-center gap-2">
             <!-- INFOR -->
             <div class="w-1/4">
-                <h1><?=$brand_name?></h1>
-                <h1 class="text-h1 my-8 font-bold"><?=$name?></h1>
+                <h1><?= $brand_name ?></h1>
+                <h1 class="text-h1 my-8 font-bold"><?= $name ?></h1>
                 <p class="">
-                    <?=$des?>
+                    <?= $des ?>
                 </p>
             </div>
             <!-- IMG -->
             <div class="relative w-1/2 flex justify-center items-center flex-col b">
                 <div class="rounded-lg">
-                    <img src="<?=$img?>" alt="">
+                    <img src="<?= $img ?>" alt="">
                 </div>
                 <div class="flex gap-4 w-3/5 mt-8 absolute -bottom-32">
                     <div>
-                        <img src="<?=$img_1?>" alt="">
+                        <img src="<?= $img_1 ?>" alt="">
                     </div>
 
                     <div>
-                        <img src="<?=$img_2?>" alt="">
+                        <img src="<?= $img_2 ?>" alt="">
                     </div>
 
                     <div>
-                        <img src="<?=$img_3?>" alt="">
+                        <img src="<?= $img_3 ?>" alt="">
                     </div>
                     <div>
-                        <img src="<?=$img_4?>" alt="">
+                        <img src="<?= $img_4 ?>" alt="">
                     </div>
                 </div>
 
@@ -65,11 +108,11 @@ $html_product_relate = show_product($product_relate);
                 <!-- VIEW -->
                 <div class="mt-2">
                     <ion-icon name="eye-outline" class="mr-1"></ion-icon>
-                    <span class="text-customGray"><?=$view?> View</span>
+                    <span class="text-customGray"><?= $view ?> View</span>
                 </div>
                 <div class="flex flex-col">
 
-                    <h1 class="font-bold mt-2 mb-4 text-h2"><?=number_format($display_price)?> VNĐ</h1>
+                    <h1 class="font-bold mt-2 mb-4 text-h2"><?= number_format($display_price) ?> VNĐ</h1>
                 </div>
                 <!-- BUTTON -->
                 <div class="flex gap-1">
@@ -87,6 +130,131 @@ $html_product_relate = show_product($product_relate);
         </div>
     </div>
 </section>
+<section>
+    <div>
+        <div class="container">
+            <h1 class="text-h3 font-bold mb-4">Đánh giá sản phẩm</h1>
+            <!-- HEAD COMMENT -->
+            <div class="flex justify-between items-center py-6 px-6 rounded-md" style="background-color: #f7f7f7;">
+                <button class="review-button bg-primary text-white text-sm font-semibold px-8 py-2 rounded-md transform hover:scale-110 transition duration-300">Đánh giá ngay</button>
+            </div>
+
+            <!-- WRITE A REVIEW -->
+            <div class="write-review-section">
+                <h2 class="text-lg font-bold my-4">Viết đánh giá</h2>
+
+                <?=$html_comment?>
+            </div>
+
+            <!-- BODY COMMENT -->
+            <div>
+                <?=$customerComment?>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- BOX COMMENT -->
+<section>
+        <div>
+            <div class="container">
+                <h1 class="text-h3 font-bold mb-4">Đánh giá sản phẩm</h1>
+
+                <!-- HEAD COMMENT -->
+                <div class="flex justify-between items-center py-6 px-6 rounded-md" style="background-color: #f7f7f7;">
+                    <div class="flex justify-between items-center gap-4">
+                        <div class="star-container flex gap-1">
+                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                        </div>
+                        <p>Based on 2 reviews</p>
+                    </div>
+
+                    <button class="review-button bg-primary text-white text-sm font-semibold px-8 py-2 rounded-md transform hover:scale-110 transition duration-300">Đánh giá ngay</button>
+                </div>
+
+                <div class="cmt">
+                    <iframe src="comment.php?idsp=<?=$_GET['id']?>" width="100%" height="400px" frameborder="0"></iframe>
+                </div>
+
+                <!-- WRITE A REVIEW -->
+                <div class="write-review-section">
+                    <h2 class="text-lg font-bold my-4">Viết đánh giá</h2>
+
+                    <iframe src="comment.php?" frameborder="0"></iframe>
+
+                    
+                
+                    <form action="" method="POST">
+                        <div>
+                            <label for="">Rating</label>
+                            <div class="star-container flex gap-1 mb-4 mt-2">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <label for="">Đánh giá</label> <br>
+                            <textarea class="w-full border mt-2 px-4 py-4" name="" id="" cols="30" rows="10" placeholder="Nội dung đánh giá"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- BODY COMMENT -->
+                <div>
+                    <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                        <div class="w-8 h-8 rounded-full bg-blue-500"></div>
+
+                        <div class="">
+                            <div class="flex items-center gap-4">
+                                <p class="font-bold">Anh Tèo Non</p>
+                                <p class="text-sm color-777">9/12/2023</p>
+                            </div>
+
+                            <div class="star-container flex gap-1 mb-4 mt-1">
+                                <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            </div>
+
+                            <p>Hàng dỏm đừng có mua!</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                        <div class="w-8 h-8 rounded-full bg-blue-500"></div>
+
+                        <div class="">
+                            <div class="flex items-center gap-4">
+                                <p class="font-bold">Chị thuồn luồn</p>
+                                <p class="text-sm color-777">9/12/2023</p>
+                            </div>
+
+                            <div class="star-container flex gap-1 mb-4 mt-1">
+                                <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            </div>
+
+                            <p>Sản phẩm cùi bắp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <section class="mt-32">
     <div>
@@ -101,8 +269,25 @@ $html_product_relate = show_product($product_relate);
 
             <div class="p-4 lg:p-0 grid grid-cols-2  xl:grid-cols-4 gap-4 ">
                 <!-- SINGLE PRODUCT -->
-                <?=$html_product_relate?>
+                <?= $html_product_relate ?>
             </div>
 
         </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Lấy phần tử chứa phần WRITE A REVIEW
+        const reviewSection = document.querySelector('.write-review-section');
+
+        // Lấy nút Đánh giá ngay
+        const reviewButton = document.querySelector('.review-button');
+
+        // Thêm sự kiện click cho nút
+        reviewButton.addEventListener('click', function() {
+            // Toggle lớp 'hidden' cho phần tử chứa phần WRITE A REVIEW
+            reviewSection.classList.toggle('hidden');
+        });
+    });
+</script>
+

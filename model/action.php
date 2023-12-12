@@ -199,5 +199,10 @@ if (isset($_POST['order'])) {
     }
 }
 
+if (isset($_GET['idpro'])) {
+    $idpro = $_GET['idpro'];
+    echo json_encode(['idpro' => $idpro]);
+}
+
 
 
