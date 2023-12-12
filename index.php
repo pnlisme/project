@@ -126,29 +126,49 @@ else {
         case 'forgotpass':
             include "View/forgot-password.php";
         break;
+        case 'process-reset-password':
+            $token = $_POST['token'];
+            $reset_token = hash("sha256", $token);
+
+            $user_token = get_reset_token($reset_token);
+
+            if (!is_array($user_token) || empty($user_token)) {
+                die("Token not found");
+            }
+            
+            if (strtotime($user_token["reset_token_ex"]) <= time()) {
+                die("Token has expired");
+            }
+            $password = $_POST['password-confirm'];
+            process_reset_password($reset_token, $user_token["reset_token_ex"], $password, $user_token["id"]);
+            $_SESSION['reset_password_success'] = "Mật khẩu đã được cập nhật thành công. Mời bạn đăng nhập.";
+            include 'View/Asignin.php';
+        break;
+        case 'reset-password':
+            include "View/reset-password.php";
+            break;
         case 'send-password-reset':
             if (isset($_POST['resetpass']) && ($_POST['resetpass'])) {
                 $email = $_POST['email'];
                 $token = bin2hex(random_bytes(16));
                 $reset_token = hash("sha256", $token);
                 $reset_token_ex = date("Y-m-d H:i:s", time() + 60 * 30);
-        
                 // Perform the database update
                 $updateResult = reset_pass($reset_token, $reset_token_ex, $email);
                 if ($updateResult) {
                     $mail = require __DIR__ . "/model/mailer.php";
         
-                    $mail->setFrom("noreply@example.com");
+                    $mail->setFrom("ht01252004@gmail.com","mailer");
                     $mail->addAddress($email);
                     $mail->Subject = "Password Reset";
                     $mail->Body = <<<END
-                        Click <a href="http://example.com/reset-password.php?token=$token">here</a> 
+                        Click <a href="http://localhost/project/index.php?pg=reset-password&token=$token">here</a> 
                         to reset your password.
                     END;
         
                     try {
                         $mail->send();
-                        echo "Thư đã được gửi, vui lòng kiểm tra hộp thư đến của bạn.";
+                        echo '<h3 class="container">Thư đã được gửi, vui lòng kiểm tra hộp thư đến của bạn.</h3>';
                     } catch (Exception $e) {
                         echo "Không thể gửi thư. Lỗi Mailer: {$mail->ErrorInfo}";
                     }
