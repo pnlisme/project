@@ -1,6 +1,7 @@
 <?php
 
 // extract($product_detail);
+echo var_dump($product_detail);
 $customerComment = '';
 $idPro = $_GET['idpro'];
 $allComment = binh_luan_select_by_id($idPro);

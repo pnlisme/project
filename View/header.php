@@ -1,6 +1,7 @@
 <?php
 $html_product_search= show_product_search($product_search_hot);
 
+
 if ((count($_SESSION['s_user']) > 0)) {
     extract($_SESSION['s_user']);
     $html_account = ' <ul class="space-y-3">
@@ -266,9 +267,9 @@ if ((count($_SESSION['s_user']) > 0)) {
                                             <h1 class="text-left text-h1 font-bold">Sản phẩm nổi bật:</h1>
                                             <div class="grid grid-cols-6 mt-4 gap-4">
                                                 <!-- SINGLE PRODUCT HERE -->
-                                        <?$html_product_search?>
-
-
+                                                    <?=
+                                                    $html_product_search;
+                                                    ?>
                                             </div>
                                         </div>
                                     </div>
