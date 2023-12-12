@@ -12,6 +12,7 @@ include "model/user.php";
 $product_hot = get_product_hot(4);
 $product_new = get_product_new(4);
 $product_view = get_product_view(4);
+$product_search_hot = get_product_hot(6);
 
 
 $hideHeader = true; 
@@ -162,7 +163,7 @@ else {
                     $mail->addAddress($email);
                     $mail->Subject = "Password Reset";
                     $mail->Body = <<<END
-                        Click <a href="http://localhost/project/index.php?pg=reset-password&token=$token">here</a> 
+                        Click <a href="http://localhost/ehehe/index.php?pg=reset-password&token=$token">here</a> 
                         to reset your password.
                     END;
         
