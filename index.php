@@ -91,9 +91,10 @@ else {
             }
             break;
             case 'comment':
+                
                 if (isset($_POST['comment'])) {
-                    $commentContent = $_POST['contentComment'];
                     $idpro = $_POST['idpro'];
+                    $commentContent = $_POST['contentComment'];
                     binh_luan_insert($idpro,$_SESSION['s_user']['id'],$commentContent);
                     header('Location: index.php?pg=detail&idpro=' . $idpro);
                     exit();

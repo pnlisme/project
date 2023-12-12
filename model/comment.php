@@ -24,13 +24,16 @@ function binh_luan_delete($ma_bl){
 }
 
 function binh_luan_select_all(){
-    $sql = "SELECT * FROM binh_luan bl ORDER BY ngay_bl DESC";
+    $sql = "SELECT * FROM comment ORDER BY date DESC";
     return pdo_query($sql);
 }
 
-function binh_luan_select_by_id($ma_bl){
-    $sql = "SELECT * FROM binh_luan WHERE ma_bl=?";
-    return pdo_query_one($sql, $ma_bl);
+function binh_luan_select_by_id($idPro){
+    
+    $sql = "SELECT comment.*, user.username AS user_name
+    FROM comment
+    JOIN user ON comment.id_user = user.id WHERE id_product=?";
+    return pdo_query($sql, $idPro);
 }
 
 function binh_luan_exist($ma_bl){
