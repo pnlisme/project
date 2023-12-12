@@ -228,20 +228,20 @@ if ((count($_SESSION['s_user']) > 0)) {
                 <!-- <div class="absolute nav-modal top-0 right-0 left-0 bottom-0 w-screen bg-white z-10 opacity-75 "></div> -->
                 <div class="nav-mobile top-0 absolute h-screen w-screen z-20 hidden">
                     <div class="flex flex-col gap-8 text-primary font-bold h-screen mx-auto text-5xl justify-center items-center">
-                        <p class="text-lg">Menu</p>
-                        <a href="index.php">Trang chủ</a>
-                        <a href="index.php?pg=product">Sản phẩm</a>
-                        <a href="index.php?pg=contact">Liên hệ</a>
-                        <a href="index.php?pg=about">Giới thiệu</a>
-                        <a href="index.php?pg=blog">Tin tức</a>
+                        <p class="text-white text-lg">Menu</p>
+                        <a class="" href="index.php">Trang chủ</a>
+                        <a class="" href="index.php?pg=product">Sản phẩm</a>
+                        <a class="" href="index.php?pg=contact">Liên hệ</a>
+                        <a class="" href="index.php?pg=about">Giới thiệu</a>
+                        <a class="" href="index.php?pg=blog">Tin tức</a>
                     </div>
                 </div>
             </div>
 
             <!-- MODAL SEARCH -->
             <div>
-                                <div class="hidden modal-search fixed top-0 left-0 h-screen w-full bg-primary z-40 opacity-25"></div>
-                                <div class="hidden search-box fixed top-0 left-0 right-0 h-3/4 bg-white z-40 text-center">
+                                <div class="hidden modal-search fixed top-0 left-0 h-screen w-full bg-primary z-50 opacity-25"></div>
+                                <div class="hidden search-box fixed top-0 left-0 right-0  h-screen lg:h-3/4 bg-white z-50 text-center">
                                     <div class="w-3/4 mx-auto">
                                         <div>
                                             <div class="relative mt-12 ">

@@ -734,21 +734,18 @@ function gsapButton() {
 };
 
 // == 10. MORDAL SEACH ==
+$('.search-open').click(function() {
+  $(".modal-search").toggleClass('hidden');
+  $('.search-box').toggleClass('hidden');
+  lenis.stop();
+})
 
+$(".close-search").click(function() {
+  $(".modal-search").toggleClass('hidden');
+  $('.search-box').toggleClass('hidden');
+  lenis.start();
+})
 
-// == 10. PASSWORD TOGGLE ==
-// const passwordInput = document.getElementById("passwordInput");
-// const togglePassword = document.getElementById("togglePassword");
-
-// togglePassword.addEventListener("click", () => {
-//   if (passwordInput.type === "password") {
-//     passwordInput.type = "text";
-//     togglePassword.setAttribute("name", "eye-off-outline");
-//   } else {
-//     passwordInput.type = "password";
-//     togglePassword.setAttribute("name", "eye-outline");
-//   }
-// });
 
 // == 11. FORM VALIDATION ==
 //  CHECK FORM SIGN IN
@@ -770,19 +767,33 @@ function validateFormSignIn(event) {
       usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
   }
 
-$('.search-open').click(function() {
-  $(".modal-search").toggleClass('hidden');
-  $('.search-box').toggleClass('hidden');
-  lenis.stop();
-})
 
-$(".close-search").click(function() {
-  $(".modal-search").toggleClass('hidden');
-  $('.search-box').toggleClass('hidden');
-  lenis.start();
-})
 
-// == 11. PASSWORD TOGGLE ==
+
+// == 10. PASSWORD TOGGLE ==
+
+// == 11. FORM VALIDATION ==
+
+
+//  CHECK FORM SIGN IN
+function validateFormSignIn(event) {
+  console.log('validateForm called');
+  event.preventDefault(); // Prevent the form from submitting by default
+
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('passwordInput').value;
+  var usernameError = document.getElementById('username-error');
+  var passwordError = document.getElementById('password-error');
+
+  // Reset error messages
+  usernameError.textContent = '';
+  passwordError.textContent = '';
+
+  // Check if fields are empty
+  if (username.trim() === '') {
+      usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
+  }
+  
 const passwordInput = document.getElementById("passwordInput");
 const togglePassword = document.getElementById("togglePassword");
 
@@ -837,5 +848,4 @@ function validateFormSignUp(event) {
   // If validation passed, you can submit the form
   return true;
 }
-
 
