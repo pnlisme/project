@@ -14,6 +14,35 @@ $html_product_view=show_product($product_view);
 //product_view_secondary
 $html_product_view_secondary = show_product_view_secondary($product_view);
 $binhluan = binh_luan_select_all();
+$binhluan_html = '';
+
+foreach ($binhluan as $key) {
+    extract($key);
+    if ($img != "") $img = PATH_IMG . $img;
+    $binhluan_html.= '
+    <div class="swiper-slide">
+    <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
+        <!-- CONTENT -->
+        <div class="px-4 py-4 flex flex-col justify-center">
+            <p class="w-50 my-4 text-customGray text-sm lg:w-80">
+                '.$content.'
+            </p>
+            <div>
+                <h3 class="font-bold text-h2">'.$username.'</h3>
+                <span class="text-small text-customGray">'.$date.'</span>
+            </div>
+        </div>
+        <!-- IMG -->
+
+        <div class="bg-white lg:bg-box lg:w-60 w-full">
+            <img src="'.$img.'" alt="" />
+
+            <p class="text-center font-bold my-4">'.$name.'</p>
+        </div>
+    </div>
+</div>
+    ';
+}
 
 ?>
 
@@ -204,181 +233,7 @@ $binhluan = binh_luan_select_all();
                 <div class="container swiper mySwiper">
                     <div class="swiper-wrapper">
                         <!-- BOX -->
-                        <div class="swiper-slide">
-                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
-                                <!-- CONTENT -->
-                                <div class="px-4 py-4 flex flex-col justify-center">
-                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
-                                        Look at the stars lighting up the sky: no one of them
-                                        stays in the same place.
-                                    </p>
-                                    <div>
-                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
-                                        <span class="text-small text-customGray">19/11/2023</span>
-                                    </div>
-                                </div>
-                                <!-- IMG -->
-
-                                <div class="bg-white lg:bg-box lg:w-60 w-full">
-                                    <img src="view/layout/assets/img/airpod.png" alt="" />
-
-                                    <p class="text-center font-bold my-4">Airpod Max</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- BOX -->
-                        <div class="swiper-slide">
-                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
-                                <!-- CONTENT -->
-                                <div class="px-4 py-4 flex flex-col justify-center">
-                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
-                                        Look at the stars lighting up the sky: no one of them
-                                        stays in the same place.
-                                    </p>
-                                    <div>
-                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
-                                        <span class="text-small text-customGray">19/11/2023</span>
-                                    </div>
-                                </div>
-                                <!-- IMG -->
-                                <div class="bg-white lg:bg-box lg:w-60 w-full">
-                                    <img src="view/layout/assets/img/airpod.png" alt="" />
-                                    <p class="text-center font-bold my-4">Airpod Max</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
-                                <!-- CONTENT -->
-                                <div class="px-4 py-4 flex flex-col justify-center">
-                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
-                                        Look at the stars lighting up the sky: no one of them
-                                        stays in the same place.
-                                    </p>
-                                    <div>
-                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
-                                        <span class="text-small text-customGray">19/11/2023</span>
-                                    </div>
-                                </div>
-                                <!-- IMG -->
-
-                                <div class="bg-white lg:bg-box lg:w-60 w-full">
-                                    <img src="view/layout/assets/img/airpod.png" alt="" />
-
-                                    <p class="text-center font-bold my-4">Airpod Max</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
-                                <!-- CONTENT -->
-                                <div class="px-4 py-4 flex flex-col justify-center">
-                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
-                                        Look at the stars lighting up the sky: no one of them
-                                        stays in the same place.
-                                    </p>
-                                    <div>
-                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
-                                        <span class="text-small text-customGray">19/11/2023</span>
-                                    </div>
-                                </div>
-                                <!-- IMG -->
-
-                                <div class="bg-white lg:bg-box lg:w-60 w-full">
-                                    <img src="view/layout/assets/img/airpod.png" alt="" />
-
-                                    <p class="text-center font-bold my-4">Airpod Max</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
-                                <!-- CONTENT -->
-                                <div class="px-4 py-4 flex flex-col justify-center">
-                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
-                                        Look at the stars lighting up the sky: no one of them
-                                        stays in the same place.
-                                    </p>
-                                    <div>
-                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
-                                        <span class="text-small text-customGray">19/11/2023</span>
-                                    </div>
-                                </div>
-                                <!-- IMG -->
-
-                                <div class="bg-white lg:bg-box lg:w-60 w-full">
-                                    <img src="view/layout/assets/img/airpod.png" alt="" />
-                                    <p class="text-center font-bold my-4">Airpod Max</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
-                                <!-- CONTENT -->
-                                <div class="px-4 py-4 flex flex-col justify-center">
-                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
-                                        Look at the stars lighting up the sky: no one of them
-                                        stays in the same place.
-                                    </p>
-                                    <div>
-                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
-                                        <span class="text-small text-customGray">19/11/2023</span>
-                                    </div>
-                                </div>
-                                <!-- IMG -->
-
-                                <div class="bg-white lg:bg-box lg:w-60 w-full">
-                                    <img src="view/layout/assets/img/airpod.png" alt="" />
-
-                                    <p class="text-center font-bold my-4">Airpod Max</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
-                                <!-- CONTENT -->
-                                <div class="px-4 py-4 flex flex-col justify-center">
-                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
-                                        Look at the stars lighting up the sky: no one of them
-                                        stays in the same place.
-                                    </p>
-                                    <div>
-                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
-                                        <span class="text-small text-customGray">19/11/2023</span>
-                                    </div>
-                                </div>
-                                <!-- IMG -->
-
-                                <div class="bg-white lg:bg-box lg:w-60 w-full">
-                                    <img src="view/layout/assets/img/airpod.png" alt="" />
-
-                                    <p class="text-center font-bold my-4">Airpod Max</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
-                                <!-- CONTENT -->
-                                <div class="px-4 py-4 flex flex-col justify-center">
-                                    <!-- STAR -->
-                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
-                                        Look at the stars lighting up the sky: no one of them
-                                        stays in the same place.
-                                    </p>
-                                    <div>
-                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
-                                        <span class="text-small text-customGray">19/11/2023</span>
-                                    </div>
-                                </div>
-                                <!-- IMG -->
-
-                                <div class="bg-white lg:bg-box lg:w-60 w-full">
-                                    <img src="view/layout/assets/img/airpod.png" alt="" />
-
-                                    <p class="text-center font-bold my-4">Airpod Max</p>
-                                </div>
-                            </div>
-                        </div>
+                            <?=$binhluan_html?>
                     </div>
                 </div>
             </div>

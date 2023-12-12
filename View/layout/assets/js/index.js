@@ -103,6 +103,7 @@ function addToCart(button) {
   });
 }
 
+
 function updateCartContent(cartData) {
   let htmlCode = "";
   let price = "";
@@ -122,12 +123,12 @@ function updateCartContent(cartData) {
 
   for (let index = 0; index < cartData.length; index++) {
     if (cartData[index].saleprice == "") {
-      lastprice = cartData[index].price;
+      lastprice = cartData[index].price *1000;
       price = "";
       VND = "";
     } else {
-      lastprice = cartData[index].saleprice;
-      price = cartData[index].price;
+      lastprice = cartData[index].saleprice *1000;
+      price = cartData[index].price *1000;
       VND = "VND";
     }
     totalPrice += lastprice * cartData[index].quantity;
@@ -146,9 +147,9 @@ function updateCartContent(cartData) {
                           }</div>
                       </div>
                       <div class="flex flex-col">
-                          <div class=" text-lg text-primary font-bold">${lastprice} VND</div>
+                          <div class=" text-lg text-primary font-bold">${lastprice.toLocaleString('en-US')} VND</div>
                           <del class=" text-sm text-customGray">${
-                            price + VND
+                            price.toLocaleString('vi-VN') + VND
                           }</del>
                       </div>
                   </div>
@@ -168,7 +169,7 @@ function updateCartContent(cartData) {
                             <i class="plus-quantity fa-solid fa-plus"></i>
                           </button>
                       </div>
-                      <p>Tổng: ${cartData[index].quantity * lastprice} VND</p>
+                      <p class="text-sm text-center" >Tổng: ${(cartData[index].quantity * Number(lastprice)).toLocaleString('vi-VN')}đ</p>
                   </div>
               </div>
           `;
@@ -184,9 +185,9 @@ function updateCartContent(cartData) {
     productHtml.innerHTML = htmlCode;
   }
 
-  $(".total-price").text(totalPrice + " VND");
-  totalCart.text(totalPrice);
-  totalCartAfterDiscount.text(totalPrice);
+  $(".total-price").text(totalPrice.toLocaleString('vi-VN') + " VND");
+  totalCart.text(totalPrice.toLocaleString('vi-VN'));
+  totalCartAfterDiscount.text(totalPrice.toLocaleString('vi-VN'));
 }
 
 // == 5. MODAL CART ==
@@ -334,7 +335,7 @@ function minusQuantity(button) {
   $(button)
     .parent()
     .next()
-    .text(productPrice * productQuantity + " VND");
+    .text(((productPrice * productQuantity) * 1000).toLocaleString("vi-VN") + " VND");
 
   // Update the displayed quantity
   $(button).next().text(productQuantity);
@@ -410,7 +411,7 @@ function plusQuantity(button) {
   $(button)
     .parent()
     .next()
-    .text(productPrice * productQuantity + " VND");
+    .text(((productPrice * productQuantity)*1000).toLocaleString('vi-VN') + " VND");
 
   // Send an AJAX request to update the cart on the server
   $.ajax({
