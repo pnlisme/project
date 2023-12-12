@@ -733,8 +733,21 @@ function gsapButton() {
 });
 };
 
+// == 10. MORDAL SEACH ==
 
-// == 10. PASSWORD TOGGLE ==
+$('.search-open').click(function() {
+  $(".modal-search").toggleClass('hidden');
+  $('.search-box').toggleClass('hidden');
+  lenis.stop();
+})
+
+$(".close-search").click(function() {
+  $(".modal-search").toggleClass('hidden');
+  $('.search-box').toggleClass('hidden');
+  lenis.start();
+})
+
+// == 11. PASSWORD TOGGLE ==
 const passwordInput = document.getElementById("passwordInput");
 const togglePassword = document.getElementById("togglePassword");
 
