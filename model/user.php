@@ -43,6 +43,31 @@ function reset_pass($reset_token, $reset_token_ex, $email){
         return false;
     }
 }
+function process_reset_password($reset_token, $reset_token_ex, $password,$id){
+    $sql = "UPDATE user SET reset_token = NULL, reset_token_ex = NULL, password = ? WHERE id = ?";
+    $stmt = pdo_get_connection()->prepare($sql);
+    $result = $stmt->execute([$password, $id]);
+    
+    if ($result) {
+        return $stmt->rowCount(); // Số dòng đã cập nhật
+    } else {
+        return false;
+    }
+}
+function get_reset_token($reset_token) {
+    $sql = "SELECT * FROM user WHERE reset_token = ?";
+    $stmt = pdo_get_connection()->prepare($sql);
+    $stmt->execute([$reset_token]);
+
+    // Sử dụng fetch để lấy dữ liệu từ kết quả truy vấn
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($result) {
+        return $result; // Trả về dữ liệu từ CSDL
+    } else {
+        return false;
+    }
+}
 
 function get_user($id){
     $sql = "SELECT * FROM user WHERE id=?";

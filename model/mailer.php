@@ -9,16 +9,16 @@ require __DIR__ . "/vendor/autoload.php";
 $mail = new PHPMailer(true);
 
 // Cấu hình để hiển thị lỗi chi tiết
-$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+// $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
 // Sử dụng SMTP
 $mail->isSMTP();
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;											
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;		
+$mail->CharSet ='utf-8';									
 $mail->Host	 = 'smtp.gmail.com';					
 $mail->SMTPAuth = true;							
-$mail->Username = 'user@example.com';				
-$mail->Password = 'password';						
-$mail->SMTPSecure = 'tls';							
+$mail->Username = 'ht01252004@gmail.com';				
+$mail->Password = 'awpz ytfl uksu vuyo';												
 $mail->Port	 = 587;
 $mail->isHTML(true);								
 
