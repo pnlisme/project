@@ -735,16 +735,89 @@ function gsapButton() {
 
 
 // == 10. PASSWORD TOGGLE ==
-const passwordInput = document.getElementById("passwordInput");
-const togglePassword = document.getElementById("togglePassword");
+// const passwordInput = document.getElementById("passwordInput");
+// const togglePassword = document.getElementById("togglePassword");
 
-togglePassword.addEventListener("click", () => {
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    togglePassword.setAttribute("name", "eye-off-outline");
-  } else {
-    passwordInput.type = "password";
-    togglePassword.setAttribute("name", "eye-outline");
+// togglePassword.addEventListener("click", () => {
+//   if (passwordInput.type === "password") {
+//     passwordInput.type = "text";
+//     togglePassword.setAttribute("name", "eye-off-outline");
+//   } else {
+//     passwordInput.type = "password";
+//     togglePassword.setAttribute("name", "eye-outline");
+//   }
+// });
+
+// == 11. FORM VALIDATION ==
+//  CHECK FORM SIGN IN
+function validateFormSignIn(event) {
+  console.log('validateForm called');
+  event.preventDefault(); // Prevent the form from submitting by default
+
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('passwordInput').value;
+  var usernameError = document.getElementById('username-error');
+  var passwordError = document.getElementById('password-error');
+
+  // Reset error messages
+  usernameError.textContent = '';
+  passwordError.textContent = '';
+
+  // Check if fields are empty
+  if (username.trim() === '') {
+      usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
   }
-});
-//validate
+
+  if (password.trim() === '') {
+      passwordError.textContent = 'Vui lòng nhập mật khẩu.';
+  }
+
+  // If there are any errors, prevent form submission
+  if (usernameError.textContent !== '' || passwordError.textContent !== '') {
+      return false;
+  }
+
+  // If validation passed, you can submit the form
+  return true;
+}
+
+// CHECK FORM SIGN UP
+function validateFormSignUp(event) {
+  console.log('validateForm called');
+  event.preventDefault(); // Prevent the form from submitting by default
+
+  var username = document.getElementById('username').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('passwordInput').value;
+  var usernameError = document.getElementById('username-error');
+  var emailError = document.getElementById('email-error');
+  var passwordError = document.getElementById('password-error');
+
+  // Reset error messages
+  usernameError.textContent = '';
+  emailError.textContent = '';
+  passwordError.textContent = '';
+
+  // Check if fields are empty
+  if (username.trim() === '') {
+      usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
+  }
+
+  if (email.trim() === '') {
+    emailError.textContent = 'Vui lòng nhập email.';
+  }
+
+  if (password.trim() === '') {
+      passwordError.textContent = 'Vui lòng nhập mật khẩu.';
+  }
+
+  // If there are any errors, prevent form submission
+  if (usernameError.textContent !== '' ||emailError.textContent !== '' || passwordError.textContent !== '') {
+      return false;
+  }
+
+  // If validation passed, you can submit the form
+  return true;
+}
+
+
