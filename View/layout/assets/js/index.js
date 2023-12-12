@@ -769,11 +769,13 @@ function validateFormSignIn(event) {
 
 // == 10. PASSWORD TOGGLE ==
 
+
 // == 11. FORM VALIDATION ==
 
 //  CHECK FORM SIGN IN
 // == 11. FORM VALIDATION ==
 //  CHECK FORM SIGN IN
+
 function validateFormSignIn() {
   console.log('validateForm called');
 

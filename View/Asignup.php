@@ -2,9 +2,13 @@
     <!-- Toast message will appear here -->
 </div>
 <div id="container">
-    <!-- HEAD -->
-    <div class="head flex justify-between items-center absolute w-full px-24 mt-6">
-        <a href="index.php"><img class="ml-4" src="./View/layout/assets/img/logo.png" alt=""></a>
+
+        <!-- HEAD -->
+        <div class="head flex justify-between items-center absolute w-full px-24 mt-8">
+            <div class="flex">
+                <i class='bx bx-chevron-left'></i>
+                <img class="ml-4" src="./View/layout/assets/img/logo.png" alt="">
+            </div>
 
         <div class="flex justify-between items-center gap-12">
             <p class="text-sm font-bold">Đã có tài khoản?</p>
@@ -99,6 +103,8 @@ function showToast(message, bgColor = 'bg-blue-500') {
     // Append the toast message to the container
     toastContainer.appendChild(toastMessage);
 
+    <script>
+     
     // Automatically remove the toast after a few seconds (adjust as needed)
     setTimeout(function() {
         toastMessage.remove();
