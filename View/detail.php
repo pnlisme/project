@@ -1,5 +1,5 @@
 <?php
-// extract($product_detail);
+extract($product_detail);
 if ($img != "") $img = PATH_IMG . $img;
 if ($img_1 != "") $img_1 = PATH_IMG . $img_1;
 if ($img_2 != "") $img_2 = PATH_IMG . $img_2;
