@@ -1,7 +1,7 @@
 <div id="container">
     <!-- HEAD -->
     <div class="head flex justify-between items-center absolute w-full px-24 mt-8">
-        <img class="ml-4" src="./View/layout/assets/img/logo.png" alt="">
+        <a href="index.php"><img class="ml-4" src="./View/layout/assets/img/logo.png" alt=""></a>
 
         <div class="flex justify-between items-center gap-12">
             <p class="text-sm font-bold">Đã có tài khoản?</p>
