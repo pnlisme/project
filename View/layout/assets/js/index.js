@@ -746,6 +746,30 @@ $(".close-search").click(function() {
   lenis.start();
 })
 
+
+// == 11. FORM VALIDATION ==
+//  CHECK FORM SIGN IN
+function validateFormSignIn(event) {
+  console.log('validateForm called');
+  event.preventDefault(); // Prevent the form from submitting by default
+
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('passwordInput').value;
+  var usernameError = document.getElementById('username-error');
+  var passwordError = document.getElementById('password-error');
+
+  // Reset error messages
+  usernameError.textContent = '';
+  passwordError.textContent = '';
+
+  // Check if fields are empty
+  if (username.trim() === '') {
+      usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
+  }
+
+
+
+
 // == 10. PASSWORD TOGGLE ==
 
 // == 11. FORM VALIDATION ==
