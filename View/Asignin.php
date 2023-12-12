@@ -45,18 +45,14 @@
                         <input class="w-full border px-6 py-4 rounded-md mt-2" type="text" id="username" name="username"
                             placeholder="admin123" style="border: 1px solid #ccd3d8;">
                         <p class="text-red-600 text-sm" id="username-error"></p> <!-- Display error message here -->
-
+                        
                     </div>
 
                     <!-- MẬT KHẨU -->
                     <div class="mt-6">
                         <label for="password">Mật khẩu</label> <br>
-
-                        <div class="w-full px-6 py-4 rounded-md mt-2 flex justify-between items-center"
-                            style="border: 1px solid #ccd3d8;">
-                            <input class="w-full" type="password" name="password" id="passwordInput" placeholder="****"
-                                style="border: none;">
-
+                        <div class="w-full px-6 py-4 rounded-md mt-2 flex justify-between items-center" style="border: 1px solid #ccd3d8;">
+                            <input class="w-full" type="password" name="password" id="passwordInput" placeholder="****" style="border: none;">
                             <!-- <i class="fa-regular fa-eye-slash"></i> -->
                         </div>
                         <p class="text-red-600 text-sm" id="password-error"></p> <!-- Display error message here -->
@@ -70,7 +66,7 @@
                         <a style="font-size: 14px; color: #4676e8;" href="index.php?pg=forgetPass">Quên mật khẩu?</a>
                     </div>
                 </form>
-
+                
 
             </div>
         </div>
