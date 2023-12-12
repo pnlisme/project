@@ -1,9 +1,9 @@
 <?php
 require_once 'pdo.php';
 
-function binh_luan_insert($ma_kh, $ma_hh, $noi_dung, $ngay_bl){
-    $sql = "INSERT INTO binh_luan(ma_kh, ma_hh, noi_dung, ngay_bl) VALUES (?,?,?,?)";
-    pdo_execute($sql, $ma_kh, $ma_hh, $noi_dung, $ngay_bl);
+function binh_luan_insert($productId, $userId, $commentContent){
+    $sql = "INSERT INTO comment (id_product, id_user, content, date) VALUES ('$productId', '$userId', '$commentContent', NOW())";
+    pdo_execute($sql);
 }
 
 function binh_luan_update($ma_bl, $ma_kh, $ma_hh, $noi_dung, $ngay_bl){
@@ -24,15 +24,18 @@ function binh_luan_delete($ma_bl){
 }
 
 function binh_luan_select_all(){
-    $sql = "SELECT * FROM binh_luan bl ORDER BY ngay_bl DESC";
+    $sql = "SELECT * FROM comment ORDER BY date DESC";
     return pdo_query($sql);
 }
 
-function binh_luan_select_by_id($ma_bl){
-    $sql = "SELECT * FROM binh_luan WHERE ma_bl=?";
-    return pdo_query_one($sql, $ma_bl);
+function binh_luan_select_by_id($idPro){
+    $sql = "SELECT comment.*, user.username AS user_name
+            FROM comment
+            JOIN user ON comment.id_user = user.id
+            WHERE id_product=?
+            ORDER BY comment.date DESC";
+    return pdo_query($sql, $idPro);
 }
-
 function binh_luan_exist($ma_bl){
     $sql = "SELECT count(*) FROM binh_luan WHERE ma_bl=?";
     return pdo_query_value($sql, $ma_bl) > 0;

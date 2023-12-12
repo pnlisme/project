@@ -9,6 +9,8 @@ include "model/pdo.php";
 include "model/product.php";
 include "model/news.php";
 include "model/user.php";
+include "model/comment.php";
+
 $product_hot = get_product_hot(4);
 $product_new = get_product_new(4);
 $product_view = get_product_view(4);
@@ -63,6 +65,10 @@ else {
             $ds_news_lasest = get_news_all(3);
             include "View/blog.php";
             break;
+        case 'contact':
+          
+            include "View/contact.php";
+            break;
         case 'newsdetail':
             if (isset($_GET['idnews'])) {
                 $id = $_GET['idnews'];
@@ -81,9 +87,19 @@ else {
                 $product_relate =get_product_relate($iddm,$id,4);
                 include "View/detail.php";
             } else {
-                include "View/home.php";
+                include "View/detail.php";
             }
             break;
+            case 'comment':
+                
+                if (isset($_POST['comment'])) {
+                    $idpro = $_POST['idpro'];
+                    $commentContent = $_POST['contentComment'];
+                    binh_luan_insert($idpro,$_SESSION['s_user']['id'],$commentContent);
+                    header('Location: index.php?pg=detail&idpro=' . $idpro);
+                    exit();
+                }
+                break;
         case 'about':
           
             include "View/about.php";
@@ -143,7 +159,7 @@ else {
             }
             $password = $_POST['password-confirm'];
             process_reset_password($reset_token, $user_token["reset_token_ex"], $password, $user_token["id"]);
-            $_SESSION['reset_password_success'] = "Mật khẩu đã được cập nhật thành công. Mời bạn đăng nhập.";
+            $_SESSION['reset_password_success'] = "Mật khẩu đã được cập nhật.";
             include 'View/Asignin.php';
         break;
         case 'reset-password':
@@ -164,7 +180,7 @@ else {
                     $mail->addAddress($email);
                     $mail->Subject = "Password Reset";
                     $mail->Body = <<<END
-                        Click <a href="http://localhost/ehehe/index.php?pg=reset-password&token=$token">here</a> 
+                        Click <a href="http://localhost/project/index.php?pg=reset-password&token=$token">here</a> 
                         to reset your password.
                     END;
         

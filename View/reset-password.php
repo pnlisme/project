@@ -21,13 +21,13 @@ if (isset($_GET['token'])) {
     die("Token not provided");
 }
 ?>
-<div id="toast-container" class="fixed top-0 right-0 p-4 mb-4 mr-4  text-white rounded">
+<div id="toast-container" class=" z-50 fixed top-0 right-0 p-4 mb-4 mr-4  text-white rounded">
     <!-- Toast message will appear here -->
 </div>
 <div id="container">
     <!-- HEAD -->
     <div class="head flex justify-between items-center absolute w-full px-24 mt-8">
-        <img class="ml-4" src="./View/layout/assets/img/logo.png" alt="">
+        <a href="index.php"><img class="ml-4" src="./View/layout/assets/img/logo.png" alt=""></a>
 
         <div class="flex justify-between items-center gap-12">
             <p class="text-sm font-bold">Đã có tài khoản?</p>
@@ -50,7 +50,7 @@ if (isset($_GET['token'])) {
             <div class="w-2/4">
                 <h1 class="text-4xl font-bold">Nhập lại mật khẩu</h1>
                 <p class="text-sm mt-6 leading-6 opacity-50 tracking-2">Nhập mật khẩu tôi sẽ giúp bạn thay đổi</p>
-                <form action="index.php?pg=process-reset-password" method="post" onclick="return validateForm()">
+                <form action="index.php?pg=process-reset-password" method="post">
                     <input type="hidden" name="token" value="<?=htmlspecialchars($token)?>">
 
                     <label class="mt-8" for="password"><span class="text-small">Mật khẩu</span>
@@ -69,7 +69,7 @@ if (isset($_GET['token'])) {
                         </div>
                     </label>
                     <div class="flex justify-between items-center mt-8">
-                        <input type="submit" name="dangky"
+                        <input type="submit" name="dangky" onclick="return validateFormm()"
                             class="px-8 py-4 rounded-md text-white font-bold transform hover:scale-110 transition duration-300"
                             style="background-color: #4676e8;" value="Xác nhận">
                     </div>
@@ -140,15 +140,27 @@ function showToast(message, bgColor = 'bg-blue-500') {
     }, 3000);
 }
 
-function validateForm() {
+function validateFormm() {
     var passworddemo = document.getElementById("passwordInput").value;
     var confirmPassword = document.getElementById("password-confirm").value;
     console.log(confirmPassword)
     if (passworddemo !== confirmPassword) {
-        showToast("Mật khẩu không khớp hoặc yếu", 'bg-red-500');
+        showToast("Mật khẩu không khớp", 'bg-red-500');
+        return false;
+    }
+    if (!isPasswordStrong(passworddemo)) {
+        showToast("Mật khẩu yếu", 'bg-red-500');
         return false;
     }
 
+    return true;
+}
+
+// Function to check if the password is strong
+function isPasswordStrong(password) {
+    // Password must be at least 8 characters long and contain at least one letter and one number
+    var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+    return passwordRegex.test(password);
     return true;
 }
 </script>
