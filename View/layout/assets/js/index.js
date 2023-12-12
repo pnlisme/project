@@ -750,11 +750,11 @@ function gsapButton() {
 //   }
 // });
 
+
 // == 11. FORM VALIDATION ==
 //  CHECK FORM SIGN IN
-function validateFormSignIn(event) {
+function validateFormSignIn() {
   console.log('validateForm called');
-  event.preventDefault(); // Prevent the form from submitting by default
 
   var username = document.getElementById('username').value;
   var password = document.getElementById('passwordInput').value;
@@ -767,42 +767,28 @@ function validateFormSignIn(event) {
 
   // Check if fields are empty
   if (username.trim() === '') {
-      usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
+    usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
+    return false;
   }
 
-$('.search-open').click(function() {
-  $(".modal-search").toggleClass('hidden');
-  $('.search-box').toggleClass('hidden');
-  lenis.stop();
-})
-
-$(".close-search").click(function() {
-  $(".modal-search").toggleClass('hidden');
-  $('.search-box').toggleClass('hidden');
-  lenis.start();
-})
-
-// == 11. PASSWORD TOGGLE ==
-const passwordInput = document.getElementById("passwordInput");
-const togglePassword = document.getElementById("togglePassword");
-
   if (password.trim() === '') {
-      passwordError.textContent = 'Vui lòng nhập mật khẩu.';
+    passwordError.textContent = 'Vui lòng nhập mật khẩu.';
+    return false;
   }
 
   // If there are any errors, prevent form submission
-  if (usernameError.textContent !== '' || passwordError.textContent !== '') {
-      return false;
+  if (usernameError.textContent !== '' ||passwordError.textContent !== '') {
+    return false;
   }
 
-  // If validation passed, you can submit the form
+  // If validation passed, the form will be submitted
   return true;
 }
+
 
 // CHECK FORM SIGN UP
 function validateFormSignUp(event) {
   console.log('validateForm called');
-  event.preventDefault(); // Prevent the form from submitting by default
 
   var username = document.getElementById('username').value;
   var email = document.getElementById('email').value;

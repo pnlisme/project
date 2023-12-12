@@ -1,7 +1,10 @@
 <div id="container">
         <!-- HEAD -->
         <div class="head flex justify-between items-center absolute w-full px-24 mt-8">
-            <img class="ml-4" src="./View/layout/assets/img/logo.png" alt="">
+            <div class="flex">
+                <i class='bx bx-chevron-left'></i>
+                <img class="ml-4" src="./View/layout/assets/img/logo.png" alt="">
+            </div>
 
             <div class="flex justify-between items-center gap-12">
                 <p class="text-sm font-bold">Đã có tài khoản?</p>
@@ -64,23 +67,6 @@
 
 
     <script>
-        // CHECK FORM
-        function validateForm() {
-            var username = document.getElementById('username').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('forgotPasswordInput').value;
-
-            // Kiểm tra xem các trường có được nhập đầy đủ không
-            if (email === '' || password === '') {
-                alert('Vui lòng điền đầy đủ thông tin.');
-                return false; // Ngăn chặn form được gửi đi nếu có lỗi
-            }
-
-            // Các điều kiện kiểm tra khác nếu cần
-
-            return true; // Cho phép form được gửi đi nếu không có lỗi
-        }
-        
         // ẨN HEADER
         var hideHeader = <?php echo isset($hideHeader) && $hideHeader ? 'true' : 'false'; ?>;
         if (hideHeader) {

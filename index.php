@@ -103,22 +103,23 @@ else {
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            // Kiểm tra tài khoản
-            $checkuser = checkuser($username, $password);
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Kiểm tra tài khoản
+                $checkuser = checkuser($username, $password);
 
-            if (is_array($checkuser) && count($checkuser) > 0) {
-                // Đăng nhập thành công, thiết lập session và chuyển hướng
-                $_SESSION['s_user'] = $checkuser;
-                header('location:index.php?pg');
-            } else {
-                // Tài khoản không tồn tại, thiết lập thông báo lỗi và chuyển hướng
-                $tb = "Tài khoản không tồn tại";
-                $_SESSION['tb_dangnhap'] = $tb;
-                header('location: index.php?pg=signin');
+                if (is_array($checkuser) && count($checkuser) > 0) {
+                    // Đăng nhập thành công, thiết lập session và chuyển hướng
+                    $_SESSION['s_user'] = $checkuser;
+                    header('location:index.php?pg');
+                    exit();
+                } else {
+                    // Tài khoản không tồn tại, thiết lập thông báo lỗi và chuyển hướng
+                    $tb = "Tài khoản không tồn tại";
+                    $_SESSION['tb_dangnhap'] = $tb;
+                    header('location: index.php?pg=signin');
+                }
             }
-
-
-        break;
+            break;
         case 'signin':
 
             // output
@@ -183,14 +184,11 @@ else {
             if (isset($_POST['dangky'])&&($_POST['dangky'])) {
                 $username = $_POST['username'];
                 $email = $_POST['email'];
-                $password = $_POST['ForgotPassword'];
+                $password = $_POST['password'];
                 //xử lí
-                user_insert($username, $password, $email);
-                
+                user_insert($username, $email, $password);
             }
-            
             include "View/Asignin.php";
-            
             break;
         case 'signup':
             include_once "View/Asignup.php";
@@ -219,10 +217,10 @@ else {
             $role=0;
             acount_update($fullname,$phone,$address,$password,$role,$id);
             include "View/account_confirm.php";
-        }
+            }
         break;
-            default:
-        include "View/home.php";
+        default:
+            include "View/home.php";
             break;
     }
 }

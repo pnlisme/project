@@ -73,10 +73,10 @@ function get_user($id){
     $sql = "SELECT * FROM user WHERE id=?";
     return pdo_query_one($sql,$id);
 }
-function user_insert($username, $password, $email)
+function user_insert($username, $email, $password)
 {
-    $sql = "INSERT INTO user(username,password,email) VALUES (?, ?, ?)";
-    pdo_execute($sql, $username, $password, $email);
+    $sql = "INSERT INTO user(username,email,password) VALUES (?, ?, ?)";
+    pdo_execute($sql, $username, $email, $password);
 }
 
 function user_update($img, $fullname, $password, $email, $phone, $address, $status, $role, $id)
@@ -142,3 +142,4 @@ function user_select_by_id($id)
     $sql = "SELECT * FROM user WHERE id=?";
     return pdo_query_one($sql, $id);
 }
+
