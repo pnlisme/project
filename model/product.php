@@ -442,3 +442,49 @@ function product_detail_delete($id)
         pdo_execute($sql, $id);
     }
 }
+
+function show_product_search($dssp)
+{
+    $html_dssp = '';
+    $VND = "";
+    $lastprice = '';
+    foreach ($dssp as $sp) {
+        extract($sp);
+        
+        // Tính phần trăm giảm giá
+        if ($price_sale == "") {
+            $lastprice = $price;
+            $price = "";
+            $VND = "";
+          } else {
+            $lastprice =$price_sale;
+            $price = $price;
+            $VND = "VND";
+            $percent_discount = ($price - $price_sale) / $price * 100;
+          }
+
+        if ($sale > 0 && $sale < 100) {
+            $item_sale = '<div class="absolute top-2 text-sm left-2 bg-primary w-fit rounded-box text-white p-2">
+        Sale ' . round($percent_discount) . '%
+    </div>';
+        } else {
+            $item_sale = '';
+        }
+        if ($img != "") $img = PATH_IMG . $img;
+        $link = "index.php?pg=detail&idpro=" . $id;
+        $html_dssp .=
+            '<div class="flex flex-col justify-center">
+                                                    <div class="bg-box  rounded-box flex items-center justify-center">
+                                                        <a href="'.$link.'">
+                                                            <img class="object-contain  h-3/4" src="' . $img . '" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <span class="mt-4 w-fit mx-auto" >' . $name. '</span>
+                                                    <div class="w-fit mx-auto mt-1">
+                                                        <p  class="w-fit font-bold mb-1">' . $lastprice . 'VND</p>
+                                                        <p class="line-through	 w-fit"> ' . $price. 'VND</p>
+                                                    </div>
+                                                </div>';
+    }
+    return $html_dssp;
+}

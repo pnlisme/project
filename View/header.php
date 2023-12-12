@@ -1,4 +1,6 @@
 <?php
+$html_product_search= show_product_search($product_search_hot);
+
 if ((count($_SESSION['s_user']) > 0)) {
     extract($_SESSION['s_user']);
     $html_account = ' <ul class="space-y-3">
@@ -126,8 +128,6 @@ if ((count($_SESSION['s_user']) > 0)) {
 
         </div>
         <!-- SEARCH -->
-        <a class="right-1" href="">Sign in</a>
-
         <header>
             <div>
                 <div class="md:w-3/4 px-8 container rounded-15 mt-8 flex items-center justify-between">
@@ -238,6 +238,7 @@ if ((count($_SESSION['s_user']) > 0)) {
                 </div>
             </div>
 
+            <!-- MODAL SEARCH -->
             <div>
                                 <div class="hidden modal-search fixed top-0 left-0 h-screen w-full bg-primary z-40 opacity-25"></div>
                                 <div class="hidden search-box fixed top-0 left-0 right-0 h-3/4 bg-white z-40 text-center">
@@ -253,7 +254,7 @@ if ((count($_SESSION['s_user']) > 0)) {
 
                                                 <div class="model mt-2 border-2 border-primary w-2/4 text-left mx-auto py-2 px-6 rounded-full">
                                                     <form class="flex justify-between" action="index.php?pg=product" method="post">
-                                                        <input type="text" name="kyw" id="" placeholder="Nhập sản phẩm muốn tìm kiếm">
+                                                        <input class="w-full" type="text" name="kyw" id="" placeholder="Nhập sản phẩm muốn tìm kiếm">
                                                         <button class="InputSearch ml-auto" type="submit" name="timkiem">
                                                             <ion-icon name="search-outline" class="site-link_search group-hover:text-white transition duration-300"></ion-icon>
                                                         </button>
@@ -265,78 +266,7 @@ if ((count($_SESSION['s_user']) > 0)) {
                                             <h1 class="text-left text-h1 font-bold">Sản phẩm nổi bật:</h1>
                                             <div class="grid grid-cols-6 mt-4 gap-4">
                                                 <!-- SINGLE PRODUCT HERE -->
-                                                <div class="flex flex-col justify-center">
-                                                    <div class="bg-box  rounded-box flex items-center justify-center">
-                                                        <a href="#">
-                                                            <img class="object-contain  h-3/4" src="Uploads/banphimcuibap-1.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <span class="mt-4 w-fit mx-auto">Bàn phím cùi bắp</span>
-                                                    <div class="w-fit mx-auto mt-1">
-                                                        <p class="w-fit font-bold mb-1">599999VND</p>
-                                                        <p class="line-through	 w-fit"> 1000000VND</p>
-                                                    </div>
-                                                </div>
-                                                <div class="flex flex-col justify-center">
-                                                    <div class="bg-box  rounded-box flex items-center justify-center">
-                                                        <a href="#">
-                                                            <img class="object-contain  h-3/4" src="Uploads/banphimcuibap-1.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <span class="mt-4 w-fit mx-auto">Bàn phím cùi bắp</span>
-                                                    <div class="w-fit mx-auto mt-1">
-                                                        <p class="w-fit font-bold mb-1">599999VND</p>
-                                                        <p class="line-through	 w-fit"> 1000000VND</p>
-                                                    </div>
-                                                </div>
-                                                <div class="flex flex-col justify-center">
-                                                    <div class="bg-box  rounded-box flex items-center justify-center">
-                                                        <a href="#">
-                                                            <img class="object-contain  h-3/4" src="Uploads/Logitech G502 X Plus.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <span class="mt-4 w-fit mx-auto">Bàn phím cùi bắp</span>
-                                                    <div class="w-fit mx-auto mt-1">
-                                                        <p class="w-fit font-bold mb-1">599999VND</p>
-                                                        <p class="line-through	 w-fit"> 1000000VND</p>
-                                                    </div>
-                                                </div>
-                                                <div class="flex flex-col justify-center">
-                                                    <div class="bg-box  rounded-box flex items-center justify-center">
-                                                        <a href="#">
-                                                            <img class="object-contain  h-3/4" src="Uploads/Logitech G703 LIGHTSPEED.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <span class="mt-4 w-fit mx-auto">Bàn phím cùi bắp</span>
-                                                    <div class="w-fit mx-auto mt-1">
-                                                        <p class="w-fit font-bold mb-1">599999VND</p>
-                                                        <p class="line-through	 w-fit"> 1000000VND</p>
-                                                    </div>
-                                                </div>
-                                                <div class="flex flex-col justify-center">
-                                                    <div class="bg-box  rounded-box flex items-center justify-center">
-                                                        <a href="#">
-                                                            <img class="object-contain  h-3/4" src="Uploads/banphimcuibap-1.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <span class="mt-4 w-fit mx-auto">Bàn phím cùi bắp</span>
-                                                    <div class="w-fit mx-auto mt-1">
-                                                        <p class="w-fit font-bold mb-1">599999VND</p>
-                                                        <p class="line-through	 w-fit"> 1000000VND</p>
-                                                    </div>
-                                                </div>
-                                                <div class="flex flex-col justify-center">
-                                                    <div class="bg-box  rounded-box flex items-center justify-center">
-                                                        <a href="#">
-                                                            <img class="object-contain  h-3/4" src="Uploads/banphimcuibap-1.png" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <span class="mt-4 w-fit mx-auto">Bàn phím cùi bắp</span>
-                                                    <div class="w-fit mx-auto mt-1">
-                                                        <p class="w-fit font-bold mb-1">599999VND</p>
-                                                        <p class="line-through	 w-fit"> 1000000VND</p>
-                                                    </div>
-                                                </div>
+                                        <?$html_product_search?>
 
 
                                             </div>
