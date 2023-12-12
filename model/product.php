@@ -244,7 +244,7 @@ function show_product_new_secondary($pr_new)
         //     $item_sale ='';
         // }
         if ($img != "") $img = PATH_IMG . $img;
-        $link = "index.php?pg=sanphamchitiet&idpro=" . $id;
+        $link = "index.php?pg=detail&idpro=" . $id;
         $html_pr_new .= ' <div class="swiper-slide justify-between slider-box-hero bg-box rounded-box py-4 flex flex-col items-center">
         <img class="w-80 object-cover" src="' . $img . '" alt="" />
             <div>
