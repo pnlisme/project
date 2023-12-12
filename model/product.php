@@ -275,7 +275,7 @@ function show_product_view_secondary($dssp)
             $item_sale = '';
         }
         if ($img != "") $img = PATH_IMG . $img;
-        $link = "index.php?pg=sanphamchitiet&idpro=" . $id;
+        $link = "index.php?pg=detail&idpro=" . $id;
         $html_dssp .=
             ' <div class="swiper-slide flex items-center justify-center">
     <!-- SINGLE PRODUCT -->
