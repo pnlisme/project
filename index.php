@@ -9,6 +9,8 @@ include "model/pdo.php";
 include "model/product.php";
 include "model/news.php";
 include "model/user.php";
+include "model/comment.php";
+
 $product_hot = get_product_hot(4);
 $product_new = get_product_new(4);
 $product_view = get_product_view(4);
@@ -85,9 +87,18 @@ else {
                 $product_relate =get_product_relate($iddm,$id,4);
                 include "View/detail.php";
             } else {
-                include "View/home.php";
+                include "View/detail.php";
             }
             break;
+            case 'comment':
+                if (isset($_POST['comment'])) {
+                    $commentContent = $_POST['contentComment'];
+                    $idpro = $_POST['idpro'];
+                    binh_luan_insert($idpro,$_SESSION['s_user']['id'],$commentContent);
+                    header('Location: index.php?pg=detail&idpro=' . $idpro);
+                    exit();
+                }
+                break;
         case 'about':
           
             include "View/about.php";
