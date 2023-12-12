@@ -1,9 +1,9 @@
 <?php
 require_once 'pdo.php';
 
-function binh_luan_insert($ma_kh, $ma_hh, $noi_dung, $ngay_bl){
-    $sql = "INSERT INTO binh_luan(ma_kh, ma_hh, noi_dung, ngay_bl) VALUES (?,?,?,?)";
-    pdo_execute($sql, $ma_kh, $ma_hh, $noi_dung, $ngay_bl);
+function binh_luan_insert($productId, $userId, $commentContent){
+    $sql = "INSERT INTO comment (id_product, id_user, content, date) VALUES ('$productId', '$userId', '$commentContent', NOW())";
+    pdo_execute($sql);
 }
 
 function binh_luan_update($ma_bl, $ma_kh, $ma_hh, $noi_dung, $ngay_bl){
