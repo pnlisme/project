@@ -95,7 +95,7 @@ function get_product_view($limi)
     LIMIT " . $limi;
     return pdo_query($sql);
 }
-function get_product_relate($iddm,$id,$limi)
+function get_product_relate($iddm, $id, $limi)
 {
     $sql = "SELECT p.*, b.name as brand_name 
     FROM product p
@@ -103,10 +103,11 @@ function get_product_relate($iddm,$id,$limi)
     WHERE p.id_category=? AND p.id<>?
     ORDER BY p.id ASC
     LIMIT " . $limi;
-    return pdo_query($sql,$iddm,$id);
+    return pdo_query($sql, $iddm, $id);
 }
 
-function get_product_by_id($id) {
+function get_product_by_id($id)
+{
     $sql = "SELECT 
                 product.*,
                 brand.name AS brand_name,
@@ -202,7 +203,7 @@ function show_product_new($pr_new)
         //     $item_sale ='';
         // }
         if ($img != "") $img = PATH_IMG . $img;
-        $link = "index.php?pg=sanphamchitiet&idpro=" . $id;
+        $link = "index.php?pg=detail&idpro=" . $id;
         $html_pr_new .= '<div class=" swiper-slide relative flex justify-center items-center gap-60">
         <div class="">
             <div>
@@ -243,7 +244,7 @@ function show_product_new_secondary($pr_new)
         //     $item_sale ='';
         // }
         if ($img != "") $img = PATH_IMG . $img;
-        $link = "index.php?pg=sanphamchitiet&idpro=" . $id;
+        $link = "index.php?pg=detail&idpro=" . $id;
         $html_pr_new .= ' <div class="swiper-slide justify-between slider-box-hero bg-box rounded-box py-4 flex flex-col items-center">
         <img class="w-80 object-cover" src="' . $img . '" alt="" />
             <div>
@@ -274,7 +275,7 @@ function show_product_view_secondary($dssp)
             $item_sale = '';
         }
         if ($img != "") $img = PATH_IMG . $img;
-        $link = "index.php?pg=sanphamchitiet&idpro=" . $id;
+        $link = "index.php?pg=detail&idpro=" . $id;
         $html_dssp .=
             ' <div class="swiper-slide flex items-center justify-center">
     <!-- SINGLE PRODUCT -->
@@ -441,4 +442,59 @@ function product_detail_delete($id)
     } else {
         pdo_execute($sql, $id);
     }
+}
+
+function show_product_search($dssp)
+{
+    $html_dssp = '';
+    $VND = "";
+    $lastprice = '';
+    foreach ($dssp as $sp) {
+        extract($sp);
+
+        // Tính phần trăm giảm giá
+        if ($price_sale == "") {
+            $lastprice = $price;
+            $price = "";
+            $VND = "";
+        } else {
+            $lastprice = $price_sale;
+            $price = $price;
+            $VND = "VND";
+            $percent_discount = ($price - $price_sale) / $price * 100;
+        }
+
+        if ($sale > 0 && $sale < 100) {
+            $item_sale = '<div class="absolute top-2 text-sm left-2 bg-primary w-fit rounded-box text-white p-2">
+        Sale ' . round($percent_discount) . '%
+    </div>';
+        } else {
+            $item_sale = '';
+        }
+        if ($img != "") $img = PATH_IMG . $img;
+        $link = "index.php?pg=detail&idpro=" . $id;
+        $html_dssp .=
+            '<div class="flex flex-col justify-center">
+                                                    <div class="bg-box  rounded-box flex items-center justify-center">
+                                                        <a href="' . $link . '">
+                                                            <img class="object-contain  h-3/4" src="' . $img . '" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <span class="mt-4 w-fit mx-auto" >' . $name . '</span>
+                                                    <div class="w-fit mx-auto mt-1">
+                                                        <p  class="w-fit font-bold mb-1">' . $lastprice . 'VND</p>
+                                                        <p class="line-through	 w-fit"> ' . $price . 'VND</p>
+                                                    </div>
+                                                </div>';
+    }
+    return $html_dssp;
+}
+
+function product_count_now()
+{
+    $sql = "SELECT count(*) FROM product
+    WHERE MONTH(entry_date) = MONTH(CURRENT_DATE())
+        AND YEAR(entry_date) = YEAR(CURRENT_DATE());
+    ";
+    return pdo_query_value($sql);
 }

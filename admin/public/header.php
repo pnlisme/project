@@ -58,10 +58,10 @@
             <ion-icon name="business-outline"></ion-icon><span>Thương hiệu</span></a>
           <div class="sidebar-animation"></div>
         </li>
-        <li class="sidebar-item"><a class="sidebar-link" href="index.php?page=voucher">
+        <!-- <li class="sidebar-item"><a class="sidebar-link" href="index.php?page=voucher">
             <ion-icon name="wallet-outline"></ion-icon><span>Mã giảm giá</span></a>
           <div class="sidebar-animation"></div>
-        </li>
+        </li> -->
         <li class="sidebar-item"><a class="sidebar-link" href="index.php?page=logout">
             <ion-icon name="log-out-outline"></ion-icon><span>Đăng xuất</span></a>
           <div class="sidebar-animation"></div>

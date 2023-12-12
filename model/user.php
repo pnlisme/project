@@ -11,10 +11,10 @@ function checkuser($username, $password)
     //     return 0;
     // }
 }
-function  acount_update($fullname,$phone,$address,$password,$role,$id){
+function  acount_update($fullname, $phone, $address, $password, $role, $id)
+{
     $sql = "UPDATE user SET full_name=?, phone=?, address=?, password=?, role=? WHERE id=?";
-    pdo_execute($sql, $fullname,$phone,$address,$password,$role,$id);
-
+    pdo_execute($sql, $fullname, $phone, $address, $password, $role, $id);
 }
 
 function pdo_re_pass($sql)
@@ -32,29 +32,32 @@ function pdo_re_pass($sql)
     }
 }
 
-function reset_pass($reset_token, $reset_token_ex, $email){
+function reset_pass($reset_token, $reset_token_ex, $email)
+{
     $sql = "UPDATE user SET reset_token=?, reset_token_ex=? WHERE email=?";
     $stmt = pdo_get_connection()->prepare($sql);
     $result = $stmt->execute([$reset_token, $reset_token_ex, $email]);
-    
+
     if ($result) {
         return $stmt->rowCount(); // Số dòng đã cập nhật
     } else {
         return false;
     }
 }
-function process_reset_password($reset_token, $reset_token_ex, $password,$id){
+function process_reset_password($reset_token, $reset_token_ex, $password, $id)
+{
     $sql = "UPDATE user SET reset_token = NULL, reset_token_ex = NULL, password = ? WHERE id = ?";
     $stmt = pdo_get_connection()->prepare($sql);
     $result = $stmt->execute([$password, $id]);
-    
+
     if ($result) {
         return $stmt->rowCount(); // Số dòng đã cập nhật
     } else {
         return false;
     }
 }
-function get_reset_token($reset_token) {
+function get_reset_token($reset_token)
+{
     $sql = "SELECT * FROM user WHERE reset_token = ?";
     $stmt = pdo_get_connection()->prepare($sql);
     $stmt->execute([$reset_token]);
@@ -69,14 +72,15 @@ function get_reset_token($reset_token) {
     }
 }
 
-function get_user($id){
-    $sql = "SELECT * FROM user WHERE id=?";
-    return pdo_query_one($sql,$id);
-}
-function user_insert($username, $password, $email)
+function get_user($id)
 {
-    $sql = "INSERT INTO user(username,password,email) VALUES (?, ?, ?)";
-    pdo_execute($sql, $username, $password, $email);
+    $sql = "SELECT * FROM user WHERE id=?";
+    return pdo_query_one($sql, $id);
+}
+function user_insert($username, $email, $password)
+{
+    $sql = "INSERT INTO user(username,email,password) VALUES (?, ?, ?)";
+    pdo_execute($sql, $username, $email, $password);
 }
 
 function user_update($img, $fullname, $password, $email, $phone, $address, $status, $role, $id)
@@ -137,8 +141,17 @@ function user_count_all()
     $sql = "SELECT count(*) FROM user";
     return pdo_query_value($sql);
 }
+function user_count_now()
+{
+    $sql = "SELECT count(*) FROM user
+    WHERE MONTH(date) = MONTH(CURRENT_DATE())
+        AND YEAR(date) = YEAR(CURRENT_DATE());
+    ";
+    return pdo_query_value($sql);
+}
 function user_select_by_id($id)
 {
     $sql = "SELECT * FROM user WHERE id=?";
     return pdo_query_one($sql, $id);
 }
+
