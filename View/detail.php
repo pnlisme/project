@@ -1,6 +1,7 @@
 <?php
 
 
+
 extract($product_detail);
 $customerComment = '';
 $idPro = $_GET['idpro'];

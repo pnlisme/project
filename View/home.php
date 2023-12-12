@@ -1,6 +1,5 @@
 <?php 
-// session_unset();
-// echo var_dump($_SESSION['cart']);
+
 
 //product_hot
 $html_product_hot = show_product($product_hot);
@@ -9,11 +8,12 @@ $html_product_new = show_product_new($product_new);
 //product_new_secondary
 $html_product_new_secondary = show_product_new_secondary($product_new);
 // //product_sale
-// $html_product_sale=show_product($product_sale);
+$html_product_sale=show_product($product_sale);
 //product_view
 $html_product_view=show_product($product_view);
 //product_view_secondary
 $html_product_view_secondary = show_product_view_secondary($product_view);
+$binhluan = binh_luan_select_all();
 
 ?>
 
@@ -208,14 +208,6 @@ $html_product_view_secondary = show_product_view_secondary($product_view);
                             <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
                                 <!-- CONTENT -->
                                 <div class="px-4 py-4 flex flex-col justify-center">
-                                    <!-- STAR -->
-                                    <div>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
                                     <p class="w-50 my-4 text-customGray text-sm lg:w-80">
                                         Look at the stars lighting up the sky: no one of them
                                         stays in the same place.
@@ -239,14 +231,6 @@ $html_product_view_secondary = show_product_view_secondary($product_view);
                             <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
                                 <!-- CONTENT -->
                                 <div class="px-4 py-4 flex flex-col justify-center">
-                                    <!-- STAR -->
-                                    <div>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
                                     <p class="w-50 my-4 text-customGray text-sm lg:w-80">
                                         Look at the stars lighting up the sky: no one of them
                                         stays in the same place.
@@ -267,14 +251,6 @@ $html_product_view_secondary = show_product_view_secondary($product_view);
                             <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
                                 <!-- CONTENT -->
                                 <div class="px-4 py-4 flex flex-col justify-center">
-                                    <!-- STAR -->
-                                    <div>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
                                     <p class="w-50 my-4 text-customGray text-sm lg:w-80">
                                         Look at the stars lighting up the sky: no one of them
                                         stays in the same place.
@@ -297,14 +273,6 @@ $html_product_view_secondary = show_product_view_secondary($product_view);
                             <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
                                 <!-- CONTENT -->
                                 <div class="px-4 py-4 flex flex-col justify-center">
-                                    <!-- STAR -->
-                                    <div>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
                                     <p class="w-50 my-4 text-customGray text-sm lg:w-80">
                                         Look at the stars lighting up the sky: no one of them
                                         stays in the same place.
@@ -327,14 +295,6 @@ $html_product_view_secondary = show_product_view_secondary($product_view);
                             <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
                                 <!-- CONTENT -->
                                 <div class="px-4 py-4 flex flex-col justify-center">
-                                    <!-- STAR -->
-                                    <div>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
                                     <p class="w-50 my-4 text-customGray text-sm lg:w-80">
                                         Look at the stars lighting up the sky: no one of them
                                         stays in the same place.
@@ -356,14 +316,28 @@ $html_product_view_secondary = show_product_view_secondary($product_view);
                             <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
                                 <!-- CONTENT -->
                                 <div class="px-4 py-4 flex flex-col justify-center">
-                                    <!-- STAR -->
+                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
+                                        Look at the stars lighting up the sky: no one of them
+                                        stays in the same place.
+                                    </p>
                                     <div>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
+                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
+                                        <span class="text-small text-customGray">19/11/2023</span>
                                     </div>
+                                </div>
+                                <!-- IMG -->
+
+                                <div class="bg-white lg:bg-box lg:w-60 w-full">
+                                    <img src="view/layout/assets/img/airpod.png" alt="" />
+
+                                    <p class="text-center font-bold my-4">Airpod Max</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
+                                <!-- CONTENT -->
+                                <div class="px-4 py-4 flex flex-col justify-center">
                                     <p class="w-50 my-4 text-customGray text-sm lg:w-80">
                                         Look at the stars lighting up the sky: no one of them
                                         stays in the same place.
@@ -387,43 +361,6 @@ $html_product_view_secondary = show_product_view_secondary($product_view);
                                 <!-- CONTENT -->
                                 <div class="px-4 py-4 flex flex-col justify-center">
                                     <!-- STAR -->
-                                    <div>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <p class="w-50 my-4 text-customGray text-sm lg:w-80">
-                                        Look at the stars lighting up the sky: no one of them
-                                        stays in the same place.
-                                    </p>
-                                    <div>
-                                        <h3 class="font-bold text-h2">Anhbakhia</h3>
-                                        <span class="text-small text-customGray">19/11/2023</span>
-                                    </div>
-                                </div>
-                                <!-- IMG -->
-
-                                <div class="bg-white lg:bg-box lg:w-60 w-full">
-                                    <img src="view/layout/assets/img/airpod.png" alt="" />
-
-                                    <p class="text-center font-bold my-4">Airpod Max</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col lg:flex-row bg-white mt-8 shadow-2xl rounded-box justify-between">
-                                <!-- CONTENT -->
-                                <div class="px-4 py-4 flex flex-col justify-center">
-                                    <!-- STAR -->
-                                    <div>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
                                     <p class="w-50 my-4 text-customGray text-sm lg:w-80">
                                         Look at the stars lighting up the sky: no one of them
                                         stays in the same place.

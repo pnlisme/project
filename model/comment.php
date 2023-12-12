@@ -36,6 +36,7 @@ function binh_luan_select_by_id($idPro){
             ORDER BY comment.date DESC";
     return pdo_query($sql, $idPro);
 }
+
 function binh_luan_exist($ma_bl){
     $sql = "SELECT count(*) FROM binh_luan WHERE ma_bl=?";
     return pdo_query_value($sql, $ma_bl) > 0;
