@@ -29,13 +29,13 @@ function binh_luan_select_all(){
 }
 
 function binh_luan_select_by_id($idPro){
-    
     $sql = "SELECT comment.*, user.username AS user_name
-    FROM comment
-    JOIN user ON comment.id_user = user.id WHERE id_product=?";
+            FROM comment
+            JOIN user ON comment.id_user = user.id
+            WHERE id_product=?
+            ORDER BY comment.date DESC";
     return pdo_query($sql, $idPro);
 }
-
 function binh_luan_exist($ma_bl){
     $sql = "SELECT count(*) FROM binh_luan WHERE ma_bl=?";
     return pdo_query_value($sql, $ma_bl) > 0;
