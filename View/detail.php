@@ -1,21 +1,42 @@
 <?php
 
+// extract($product_detail);
+$customerComment = '';
+$idPro = $_GET['idpro'];
+$allComment = binh_luan_select_by_id($idPro);
+
+foreach ($allComment as $key) {
+    $customerComment .= '
+        <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+            <div class="w-8 h-8 rounded-full bg-blue-500"></div>
+            <div class="">
+                <div class="flex items-center gap-4">
+                    <p class="font-bold">' . $key['user_name'] . '</p>
+                    <p class="text-sm color-777">' . $key['date'] . '</p>
+                </div>
+                <p>' . $key['content'] . '</p>
+            </div>
+        </div>
+    ';
+}
 
 $html_comment = '';
 
 if ((count($_SESSION['s_user']) > 0)) {
     $html_comment = '
-    <form action="index.php?pg=comment" method="POST">
-    <div class="px-3 mb-2 mt-2">
-        <textarea placeholder="comment" class="w-full bg-gray-100 rounded border border-gray-400 leading-normal resize-none h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"></textarea>
-    </div>
-    <div class="flex justify-end px-4">
-        <button type="submit" name="comment" class="cursor-pointer transition duration-300 delay-75 hover:scale-110 comment-send px-2.5 py-1.5 rounded-md text-white text-sm bg-primary px-2 py-2 font-bold">Gửi bình luận</button>
-    </div>
-</form>
+                   <form action="index.php?pg=comment" method="POST">
+                    <div class="px-3 mb-2 mt-2">
+                        <input type="hidden" name="idpro" value="'.$id.'">
+                        <textarea name="contentComment" placeholder="comment" class="w-full bg-gray-100 rounded border border-gray-400 leading-normal resize-none h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"></textarea>
+                    </div>
+                    <div class="flex justify-end px-4">
+                        <button type="submit" name="comment" class="cursor-pointer transition duration-300 delay-75 hover:scale-110 comment-send px-2.5 py-1.5 rounded-md text-white text-sm bg-primary px-2 py-2 font-bold">Gửi bình luận</button>
+                    </div>
+                </form>
     ';
+} else {
+    $html_comment = "<p>Bạn phải đăng nhập mới có thể bình luận</p>";
 }
-extract($product_detail);
 if ($img != "") $img = PATH_IMG . $img;
 if ($img_1 != "") $img_1 = PATH_IMG . $img_1;
 if ($img_2 != "") $img_2 = PATH_IMG . $img_2;
@@ -119,60 +140,13 @@ $html_product_relate = show_product($product_relate);
             <!-- WRITE A REVIEW -->
             <div class="write-review-section">
                 <h2 class="text-lg font-bold my-4">Viết đánh giá</h2>
-                <input type="hidden" name="idpro" value="<?= $id ?>">
-                <form action="index.php?pg=comment" method="POST">
-                    <div class="px-3 mb-2 mt-2">
-                        <textarea name="contentComment" placeholder="comment" class="w-full bg-gray-100 rounded border border-gray-400 leading-normal resize-none h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"></textarea>
-                    </div>
-                    <div class="flex justify-end px-4">
-                        <button type="submit" name="comment" class="cursor-pointer transition duration-300 delay-75 hover:scale-110 comment-send px-2.5 py-1.5 rounded-md text-white text-sm bg-primary px-2 py-2 font-bold">Gửi bình luận</button>
-                    </div>
-                </form>
+
+                <?=$html_comment?>
             </div>
 
             <!-- BODY COMMENT -->
             <div>
-                <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
-                    <div class="w-8 h-8 rounded-full bg-blue-500"></div>
-
-                    <div class="">
-                        <div class="flex items-center gap-4">
-                            <p class="font-bold">Anh Tèo Non</p>
-                            <p class="text-sm color-777">9/12/2023</p>
-                        </div>
-
-                        <div class="star-container flex gap-1 mb-4 mt-1">
-                            <img class="w-4" src="./assets/img/newstar.png" alt="">
-                            <img class="w-4 grayscale" src="./assets/img/newstar.png" alt="">
-                            <img class="w-4 grayscale" src="./assets/img/newstar.png" alt="">
-                            <img class="w-4 grayscale" src="./assets/img/newstar.png" alt="">
-                            <img class="w-4 grayscale" src="./assets/img/newstar.png" alt="">
-                        </div>
-
-                        <p>Hàng dỏm đừng có mua!</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
-                    <div class="w-8 h-8 rounded-full bg-blue-500"></div>
-
-                    <div class="">
-                        <div class="flex items-center gap-4">
-                            <p class="font-bold">Chị thuồn luồn</p>
-                            <p class="text-sm color-777">9/12/2023</p>
-                        </div>
-
-                        <div class="star-container flex gap-1 mb-4 mt-1">
-                            <img class="w-4" src="./assets/img/newstar.png" alt="">
-                            <img class="w-4 grayscale" src="./assets/img/newstar.png" alt="">
-                            <img class="w-4 grayscale" src="./assets/img/newstar.png" alt="">
-                            <img class="w-4 grayscale" src="./assets/img/newstar.png" alt="">
-                            <img class="w-4 grayscale" src="./assets/img/newstar.png" alt="">
-                        </div>
-
-                        <p>Sản phẩm cùi bắp</p>
-                    </div>
-                </div>
+                <?=$customerComment?>
             </div>
         </div>
     </div>
