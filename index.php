@@ -63,6 +63,10 @@ else {
             $ds_news_lasest = get_news_all(3);
             include "View/blog.php";
             break;
+        case 'contact':
+          
+            include "View/contact.php";
+            break;
         case 'newsdetail':
             if (isset($_GET['idnews'])) {
                 $id = $_GET['idnews'];
@@ -142,7 +146,7 @@ else {
             }
             $password = $_POST['password-confirm'];
             process_reset_password($reset_token, $user_token["reset_token_ex"], $password, $user_token["id"]);
-            $_SESSION['reset_password_success'] = "Mật khẩu đã được cập nhật thành công. Mời bạn đăng nhập.";
+            $_SESSION['reset_password_success'] = "Mật khẩu đã được cập nhật.";
             include 'View/Asignin.php';
         break;
         case 'reset-password':
@@ -163,7 +167,7 @@ else {
                     $mail->addAddress($email);
                     $mail->Subject = "Password Reset";
                     $mail->Body = <<<END
-                        Click <a href="http://localhost/ehehe/index.php?pg=reset-password&token=$token">here</a> 
+                        Click <a href="http://localhost/project/index.php?pg=reset-password&token=$token">here</a> 
                         to reset your password.
                     END;
         

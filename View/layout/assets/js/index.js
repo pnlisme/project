@@ -25,11 +25,11 @@ navIcon.click(function () {
   pathMiddle.toggleClass("nav-active-middle");
   pathBottom.toggleClass("nav-active-bottom");
   $("body").toggleClass("overflow-hidden");
-  navIcon.toggleClass('nav-off');
-  $('.nav-mobile').toggleClass("blurAnimate");
-  $('.nav-mobile').toggle('slidein');
-  navIcon.removeClass('nav-off');
-  navIcon.toggleClass('nav-on');
+  navIcon.toggleClass("nav-off");
+  $(".nav-mobile").toggleClass("blurAnimate");
+  $(".nav-mobile").toggle("slidein");
+  navIcon.removeClass("nav-off");
+  navIcon.toggleClass("nav-on");
   navIcon.attr("data-lenis-stop");
 
   $(this).toggleClass("stop-scroll");
@@ -39,11 +39,6 @@ navIcon.click(function () {
     lenis.start();
   }
 });
-
-
-
-
-
 
 // == 3. ANIMATION FOOTER MOBILE ==
 const footerBtnShow = document.querySelectorAll(".footer-btn-show");
@@ -139,44 +134,44 @@ function updateCartContent(cartData) {
     htmlCode += `
             <div class="flex gap-4 my-2 ">
                 <div class="w-1/4 bg-box rounded-box">
-                    <img src="${cartData[index].img}" alt="">
-                 </div>
-                 <div class="flex flex-col justify-between">
-                     <div>
-                         <div class="text-p font-bold">${
-                           cartData[index].name
-                         }</div>
-                         <div class="text-sm text-customGray">${
-                           cartData[index].brand
-                         }</div>
-                     </div>
-                     <div class="flex flex-col">
-                         <div class=" text-lg text-primary font-bold">${lastprice} VND</div>
-                         <del class=" text-sm text-customGray">${
-                           price + VND
-                         }</del>
-                     </div>
-                 </div>
-                 <div class="ml-auto flex flex-col justify-between items-center">
-                 <button onclick="handleDeleteButtonClick(this)">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="delete-cart ml-auto text-primary hover:scale-125 delay-75 h-5 w-5 cursor-pointer duration-150">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                     </svg>
-                 </button>
-   
-                        <div class="flex items-center justify-center gap-3 text-sm py-1.5 w-20 text-customGray border-2 border-box rounded-lg">
-                        <button onclick="minusQuantity(this)">
-                           <i class="minus-quantity fa-solid fa-minus"></i>
-                        </button>
-                        <span class="">${cartData[index].quantity}</span>
-                        <button onclick="plusQuantity(this)">
-                           <i class="plus-quantity fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                    <p>Tổng: ${cartData[index].quantity * lastprice} VND</p>
-                 </div>
-             </div>
-         `;
+                      <img src="${cartData[index].img}" alt="">
+                  </div>
+                  <div class="flex flex-col justify-between">
+                      <div>
+                          <div class="text-p font-bold">${
+                            cartData[index].name
+                          }</div>
+                          <div class="text-sm text-customGray">${
+                            cartData[index].brand
+                          }</div>
+                      </div>
+                      <div class="flex flex-col">
+                          <div class=" text-lg text-primary font-bold">${lastprice} VND</div>
+                          <del class=" text-sm text-customGray">${
+                            price + VND
+                          }</del>
+                      </div>
+                  </div>
+                  <div class="ml-auto flex flex-col justify-between items-center">
+                  <button onclick="handleDeleteButtonClick(this)">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="delete-cart ml-auto text-primary hover:scale-125 delay-75 h-5 w-5 cursor-pointer duration-150">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                  </button>
+    
+                          <div class="flex items-center justify-center gap-3 text-sm py-1.5 w-20 text-customGray border-2 border-box rounded-lg">
+                          <button onclick="minusQuantity(this)">
+                            <i class="minus-quantity fa-solid fa-minus"></i>
+                          </button>
+                          <span class="">${cartData[index].quantity}</span>
+                          <button onclick="plusQuantity(this)">
+                            <i class="plus-quantity fa-solid fa-plus"></i>
+                          </button>
+                      </div>
+                      <p>Tổng: ${cartData[index].quantity * lastprice} VND</p>
+                  </div>
+              </div>
+          `;
   }
 
   if (cartData.length == 0) {
@@ -465,16 +460,16 @@ function applyPromoCode() {
         case 1:
           totalCartAfterDiscount.text(response[1]);
           $(".priceDiscount").text(response[2] - response[1]);
-          $('.alert-text').text("");
+          $(".alert-text").text("");
           break;
         case 2:
-          $('.alert-text').text("Voucher đã được sử dụng");
+          $(".alert-text").text("Voucher đã được sử dụng");
           totalCartAfterDiscount.text(response[2]);
           $(".priceDiscount").text(0);
           console.log("Voucher đã được sử dụng");
           break;
         case 3:
-          $('.alert-text').text("Voucher không tồn tại hoặc quá hạn");
+          $(".alert-text").text("Voucher không tồn tại hoặc quá hạn");
           totalCartAfterDiscount.text(response[2]);
           $(".priceDiscount").text(0);
           console.log("Voucher đã chimto");
@@ -556,7 +551,6 @@ function validateForm(
     return false;
   }
   $alertInputEmail.text("");
-  
 
   if (!isValidEmail(receiverPhone)) {
     $alertInputPhone.text("Vui lòng nhập số điện thoại hợp lệ.");
@@ -569,51 +563,52 @@ function validateForm(
 
 function placeOrder() {
   let receiverName = $(".inputName").val(),
-  receiverAddress = $(".inputAddress").val(),
-  receiverEmail = $(".inputEmail").val(),
-  receiverPhone = $(".inputPhone").val(),
-  receiverNote = $(".inputNote").val(),
-  otherReceiverName = $(".other-receiver-name").val(),
-  otherReceiverEmail = $(".other-receiver-name").val(),
-  otherReceiverPhone = $(".other-receiver-phone").val(),
-  otherReceiverAddress = $(".other-receiver-address").val();
+    receiverAddress = $(".inputAddress").val(),
+    receiverEmail = $(".inputEmail").val(),
+    receiverPhone = $(".inputPhone").val(),
+    receiverNote = $(".inputNote").val(),
+    otherReceiverName = $(".other-receiver-name").val(),
+    otherReceiverEmail = $(".other-receiver-name").val(),
+    otherReceiverPhone = $(".other-receiver-phone").val(),
+    otherReceiverAddress = $(".other-receiver-address").val();
 
-      // If otherReceiver fields are empty, use receiver fields
-      if (
-        otherReceiverName === "" &&
-        otherReceiverAddress === "" &&
-        otherReceiverPhone === "" &&
-        otherReceiverEmail === ""
-    ) {
-        otherReceiverName = receiverName;
-        otherReceiverEmail = receiverEmail;
-        otherReceiverPhone = receiverPhone;
-        otherReceiverAddress = receiverAddress;
-    }
+  // If otherReceiver fields are empty, use receiver fields
+  if (
+    otherReceiverName === "" &&
+    otherReceiverAddress === "" &&
+    otherReceiverPhone === "" &&
+    otherReceiverEmail === ""
+  ) {
+    otherReceiverName = receiverName;
+    otherReceiverEmail = receiverEmail;
+    otherReceiverPhone = receiverPhone;
+    otherReceiverAddress = receiverAddress;
+  }
 
-    // CHECK FORM
+  // CHECK FORM
 
-    if (!validateForm(receiverName,receiverAddress,receiverEmail,receiverPhone)) {
-      return;
-    } 
-    
+  if (
+    !validateForm(receiverName, receiverAddress, receiverEmail, receiverPhone)
+  ) {
+    return;
+  }
 
-// MODAL
-$('.name').text(receiverName);
-$('.address').text(receiverAddress);
-$('.email').text(receiverEmail);
-$('.phone').text(receiverPhone);
-$('.note').text(receiverNote);
-$('.receiver-name').text(otherReceiverName);
-$('.receiver-email').text(otherReceiverEmail);
-$('.receiver-phone').text(otherReceiverPhone);
-$('.receiver-address').text(otherReceiverAddress);
+  // MODAL
+  $(".name").text(receiverName);
+  $(".address").text(receiverAddress);
+  $(".email").text(receiverEmail);
+  $(".phone").text(receiverPhone);
+  $(".note").text(receiverNote);
+  $(".receiver-name").text(otherReceiverName);
+  $(".receiver-email").text(otherReceiverEmail);
+  $(".receiver-phone").text(otherReceiverPhone);
+  $(".receiver-address").text(otherReceiverAddress);
 
-$('.modal-sumary').addClass('sumaryCartShow');
-$('.sumary-box').addClass('sumaryBoxShow');
+  $(".modal-sumary").addClass("sumaryCartShow");
+  $(".sumary-box").addClass("sumaryBoxShow");
 
-setTimeout(gsapButton,1000);
-// setInterval(gsapButton,300)
+  setTimeout(gsapButton, 1000);
+  // setInterval(gsapButton,300)
 
   $.ajax({
     type: "POST",
@@ -621,15 +616,15 @@ setTimeout(gsapButton,1000);
 
     data: {
       order: "order",
-      receiverName:  receiverName ,
-      receiverAddress:  receiverAddress ,
-      receiverEmail:  receiverEmail ,
-      receiverPhone:  receiverPhone ,
-      receiverNote:  receiverNote ,
-      otherReceiverName:  otherReceiverName ,
-      otherReceiverEmail:  otherReceiverEmail ,
-      otherReceiverPhone:  otherReceiverPhone ,
-      otherReceiverAddress:  otherReceiverAddress ,
+      receiverName: receiverName,
+      receiverAddress: receiverAddress,
+      receiverEmail: receiverEmail,
+      receiverPhone: receiverPhone,
+      receiverNote: receiverNote,
+      otherReceiverName: otherReceiverName,
+      otherReceiverEmail: otherReceiverEmail,
+      otherReceiverPhone: otherReceiverPhone,
+      otherReceiverAddress: otherReceiverAddress,
     },
     success: function (response) {
       console.log(response);
@@ -647,163 +642,164 @@ $(".notForMe").click(() => {
 });
 
 function gsapButton() {
-  document.querySelectorAll('.truck-button').forEach(button => {
+  document.querySelectorAll(".truck-button").forEach((button) => {
     // e.preventDefault();
-    let box = button.querySelector('.box'),
-        truck = button.querySelector('.truck');
-    if (!button.classList.contains('done')) {
-        if (!button.classList.contains('animation')) {
-            button.classList.add('animation');
-            gsap.to(button, {
-                '--box-s': 1,
-                '--box-o': 1,
-                duration: .3,
-                delay: .5
-            });
-            gsap.to(box, {
-                x: 0,
-                duration: .4,
-                delay: .7
-            });
-            gsap.to(button, {
-                '--hx': -5,
-                '--bx': 50,
-                duration: .18,
-                delay: .92
-            });
-            gsap.to(box, {
-                y: 0,
-                duration: .1,
-                delay: 1.15
-            });
-            gsap.set(button, {
-                '--truck-y': 0,
-                '--truck-y-n': -26
-            });
-            gsap.to(button, {
-                '--truck-y': 1,
-                '--truck-y-n': -25,
-                duration: .2,
-                delay: 1.25,
-                onComplete() {
-                    gsap.timeline({
-                        onComplete() {
-                            button.classList.add('done');
-                        }
-                    }).to(truck, {
-                        x: 0,
-                        duration: .4
-                    }).to(truck, {
-                        x: 40,
-                        duration: 1
-                    }).to(truck, {
-                        x: 20,
-                        duration: .6
-                    }).to(truck, {
-                        x: 96,
-                        duration: .4
-                    });
-                    gsap.to(button, {
-                        '--progress': 1,
-                        duration: 2.4,
-                        ease: "power2.in"
-                    });
-                }
-            });
-        }
-    } else {
-        button.classList.remove('animation', 'done');
-        gsap.set(truck, {
-            x: 4
+    let box = button.querySelector(".box"),
+      truck = button.querySelector(".truck");
+    if (!button.classList.contains("done")) {
+      if (!button.classList.contains("animation")) {
+        button.classList.add("animation");
+        gsap.to(button, {
+          "--box-s": 1,
+          "--box-o": 1,
+          duration: 0.3,
+          delay: 0.5,
+        });
+        gsap.to(box, {
+          x: 0,
+          duration: 0.4,
+          delay: 0.7,
+        });
+        gsap.to(button, {
+          "--hx": -5,
+          "--bx": 50,
+          duration: 0.18,
+          delay: 0.92,
+        });
+        gsap.to(box, {
+          y: 0,
+          duration: 0.1,
+          delay: 1.15,
         });
         gsap.set(button, {
-            '--progress': 0,
-            '--hx': 0,
-            '--bx': 0,
-            '--box-s': .5,
-            '--box-o': 0,
-            '--truck-y': 0,
-            '--truck-y-n': -26
+          "--truck-y": 0,
+          "--truck-y-n": -26,
         });
-        gsap.set(box, {
-            x: -24,
-            y: -6
+        gsap.to(button, {
+          "--truck-y": 1,
+          "--truck-y-n": -25,
+          duration: 0.2,
+          delay: 1.25,
+          onComplete() {
+            gsap
+              .timeline({
+                onComplete() {
+                  button.classList.add("done");
+                },
+              })
+              .to(truck, {
+                x: 0,
+                duration: 0.4,
+              })
+              .to(truck, {
+                x: 40,
+                duration: 1,
+              })
+              .to(truck, {
+                x: 20,
+                duration: 0.6,
+              })
+              .to(truck, {
+                x: 96,
+                duration: 0.4,
+              });
+            gsap.to(button, {
+              "--progress": 1,
+              duration: 2.4,
+              ease: "power2.in",
+            });
+          },
         });
+      }
+    } else {
+      button.classList.remove("animation", "done");
+      gsap.set(truck, {
+        x: 4,
+      });
+      gsap.set(button, {
+        "--progress": 0,
+        "--hx": 0,
+        "--bx": 0,
+        "--box-s": 0.5,
+        "--box-o": 0,
+        "--truck-y": 0,
+        "--truck-y-n": -26,
+      });
+      gsap.set(box, {
+        x: -24,
+        y: -6,
+      });
     }
-});
-};
+  });
+}
 
 // == 10. MORDAL SEACH ==
-$('.search-open').click(function() {
-  $(".modal-search").toggleClass('hidden');
-  $('.search-box').toggleClass('hidden');
+$(".search-open").click(function () {
+  $(".modal-search").toggleClass("hidden");
+  $(".search-box").toggleClass("hidden");
   lenis.stop();
-})
+});
 
-$(".close-search").click(function() {
-  $(".modal-search").toggleClass('hidden');
-  $('.search-box').toggleClass('hidden');
+$(".close-search").click(function () {
+  $(".modal-search").toggleClass("hidden");
+  $(".search-box").toggleClass("hidden");
   lenis.start();
-})
-
+});
 
 // == 11. FORM VALIDATION ==
 //  CHECK FORM SIGN IN
 function validateFormSignIn(event) {
-  console.log('validateForm called');
+  console.log("validateForm called");
   event.preventDefault(); // Prevent the form from submitting by default
 
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('passwordInput').value;
-  var usernameError = document.getElementById('username-error');
-  var passwordError = document.getElementById('password-error');
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("passwordInput").value;
+  var usernameError = document.getElementById("username-error");
+  var passwordError = document.getElementById("password-error");
 
   // Reset error messages
-  usernameError.textContent = '';
-  passwordError.textContent = '';
+  usernameError.textContent = "";
+  passwordError.textContent = "";
 
   // Check if fields are empty
-  if (username.trim() === '') {
-      usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
+  if (username.trim() === "") {
+    usernameError.textContent = "Vui lòng nhập tên đăng nhập.";
   }
-
-
-
+}
 
 // == 10. PASSWORD TOGGLE ==
 
 // == 11. FORM VALIDATION ==
 
-
 //  CHECK FORM SIGN IN
 function validateFormSignIn(event) {
-  console.log('validateForm called');
+  console.log("validateForm called");
   event.preventDefault(); // Prevent the form from submitting by default
 
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('passwordInput').value;
-  var usernameError = document.getElementById('username-error');
-  var passwordError = document.getElementById('password-error');
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("passwordInput").value;
+  var usernameError = document.getElementById("username-error");
+  var passwordError = document.getElementById("password-error");
 
   // Reset error messages
-  usernameError.textContent = '';
-  passwordError.textContent = '';
+  usernameError.textContent = "";
+  passwordError.textContent = "";
 
   // Check if fields are empty
-  if (username.trim() === '') {
-      usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
+  if (username.trim() === "") {
+    usernameError.textContent = "Vui lòng nhập tên đăng nhập.";
   }
-  
-const passwordInput = document.getElementById("passwordInput");
-const togglePassword = document.getElementById("togglePassword");
 
-  if (password.trim() === '') {
-      passwordError.textContent = 'Vui lòng nhập mật khẩu.';
+  const passwordInput = document.getElementById("passwordInput");
+  const togglePassword = document.getElementById("togglePassword");
+
+  if (password.trim() === "") {
+    passwordError.textContent = "Vui lòng nhập mật khẩu.";
   }
 
   // If there are any errors, prevent form submission
-  if (usernameError.textContent !== '' || passwordError.textContent !== '') {
-      return false;
+  if (usernameError.textContent !== "" || passwordError.textContent !== "") {
+    return false;
   }
 
   // If validation passed, you can submit the form
@@ -812,40 +808,56 @@ const togglePassword = document.getElementById("togglePassword");
 
 // CHECK FORM SIGN UP
 function validateFormSignUp(event) {
-  console.log('validateForm called');
+  console.log("validateForm called");
   event.preventDefault(); // Prevent the form from submitting by default
 
-  var username = document.getElementById('username').value;
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('passwordInput').value;
-  var usernameError = document.getElementById('username-error');
-  var emailError = document.getElementById('email-error');
-  var passwordError = document.getElementById('password-error');
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("passwordInput").value;
+  var usernameError = document.getElementById("username-error");
+  var emailError = document.getElementById("email-error");
+  var passwordError = document.getElementById("password-error");
 
   // Reset error messages
-  usernameError.textContent = '';
-  emailError.textContent = '';
-  passwordError.textContent = '';
+  usernameError.textContent = "";
+  emailError.textContent = "";
+  passwordError.textContent = "";
 
   // Check if fields are empty
-  if (username.trim() === '') {
-      usernameError.textContent = 'Vui lòng nhập tên đăng nhập.';
+  if (username.trim() === "") {
+    usernameError.textContent = "Vui lòng nhập tên đăng nhập.";
   }
 
-  if (email.trim() === '') {
-    emailError.textContent = 'Vui lòng nhập email.';
+  if (email.trim() === "") {
+    emailError.textContent = "Vui lòng nhập email.";
   }
 
-  if (password.trim() === '') {
-      passwordError.textContent = 'Vui lòng nhập mật khẩu.';
+  if (password.trim() === "") {
+    passwordError.textContent = "Vui lòng nhập mật khẩu.";
   }
 
   // If there are any errors, prevent form submission
-  if (usernameError.textContent !== '' ||emailError.textContent !== '' || passwordError.textContent !== '') {
-      return false;
+  if (
+    usernameError.textContent !== "" ||
+    emailError.textContent !== "" ||
+    passwordError.textContent !== ""
+  ) {
+    return false;
   }
 
   // If validation passed, you can submit the form
   return true;
 }
+// == 10. PASSWORD TOGGLE ==
+const passwordInput = document.getElementById("passwordInput");
+const togglePassword = document.getElementById("togglePassword");
 
+togglePassword.addEventListener("click", () => {
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    togglePassword.setAttribute("name", "eye-off-outline");
+  } else {
+    passwordInput.type = "password";
+    togglePassword.setAttribute("name", "eye-outline");
+  }
+});
