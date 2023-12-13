@@ -77,9 +77,11 @@ function get_user($id)
     $sql = "SELECT * FROM user WHERE id=?";
     return pdo_query_one($sql, $id);
 }
+// Sửa lại phần user_insert
 function user_insert($username, $email, $password)
 {
-    $sql = "INSERT INTO user(username,email,password) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO user(username, email, password) VALUES (?, ?, ?)
+            ON DUPLICATE KEY UPDATE password = VALUES(password)";
     pdo_execute($sql, $username, $email, $password);
 }
 
