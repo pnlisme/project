@@ -24,7 +24,18 @@ function binh_luan_delete($ma_bl){
 }
 
 function binh_luan_select_all(){
-    $sql = "SELECT * FROM comment ORDER BY date DESC";
+    $sql = "SELECT
+    product.img,
+    product.name,
+    comment.content,
+    comment.date,
+    user.username
+FROM
+    product
+JOIN comment ON product.id = comment.id_product
+JOIN user ON comment.id_user = user.id;
+limit 8
+";
     return pdo_query($sql);
 }
 
@@ -36,6 +47,7 @@ function binh_luan_select_by_id($idPro){
             ORDER BY comment.date DESC";
     return pdo_query($sql, $idPro);
 }
+
 function binh_luan_exist($ma_bl){
     $sql = "SELECT count(*) FROM binh_luan WHERE ma_bl=?";
     return pdo_query_value($sql, $ma_bl) > 0;

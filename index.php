@@ -39,7 +39,7 @@ if(!isset($_SESSION['promodeCode'])) {
 }
 
 
-// $product_sale = get_product_sale(4);
+$product_sale = get_product_sale(4);
 include "View/header.php";
 if (!isset($_GET['pg'])) {
     include "View/home.php";                                                
@@ -50,7 +50,7 @@ else {
             //search
                 $kyw="";
                 $titlepage="";
-            if (isset($_POST["timkiem"])&&($_POST["timkiem"])) {
+            if (isset($_POST["timkiem"])) {
                 $kyw=$_POST["kyw"];
                 $titlepage="Kết quả tìm kiếm với từ khóa: ".$kyw;
             }
@@ -82,7 +82,7 @@ else {
             $dsdm = get_category_name();
             if (isset($_GET['idpro'])) {
                 $id = $_GET['idpro'];
-                $product_detail =get_product_by_id($id);
+                $product_detail = get_product_by_id($id);
                 $iddm = $product_detail['id_category'];
                 $product_relate =get_product_relate($iddm,$id,4);
                 include "View/detail.php";

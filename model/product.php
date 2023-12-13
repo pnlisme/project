@@ -128,6 +128,7 @@ function get_product_by_id($id)
                 product.id=?";
     return pdo_query_one($sql, $id);
 }
+
 function show_product($dssp)
 {
     $html_dssp = '';
@@ -178,11 +179,11 @@ function show_product($dssp)
     </div>
 
     <!-- DES -->
-    <p class="text-center font-bold mt-2 text-sm lg:text-xl">' . $name . '</p>
+    <p class="text-center font-bold mt-2 text-sm lg:text-lg">' . $name . '</p>
     <p class="my-2 text-center text-sm">' . $brand_name . '</p>
     <div class="flex flex-col lg:flex-row justify-center gap-1 lg:gap-4  items-center">
-    <p class="text-sm lg:text-lg font-bold">' . $price_sale . 'VNĐ</p>
-    <del class="font-del text-sm lg:text-lg ">' . $price . 'VNĐ</del>
+    <p class="text-sm lg:text-lg font-bold">' . number_format($price,3) . 'VNĐ</p>
+    <del class="font-del text-sm lg:text-lg ">' . number_format($price,3) . 'VNĐ</del>
     </div>
 </div>';
     }
@@ -203,7 +204,7 @@ function show_product_new($pr_new)
         //     $item_sale ='';
         // }
         if ($img != "") $img = PATH_IMG . $img;
-        $link = "index.php?pg=sanphamchitiet&idpro=" . $id;
+        $link = "index.php?pg=detail&idpro=" . $id;
         $html_pr_new .= '<div class=" swiper-slide relative flex justify-center items-center gap-60">
         <div class="">
             <div>
@@ -213,7 +214,7 @@ function show_product_new($pr_new)
                     </div>
                     Hot deal this week
                 </div>
-                <h1 class="text-8xl font-bold mt-4 w-96">' . $name . '</h1>
+                <h1 class="text-5xl font-bold mt-4 w-96">' . $name . '</h1>
             </div>
             
             <a href="' . $link . '"class=" mt-4 cursor-pointer border-2 hover:bg-transparent 
@@ -244,12 +245,12 @@ function show_product_new_secondary($pr_new)
         //     $item_sale ='';
         // }
         if ($img != "") $img = PATH_IMG . $img;
-        $link = "index.php?pg=sanphamchitiet&idpro=" . $id;
+        $link = "index.php?pg=detail&idpro=" . $id;
         $html_pr_new .= ' <div class="swiper-slide justify-between slider-box-hero bg-box rounded-box py-4 flex flex-col items-center">
         <img class="w-80 object-cover" src="' . $img . '" alt="" />
             <div>
             <p class="text-center font-bold mt-4">' . $name . '</p>
-            <p class="text-center font-bold mb-6">' . $price_sale . '</p>
+            <p class="text-center font-bold mb-6">' . number_format($price_sale,3) . '</p>
             </div>
 
     </div>';
@@ -275,7 +276,7 @@ function show_product_view_secondary($dssp)
             $item_sale = '';
         }
         if ($img != "") $img = PATH_IMG . $img;
-        $link = "index.php?pg=sanphamchitiet&idpro=" . $id;
+        $link = "index.php?pg=detail&idpro=" . $id;
         $html_dssp .=
             ' <div class="swiper-slide flex items-center justify-center">
     <!-- SINGLE PRODUCT -->
@@ -284,8 +285,8 @@ function show_product_view_secondary($dssp)
         <input type="hidden" name="img" value="' . $img . '">
         <input type="hidden" name="name" value="' . $name . '">
         <input type="hidden" name="brand" value="' . $brand_name . '">
-        <input type="hidden" name="price" value="' . $price_sale . '">
-        <input type="hidden" name="price_sale" value="' . $price . '"> 
+        <input type="hidden" name="price" value="' . number_format($price_sale,3) . '">
+        <input type="hidden" name="price_sale" value="' . number_format($price,3) . '"> 
         <a  href="' . $link . '" >
         <img class="group-hover:scale-125  group-hover:blur-sm  transition duration-500" 
 src="' . $img . '" alt="">
@@ -316,8 +317,8 @@ src="' . $img . '" alt="">
         <p class="text-center font-bold mt-4">' . $name . '</p>
         <p class="text-center text-sm">' . $brand_name . '</p>
         <div class="flex justify-center gap-4">
-        <p>' . $price_sale . 'VNĐ</p>
-        <del class="font-del">' . $price . 'VNĐ</del>
+        <p>' . number_format($price_sale,3) . 'VNĐ</p>
+        <del class="font-del">' . number_format($price,3) . 'VNĐ</del>
         </div>
     </div>
 </div>';
@@ -443,27 +444,13 @@ function product_detail_delete($id)
         pdo_execute($sql, $id);
     }
 }
-
 function show_product_search($dssp)
 {
     $html_dssp = '';
-    $VND = "";
-    $lastprice = '';
     foreach ($dssp as $sp) {
         extract($sp);
-
         // Tính phần trăm giảm giá
-        if ($price_sale == "") {
-            $lastprice = $price;
-            $price = "";
-            $VND = "";
-        } else {
-            $lastprice = $price_sale;
-            $price = $price;
-            $VND = "VND";
-            $percent_discount = ($price - $price_sale) / $price * 100;
-        }
-
+        $percent_discount = ($price - $price_sale) / $price * 100;
         if ($sale > 0 && $sale < 100) {
             $item_sale = '<div class="absolute top-2 text-sm left-2 bg-primary w-fit rounded-box text-white p-2">
         Sale ' . round($percent_discount) . '%
@@ -476,14 +463,13 @@ function show_product_search($dssp)
         $html_dssp .=
             '<div class="flex flex-col justify-center">
                                                     <div class="bg-box  rounded-box flex items-center justify-center">
-                                                        <a href="' . $link . '">
+                                                        <a href="'.$link.'">
                                                             <img class="object-contain  h-3/4" src="' . $img . '" alt="">
                                                         </a>
                                                     </div>
-                                                    <span class="mt-4 w-fit mx-auto" >' . $name . '</span>
-                                                    <div class="w-fit mx-auto mt-1">
-                                                        <p  class="w-fit font-bold mb-1">' . $lastprice . 'VND</p>
-                                                        <p class="line-through	 w-fit"> ' . $price . 'VND</p>
+                                                    <span class="mt-4 w-fit mx-auto" >' . $name. '</span>
+                                                    <div class="w-fit mx-auto mt-2">
+                                                        <p  class="w-fit font-bold mb-1">' . number_format($price,3). 'VND</p>
                                                     </div>
                                                 </div>';
     }

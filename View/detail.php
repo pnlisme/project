@@ -1,6 +1,8 @@
 <?php
 
-// extract($product_detail);
+
+
+extract($product_detail);
 $customerComment = '';
 $idPro = $_GET['idpro'];
 $allComment = binh_luan_select_by_id($idPro);
@@ -37,6 +39,7 @@ if ((count($_SESSION['s_user']) > 0)) {
 } else {
     $html_comment = "<p>Bạn phải đăng nhập mới có thể bình luận</p>";
 }
+
 if ($img != "") $img = PATH_IMG . $img;
 if ($img_1 != "") $img_1 = PATH_IMG . $img_1;
 if ($img_2 != "") $img_2 = PATH_IMG . $img_2;
@@ -134,7 +137,9 @@ $html_product_relate = show_product($product_relate);
             <h1 class="text-h3 font-bold mb-4">Đánh giá sản phẩm</h1>
             <!-- HEAD COMMENT -->
             <div class="flex justify-between items-center py-6 px-6 rounded-md" style="background-color: #f7f7f7;">
-                <button class="review-button bg-primary text-white text-sm font-semibold px-8 py-2 rounded-md transform hover:scale-110 transition duration-300">Đánh giá ngay</button>
+                <button
+                    class="review-button bg-primary text-white text-sm font-semibold px-8 py-2 rounded-md transform hover:scale-110 transition duration-300">Đánh
+                    giá ngay</button>
             </div>
 
             <!-- WRITE A REVIEW -->
@@ -155,104 +160,107 @@ $html_product_relate = show_product($product_relate);
 
 <!-- BOX COMMENT -->
 <section>
-        <div>
-            <div class="container">
-                <h1 class="text-h3 font-bold mb-4">Đánh giá sản phẩm</h1>
+    <div>
+        <div class="container">
+            <h1 class="text-h3 font-bold mb-4">Đánh giá sản phẩm</h1>
 
-                <!-- HEAD COMMENT -->
-                <div class="flex justify-between items-center py-6 px-6 rounded-md" style="background-color: #f7f7f7;">
-                    <div class="flex justify-between items-center gap-4">
-                        <div class="star-container flex gap-1">
-                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
-                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
-                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
-                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
-                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
-                        </div>
-                        <p>Based on 2 reviews</p>
+            <!-- HEAD COMMENT -->
+            <div class="flex justify-between items-center py-6 px-6 rounded-md" style="background-color: #f7f7f7;">
+                <div class="flex justify-between items-center gap-4">
+                    <div class="star-container flex gap-1">
+                        <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                        <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                        <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                        <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                        <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
                     </div>
-
-                    <button class="review-button bg-primary text-white text-sm font-semibold px-8 py-2 rounded-md transform hover:scale-110 transition duration-300">Đánh giá ngay</button>
+                    <p>Based on 2 reviews</p>
                 </div>
 
-                <div class="cmt">
-                    <iframe src="comment.php?idsp=<?=$_GET['id']?>" width="100%" height="400px" frameborder="0"></iframe>
-                </div>
+                <button
+                    class="review-button bg-primary text-white text-sm font-semibold px-8 py-2 rounded-md transform hover:scale-110 transition duration-300">Đánh
+                    giá ngay</button>
+            </div>
 
-                <!-- WRITE A REVIEW -->
-                <div class="write-review-section">
-                    <h2 class="text-lg font-bold my-4">Viết đánh giá</h2>
+            <div class="cmt">
+                <iframe src="comment.php?idsp=<?=$_GET['id']?>" width="100%" height="400px" frameborder="0"></iframe>
+            </div>
 
-                    <iframe src="comment.php?" frameborder="0"></iframe>
+            <!-- WRITE A REVIEW -->
+            <div class="write-review-section">
+                <h2 class="text-lg font-bold my-4">Viết đánh giá</h2>
 
-                    
-                
-                    <form action="" method="POST">
-                        <div>
-                            <label for="">Rating</label>
-                            <div class="star-container flex gap-1 mb-4 mt-2">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                            </div>
-                        </div>
+                <iframe src="comment.php?" frameborder="0"></iframe>
 
-                        <div class="mt-8">
-                            <label for="">Đánh giá</label> <br>
-                            <textarea class="w-full border mt-2 px-4 py-4" name="" id="" cols="30" rows="10" placeholder="Nội dung đánh giá"></textarea>
-                        </div>
-                    </form>
-                </div>
 
-                <!-- BODY COMMENT -->
-                <div>
-                    <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
-                        <div class="w-8 h-8 rounded-full bg-blue-500"></div>
 
-                        <div class="">
-                            <div class="flex items-center gap-4">
-                                <p class="font-bold">Anh Tèo Non</p>
-                                <p class="text-sm color-777">9/12/2023</p>
-                            </div>
-
-                            <div class="star-container flex gap-1 mb-4 mt-1">
-                                <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                            </div>
-
-                            <p>Hàng dỏm đừng có mua!</p>
+                <form action="" method="POST">
+                    <div>
+                        <label for="">Rating</label>
+                        <div class="star-container flex gap-1 mb-4 mt-2">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
                         </div>
                     </div>
 
-                    <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
-                        <div class="w-8 h-8 rounded-full bg-blue-500"></div>
+                    <div class="mt-8">
+                        <label for="">Đánh giá</label> <br>
+                        <textarea class="w-full border mt-2 px-4 py-4" name="" id="" cols="30" rows="10"
+                            placeholder="Nội dung đánh giá"></textarea>
+                    </div>
+                </form>
+            </div>
 
-                        <div class="">
-                            <div class="flex items-center gap-4">
-                                <p class="font-bold">Chị thuồn luồn</p>
-                                <p class="text-sm color-777">9/12/2023</p>
-                            </div>
+            <!-- BODY COMMENT -->
+            <div>
+                <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                    <div class="w-8 h-8 rounded-full bg-blue-500"></div>
 
-                            <div class="star-container flex gap-1 mb-4 mt-1">
-                                <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                                <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
-                            </div>
-
-                            <p>Sản phẩm cùi bắp</p>
+                    <div class="">
+                        <div class="flex items-center gap-4">
+                            <p class="font-bold">Anh Tèo Non</p>
+                            <p class="text-sm color-777">9/12/2023</p>
                         </div>
+
+                        <div class="star-container flex gap-1 mb-4 mt-1">
+                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                        </div>
+
+                        <p>Hàng dỏm đừng có mua!</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-2 mt-6 pb-4" style="border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                    <div class="w-8 h-8 rounded-full bg-blue-500"></div>
+
+                    <div class="">
+                        <div class="flex items-center gap-4">
+                            <p class="font-bold">Chị thuồn luồn</p>
+                            <p class="text-sm color-777">9/12/2023</p>
+                        </div>
+
+                        <div class="star-container flex gap-1 mb-4 mt-1">
+                            <img class="w-4" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                            <img class="w-4 grayscale" src="./View/layout/assets/img/newstar.png" alt="">
+                        </div>
+
+                        <p>Sản phẩm cùi bắp</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <section class="mt-32">
     <div>
@@ -274,18 +282,17 @@ $html_product_relate = show_product($product_relate);
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Lấy phần tử chứa phần WRITE A REVIEW
-        const reviewSection = document.querySelector('.write-review-section');
+document.addEventListener('DOMContentLoaded', function() {
+    // Lấy phần tử chứa phần WRITE A REVIEW
+    const reviewSection = document.querySelector('.write-review-section');
 
-        // Lấy nút Đánh giá ngay
-        const reviewButton = document.querySelector('.review-button');
+    // Lấy nút Đánh giá ngay
+    const reviewButton = document.querySelector('.review-button');
 
-        // Thêm sự kiện click cho nút
-        reviewButton.addEventListener('click', function() {
-            // Toggle lớp 'hidden' cho phần tử chứa phần WRITE A REVIEW
-            reviewSection.classList.toggle('hidden');
-        });
+    // Thêm sự kiện click cho nút
+    reviewButton.addEventListener('click', function() {
+        // Toggle lớp 'hidden' cho phần tử chứa phần WRITE A REVIEW
+        reviewSection.classList.toggle('hidden');
     });
+});
 </script>
-
